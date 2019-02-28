@@ -1,2 +1,0 @@
-# korkutanapa
-odtü projesi için 
