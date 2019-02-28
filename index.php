@@ -1,3 +1,16 @@
 <?php 
-echo "Hello, World!";
+echo 
+"
+Merhabalar
+bu site RATE TAXI uygulamasıdır.
+Korkut Anapa
+Ebru Keleş
+Cem Kobal 
+ve 
+Bilgesu Güvenç
+tarafından hazırlanmaktadır.
+Şu anda cloud üzerinde canlıdır.
+";
+
+
 ?>
