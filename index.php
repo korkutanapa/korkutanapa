@@ -20,7 +20,7 @@ img {margin-bottom: -7px}
   </a>
   <div class="w3-bar-block w3-center">
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-    <a href="connection_nosqldatabase.php" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Rate The Taxi</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Rate The Taxi</a>
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Complaint</a>
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Feedback</a>
   </div>
@@ -37,6 +37,7 @@ img {margin-bottom: -7px}
   <h1><b>RATE THE TAXI</b></h1>
   <p><b>A web application based on Azure</b></p>
   <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">RATE THE TAXI</button></p>
+	<p class="w3-padding-16"><button class="w3-button w3-black" onclick="connection_nosqldatabase.php">RATE THE TAXI 2</button></p>
 </header>
 </div>
 
