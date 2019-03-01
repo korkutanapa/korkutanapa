@@ -17,9 +17,10 @@ $db = new Connection([
 $db->timeout = 0.5; 
   $db->open();
   
-  echo "merhaba";
-  
+ 
   $db->close();
+  
+  
  ?> 
   
   
