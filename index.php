@@ -37,7 +37,7 @@ img {margin-bottom: -7px}
   <h1><b>RATE THE TAXI</b></h1>
   
 			<?php
-			$db="merhaba";
+			$db="merhaba2";
 			echo $db;
   
 			?> 
