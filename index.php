@@ -48,7 +48,7 @@ img {margin-bottom: -7px}
   </div>
 
   <div class="w3-third">
-    <img src="taxi.jpg" style="width:100%">
+    <img src="becks.jpg" style="width:100%">
 
   </div>
 
