@@ -39,14 +39,14 @@ img {margin-bottom: -7px}
 			<?php
 
 			
-			echo "merhaba dünya";
+			echo "Merhaba BECKS, ";
 			
 			
 			?> 
   
   <p><b>A web application based on Azure</b></p>
-  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">RATE THE TAXI</button></p>
-	<p class="w3-padding-16"><button class="w3-button w3-black" onclick="connection_nosqldatabase.php">RATE THE TAXI 2</button></p>
+  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="#">RATE THE TAXI</button></p>
+	<p class="w3-padding-16"><button class="w3-button w3-black" onclick="#">RATE THE TAXI 2</button></p>
 </header>
 </div>
 
@@ -78,27 +78,6 @@ img {margin-bottom: -7px}
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">BECKS</a></p>
 </footer>
  
-<script>
-// Toggle grid padding
-function myFunction() {
-  var x = document.getElementById("myGrid");
-  if (x.className === "w3-row") {
-    x.className = "w3-row-padding";
-  } else { 
-    x.className = x.className.replace("w3-row-padding", "w3-row");
-  }
-}
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "100%";
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
 
 </body>
 </html>
