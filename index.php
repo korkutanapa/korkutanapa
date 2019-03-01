@@ -3,7 +3,7 @@
 
 
 
-echo "merhaba korkut";
+echo "merhaba korkut22";
 
 require_once('vendor/autoload.php');
 use \Brightzone\GremlinDriver\Connection;
