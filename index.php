@@ -11,15 +11,8 @@ $db = new Connection([
     // Required parameter
     ,'ssl' => TRUE
 ]);
-$db->timeout = 0.5; 
-
-
-
-    print "Welcome to Azure Cosmos DB + Gremlin on PHP!\n\n";
-    print "Attempting to connect...\n";
 			
     $db->open();
-    print "Successfully connected to the database\n\n";
     
     $db->close();
 
