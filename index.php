@@ -20,7 +20,7 @@ img {margin-bottom: -7px}
   </a>
   <div class="w3-bar-block w3-center">
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Rate The Taxi</a>
+    <a href="connection_nosqldatabase.php" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Rate The Taxi</a>
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Complaint</a>
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Feedback</a>
   </div>
@@ -52,10 +52,6 @@ img {margin-bottom: -7px}
 
   </div>
 
-  <div class="w3-third">
-
-    <img src="taxi.jpg" style="width:100%">
-  </div>
 </div>
 
 <!-- End Page Content -->
