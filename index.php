@@ -20,9 +20,9 @@ img {margin-bottom: -7px}
   </a>
   <div class="w3-bar-block w3-center">
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Rate The Taxi</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Complaint</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Feedback</a>
   </div>
 </nav>
 
@@ -34,9 +34,9 @@ img {margin-bottom: -7px}
 <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
 <div class="w3-clear"></div>
 <header class="w3-center w3-margin-bottom">
-  <h1><b>PHOTOLIO</b></h1>
-  <p><b>A template made by w3.css for photographers.</b></p>
-  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
+  <h1><b>RATE THE TAXI</b></h1>
+  <p><b>A web application based on Azure</b></p>
+  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">RATE THE TAXI</button></p>
 </header>
 </div>
 
@@ -81,7 +81,7 @@ img {margin-bottom: -7px}
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">BECKS</a></p>
 </footer>
  
 <script>
