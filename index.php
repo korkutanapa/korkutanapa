@@ -35,6 +35,24 @@ img {margin-bottom: -7px}
 <div class="w3-clear"></div>
 <header class="w3-center w3-margin-bottom">
   <h1><b>RATE THE TAXI</b></h1>
+  
+			<?php
+			$db = new Connection([
+			'host' => 'https://ratetaxicosmosdb.documents.azure.com.graphs.azure.com',
+			'username' => '/dbs/ratetaxicosmosdb/colls/ratetaxicosmosdb',
+			'password' => '6mpwHynjZvssEL8ejxI1CsA0eHn5uF2Z7YnZQdKRastGm5IvuNbLcLF4wwpZq2s8sDvMUg59RgR91RycsJjyHA=='
+			,'port' => '443'
+		// Required parameter
+			,'ssl' => TRUE
+			]);
+			$db->timeout = 0.5; 
+			$db->open();
+  
+			echo "merhaba";
+  
+			$db->close();
+			?> 
+  
   <p><b>A web application based on Azure</b></p>
   <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">RATE THE TAXI</button></p>
 	<p class="w3-padding-16"><button class="w3-button w3-black" onclick="connection_nosqldatabase.php">RATE THE TAXI 2</button></p>
