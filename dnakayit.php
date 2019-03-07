@@ -14,7 +14,7 @@ if(empty($cekoKullaniciAdi) or empty($cekopassword) or empty($cekoAdSoyad)or emp
 }
 else {
 
-$sql = "INSERT INTO kisiler (KullaniciAdi,sifre,AdSoyad,email,biografi,onay)
+$sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,onay)
  VALUES ('$cekoKullaniciAdi','$cekopassword','$cekoAdSoyad','$cekoEPosta','$cekoBiografi','0')";
 
  
@@ -22,9 +22,9 @@ $sql = "INSERT INTO kisiler (KullaniciAdi,sifre,AdSoyad,email,biografi,onay)
 if (mysqli_query($conn, $sql)) {
 	header('Location:indexdna.html');
 	
-	
+
  
-}else  {echo " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
+}else  {echo $sql . " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
 }
 
 mysqli_close($conn);
