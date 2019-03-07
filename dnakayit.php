@@ -3,6 +3,19 @@
 
 include ("baglan.php");
 
+if (mysqli_query($conn)) 
+{
+echo " oldu bu iş";
+}
+
+else  
+
+{echo "bağlanmadı";}
+
+
+
+
+
 $cekoKullaniciAdi=$_POST["oKullaniciAdi"];
 $cekopassword=$_POST["opassword"];
 $cekoAdSoyad=$_POST["oAdSoyad"];
@@ -19,12 +32,15 @@ $sql = "INSERT INTO kisiler (KullaniciAdi,sifre,AdSoyad,email,biografi,onay)
 
  
  
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($conn, $sql)) 
+{
 	header('Location:indexdna.html');
-	
-	
- 
-}else  {echo " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
+}
+
+else  
+
+{echo " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
+
 }
 
 mysqli_close($conn);
