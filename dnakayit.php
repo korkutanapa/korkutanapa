@@ -9,17 +9,11 @@
         $connectionOptions = array("Database"=>"ReportTaxiDB",  
            "Uid"=>"becks@reporttaxidbserver", "PWD"=>"774761Ka.", "LoginTimeout" => $connectionTimeoutSeconds);  
         $conn = null;  
-        $arrayOfTransientErrors = array('08001', '08002', '08003', '08004', '08007', '08S01'); 
-        for ($cc = 1; $cc <= $maxCountTriesConnectAndQuery; $cc++) {  
-            // [A.2] Connect, which proceeds to issue a query command.  
-            $conn = sqlsrv_connect($serverName, $connectionOptions);    
+        $conn = sqlsrv_connect($serverName, $connectionOptions);    
             if ($conn === true) {  
                 echo "Connection was established";  
                 echo "<br>";  
-		}}
-
-
-
+		}
 if (mysqli_query($conn)) {
 	header('Location:index.html');
 }else  {echo " Korkut Bağlanamıyorum";}
