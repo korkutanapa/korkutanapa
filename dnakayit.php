@@ -1,7 +1,7 @@
 <?php
 // YENİ ÜYE KAYIT DOSYASINDAN ALINAN VERİ DATABASE E YAZILIYOR
 
-include ("dnabaglan.php");
+include ("baglan.php");
 
 $cekoKullaniciAdi=$_POST["oKullaniciAdi"];
 $cekopassword=$_POST["opassword"];
