@@ -51,19 +51,15 @@ footer {background: #aaa;color:white;}
 
 <nav class="nav">
 <ul>
-  <li><a href="http://www.ceng.metu.edu.tr">odtü bilgisayar mühendisliği bölümü</a></li>
-  <li><a href="http://user.ceng.metu.edu.tr/~dogru/">se550</a></li>
-  
-  
-   
+  <li><a href="https://birim.ailevecalisma.gov.tr/isggm">İŞ SAĞLIĞI VE GÜVENLİĞİ GENEL MÜDÜRLÜĞÜ </a></li>
 </ul>
 </nav>
 
 <article class="article">
   <h1>SİSTEM NASIL ÇALIŞIR?</h1>
-  <p>a</p>
-  <p>a</p>
-  <p>a<strong></strong></p>
+  <p>Tespit Edilen Risk Girişi</p>
+  <p>Girilen Risklerin Onaylanması </p>
+  <p>Risk Toplantısı<strong></strong></p>
 </article>
 
 <footer>Copyright &copy; Korkut Anapa</footer>
