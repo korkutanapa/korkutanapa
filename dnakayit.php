@@ -27,9 +27,9 @@ $sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,o
  VALUES ('$cekoKullaniciAdi','$cekopassword','$cekoAdSoyad','$cekoEPosta','$cekoBiografi','0')";
 
  
-if (mysqli_query($conn,$sql)) {
+if (mysqli_query($sql)) {
 	header('Location:index.html');
-}else  {echo $sql . " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
+}else  {echo " bağlandım ama yazamıyorum ";}
 }
 
 mysqli_close($conn);
