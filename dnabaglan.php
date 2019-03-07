@@ -7,7 +7,8 @@ try {
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
-    die(print_r($e));
+  	echo $e->getMessage(); 
+   // die(print_r($e));
 }
 
 $connectionInfo = array("UID" => "becks@reporttaxidbserver", "pwd" => "774761Ka.", "Database" => "ReportTaxiDB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
