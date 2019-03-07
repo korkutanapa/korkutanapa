@@ -5,6 +5,12 @@ $connectionInfo = array("UID" => "becks@reporttaxidbserver", "pwd" => "774761Ka.
 $serverName = "tcp:reporttaxidbserver.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+if (mysqli_query($conn)) {
+	header('Location:index.html');
+}else  {echo " Korkut Bağlanamıyorum";}
+
+
+
 
 $cekoKullaniciAdi=$_POST["oKullaniciAdi"];
 $cekopassword=$_POST["opassword"];
@@ -23,9 +29,6 @@ $sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,o
  
 if (mysqli_query($conn,$sql)) {
 	header('Location:index.html');
-	
-
- 
 }else  {echo $sql . " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
 }
 
