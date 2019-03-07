@@ -31,9 +31,10 @@ else {
 $sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,onay)
  VALUES ('$cekoKullaniciAdi','$cekopassword','$cekoAdSoyad','$cekoEPosta','$cekoBiografi','0')";
 
+ echo $conn." ".$sql;
  
  
-if (mysqli_query($conn)) {
+if (mysqli_query($conn,$sql)) {
 	header('Location:index.html');
 	
 
