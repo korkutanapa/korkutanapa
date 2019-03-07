@@ -60,10 +60,10 @@ footer {background: #aaa;color:white;}
 </nav>
 
 <article class="article">
-  <h1></h1>
-  <p></p>
-  <p></p>
-  <p><strong></strong></p>
+  <h1>SİSTEM NASIL ÇALIŞIR?</h1>
+  <p>a</p>
+  <p>a</p>
+  <p>a<strong></strong></p>
 </article>
 
 <footer>Copyright &copy; Korkut Anapa</footer>
