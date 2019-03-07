@@ -13,18 +13,8 @@ if ($conn->connect_errno) {
 }
 
 if (!$conn->query("SET a=1")) {
-    printf("Errormessage: %s\n", $mysqli->error);
+    printf("Errormessage: %s\n", $conn->error);
 }
-
-/* close connection */
-$conn->close();
-
-
-
-
-
-
-
 
 if (mysqli_query($conn)) 
 {
