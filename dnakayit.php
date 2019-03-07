@@ -33,7 +33,7 @@ $sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,o
 
  
  
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($sql)) {
 	header('Location:index.html');
 	
 
