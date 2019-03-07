@@ -1,22 +1,17 @@
 <?php
-    $serverName = "tcp:reporttaxidbserver.database.windows.net,1433"; // update me
-    $connectionOptions = array(
-        "Database" => "ReportTaxiDB", // update me
-        "Uid" => "becks@reporttaxidbserver", // update me
-        "PWD" => "774761Ka." // update me
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-	
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:reporttaxidbserver.database.windows.net,1433; Database = ReportTaxiDB", "becks", "774761Ka.");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
-	
-    $tsql= "SELECT getdate() as tarih";
-    $getResults= sqlsrv_query($conn, $tsql);
-    echo ("Reading data from table" . PHP_EOL);
-    if ($getResults == FALSE)
-        echo (sqlsrv_errors());
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['tarih'] . PHP_EOL);
-    }
-    sqlsrv_free_stmt($getResults);
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "becks@reporttaxidbserver", "pwd" => "774761Ka.", "Database" => "ReportTaxiDB", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:reporttaxidbserver.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
 ?>

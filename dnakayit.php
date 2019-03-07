@@ -20,7 +20,7 @@ $sql = "INSERT INTO [dbo].[kisiler] (KullaniciAdi,sifre,AdSoyad,email,biografi,o
  
  
 if (mysqli_query($conn, $sql)) {
-	header('Location:indexdna.html');
+	header('Location:index.html');
 	
 
  
