@@ -57,7 +57,7 @@ footer {background: #aaa;color:white;}
 
 <article class="article">
   <h1>SİSTEM NASIL ÇALIŞIR?</h1>
-  <p>Tespit Edilen Risk Girişi</p>
+  <a href="riskgirisi.html">Tespit Edilen Risk Girişi </a>
   <p>Girilen Risklerin Onaylanması </p>
   <p>Risk Toplantısı<strong></strong></p>
 </article>
