@@ -5,7 +5,7 @@
 </head>
 <body>
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Taxi Plakası <input type="text" name="t_emp_id" id="t_emp_id"/></br>
+    Sac Stok No <input type="text" name="t_emp_id" id="t_emp_id"/></br>
     Puanı <input type="text" name="t_name" id="t_name"/></br>
     Biniş Lokasyon <input type="text" name="t_education" id="t_education"/></br>
     İniş Lokasyon <input type="text" name="t_email" id="t_email"/></br>
