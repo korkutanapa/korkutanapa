@@ -67,7 +67,7 @@ if(isset($_GET['action']))
     }
 }
 /*Display registered people.*/
-*$sql = "SELECT * FROM kisiler ORDER BY KullaniciAdi";
+$sql = "SELECT * FROM kisiler ORDER BY KullaniciAdi";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
