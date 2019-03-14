@@ -80,7 +80,7 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add1')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[trip] ([id_trip],[weather]) VALUES (?,?)";
+     $insertSql = "INSERT INTO [dbo].[weather] ([id_trip],[weather]) VALUES (?,?)";
      $params = array(	&$_POST['t_g'],
                         &$_POST['t_h']
 					);
