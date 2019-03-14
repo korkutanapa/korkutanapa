@@ -5,10 +5,12 @@
 </head>
 <body>
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Emp Id <input type="text" name="t_emp_id" id="t_emp_id"/></br>
-    Name <input type="text" name="t_name" id="t_name"/></br>
-    Education <input type="text" name="t_education" id="t_education"/></br>
-    E-mail address <input type="text" name="t_email" id="t_email"/></br>
+    Taxi Plakası <input type="text" name="t_emp_id" id="t_emp_id"/></br>
+    Puanı <input type="text" name="t_name" id="t_name"/></br>
+    Biniş Lokasyon <input type="text" name="t_education" id="t_education"/></br>
+    İniş Lokasyon <input type="text" name="t_email" id="t_email"/></br>
+	Hava <input type="text" name="t_a" id="t_a"/></br>
+	geri bildirim  <input type="text" name="t_b" id="t_b"/></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
@@ -32,11 +34,17 @@ if(isset($_GET['action']))
 		
 		
 		
-        $insertSql = "INSERT INTO [dbo].[kisiler] ([KullaniciAdi],[sifre],[AdSoyad],[email],[biografi],[onay]) VALUES (?,?,?,?,'aa','bb')";
+        $insertSql = "INSERT INTO [dbo].[kisiler] ([KullaniciAdi],[sifre],[AdSoyad],[email],[biografi],[onay]) VALUES (?,?,?,?,?,?)";
      $params = array(&$_POST['t_emp_id'],
                         &$_POST['t_name'],
                         &$_POST['t_education'],
-                        &$_POST['t_email']);
+                        &$_POST['t_email'],
+						 &$_POST['t_a'],
+                        &$_POST['t_b']
+						
+						
+						
+						);
         $stmt = sqlsrv_query($conn, $insertSql, $params);
         if($stmt === false)
         {
