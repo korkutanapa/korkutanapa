@@ -1,16 +1,16 @@
 
 <html>
 <head>
-<Title>Azure SQL Database - PHP Website</Title>
+<Title>Report The Taxi Web Application</Title>
 </head>
 <body>
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Sac Stok No <input type="text" name="t_emp_id" id="t_emp_id"/></br>
-    Puanı <input type="text" name="t_name" id="t_name"/></br>
-    Biniş Lokasyon <input type="text" name="t_education" id="t_education"/></br>
-    İniş Lokasyon <input type="text" name="t_email" id="t_email"/></br>
-	Hava <input type="text" name="t_a" id="t_a"/></br>
-	geri bildirim  <input type="text" name="t_b" id="t_b"/></br>
+    Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
+    Point <input type="text" name="t_b" id="t_b"/></br>
+    In Location <input type="text" name="t_c" id="t_c"/></br>
+    Out Location <input type="text" name="t_d" id="t_d"/></br>
+	Weather <input type="text" name="t_e" id="t_e"/></br>
+	Feedback_Compliant  <input type="text" name="t_f" id="t_f"/></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
@@ -30,21 +30,15 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-	
-		
-		
-		
-        $insertSql = "INSERT INTO [dbo].[kisiler] ([KullaniciAdi],[sifre],[AdSoyad],[email],[biografi],[onay]) VALUES (?,?,?,?,?,?)";
-     $params = array(&$_POST['t_emp_id'],
-                        &$_POST['t_name'],
-                        &$_POST['t_education'],
-                        &$_POST['t_email'],
-						 &$_POST['t_a'],
-                        &$_POST['t_b']
-						
-						
-						
-						);
+     $insertSql = "INSERT INTO [dbo].[kisiler] ([KullaniciAdi],[sifre],[AdSoyad],[email],[biografi],[onay]) VALUES (?,?,?,?,?,?)";
+     $params = array(	&$_POST['t_a'],
+                        &$_POST['t_b'],
+                        &$_POST['t_c'],
+                        &$_POST['t_d'],
+						&$_POST['t_e'],
+                        &$_POST['t_f']
+					);
+					
         $stmt = sqlsrv_query($conn, $insertSql, $params);
         if($stmt === false)
         {
@@ -76,12 +70,12 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>Taksi No</td>");
-    print("<td>puan</td>");
-    print("<td>binis</td>");
-	 print("<td>inis</td>");
-	  print("<td>hava</td>");
-    print("<td>geribildirim</td></tr>");
+    print("<tr><td>Taxi Plate</td>");
+    print("<td>Point</td>");
+    print("<td>In Location</td>");
+	print("<td>Out Location</td>");
+	print("<td>Weather</td>");
+    print("<td>Feedback_Complaint</td></tr>");
      
     while($row = sqlsrv_fetch_array($stmt))
     {
@@ -89,8 +83,8 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['KullaniciAdi']."</td>");
         print("<td>".$row['sifre']."</td>");
         print("<td>".$row['AdSoyad']."</td>");
-		  print("<td>".$row['biografi']."</td>");
-		    print("<td>".$row['onay']."</td>");
+		print("<td>".$row['biografi']."</td>");
+		print("<td>".$row['onay']."</td>");
         print("<td>".$row['email']."</td></tr>");
     }
     print("</table>");
