@@ -67,7 +67,7 @@ if(isset($_GET['action']))
     }
 }
 /*Display registered people.*/
-/*$sql = "SELECT * FROM empTable ORDER BY name";
+*$sql = "SELECT * FROM kisiler ORDER BY KullaniciAdi";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
@@ -76,17 +76,21 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>Emp Id</td>");
-    print("<td>Name</td>");
-    print("<td>education</td>");
-    print("<td>Email</td></tr>");
+    print("<tr><td>Taksi No</td>");
+    print("<td>puan</td>");
+    print("<td>binis</td>");
+	 print("<td>inis</td>");
+	  print("<td>hava</td>");
+    print("<td>geribildirim</td></tr>");
      
     while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row['emp_id']."</td>");
-        print("<td>".$row['name']."</td>");
-        print("<td>".$row['education']."</td>");
+        print("<tr><td>".$row['KullaniciAdi']."</td>");
+        print("<td>".$row['sifre']."</td>");
+        print("<td>".$row['AdSoyad']."</td>");
+		  print("<td>".$row['biografi']."</td>");
+		    print("<td>".$row['onay']."</td>");
         print("<td>".$row['email']."</td></tr>");
     }
     print("</table>");
