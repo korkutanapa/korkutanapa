@@ -102,6 +102,31 @@ if(sqlsrv_has_rows($stmt))
     print("</table>");
 }
 
+$sql = "SELECT * FROM trip ORDER BY taxiplate";
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+if(sqlsrv_has_rows($stmt))
+{
+    print("<table border='1px'>");
+    print("<tr><td>Taxi Plate</td>");
+    print("<td>Point</td>");
+       
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['taxiplate']."</td>");
+     
+        print("<td>".$row['star']."</td></tr>");
+    }
+    print("</table>");
+}
+
+
+
+
 
 ?>
 
