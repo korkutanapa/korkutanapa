@@ -80,14 +80,21 @@ if(isset($_GET['action']))
 }
 
 
-	$sql = "SELECT AVG(star) FROM trip WHERE taxiplate='$a'";
-	$result = mysql_query($conn,$sql);
+	$sql =mysql_query( "SELECT AVG(star) FROM trip WHERE taxiplate='$a' AS average");
+	$result = mysql_fetch_assoc($sql);
+	$average = $row['average'];
+
+
+
+
+
+
 	
     print("<table border='1px'>");
     print("<tr><td>Taxi Plate</td>");
     print("<td>Point</td>");
     print("<tr><td>".$a."</td>");
-    print("<td>".$result."</td></tr>");
+    print("<td>".$average."</td></tr>");
     print("</table>");
 
 
