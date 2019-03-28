@@ -80,19 +80,29 @@ if(isset($_GET['action']))
     }
 }
 
-
-
-// Make a MySQL Connection
-
-$query = "SELECT taxiplate, AVG(star) FROM trip GROUP BY taxiplate"; 
-	 
-$result = mysql_query($query) or die(mysql_error());
-
-// Print out result
-while($row = mysql_fetch_array($result)){
-	echo "The average price of ". $row['taxiplate']. " is $".$row['AVG(star)'];
-	echo "<br />";
+$sql = "SELECT taxiplate, AVG(star) FROM trip GROUP BY taxiplate";
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
+{
+    die(print_r(sqlsrv_errors(), true));
 }
+if(sqlsrv_has_rows($stmt))
+{
+    print("<table border='1px'>");
+    print("<tr><td>Taxi Plate</td>");
+    print("<td>Point</td>");
+       
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['taxiplate']."</td>");
+     
+        print("<td>".$row['AVG(star)']."</td></tr>");
+    }
+    print("</table>");
+}
+
+
 ?>
 
 
