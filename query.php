@@ -80,7 +80,7 @@ if(isset($_GET['action']))
     }
 }
 
-$sql = "SELECT taxiplate, AVG(star) FROM trip GROUP BY taxiplate";
+$sql = "SELECT taxiplate, AVG(star) AS th FROM trip GROUP BY taxiplate";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
@@ -97,7 +97,7 @@ if(sqlsrv_has_rows($stmt))
          
         print("<tr><td>".$row['taxiplate']."</td>");
      
-        print("<td>".$row['AVG(star)']."</td></tr>");
+        print("<td>".$row['th']."</td></tr>");
     }
     print("</table>");
 }
