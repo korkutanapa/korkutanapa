@@ -53,6 +53,10 @@ background-repeat:no-repeat;
 <body>
 <div id ="flex-kutu">
 <div class="alt-kutularana">
+
+<a href="query.php"> GO TO QUERY TAXI</a>
+
+
 </div>
 
 
