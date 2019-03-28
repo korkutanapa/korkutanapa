@@ -81,20 +81,18 @@ if(isset($_GET['action']))
 }
 
 
+
 // Make a MySQL Connection
 
-$query = "SELECT AVG(star) FROM trip WHERE taxiplate='$a'"; 
+$query = "SELECT taxiplate, AVG(star) FROM trip GROUP BY taxiplate"; 
 	 
-$result = mysql_query($conn,$query) or die(mysql_error());
+$result = mysql_query($query) or die(mysql_error());
 
 // Print out result
-while($row = mysql_fetch_array($result))
-
-{
-	echo "The average price of ".$a. " is ".$row['AVG(star)'].;
+while($row = mysql_fetch_array($result)){
+	echo "The average price of ". $row['taxiplate']. " is $".$row['AVG(star)'];
 	echo "<br />";
 }
-
 ?>
 
 
