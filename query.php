@@ -75,18 +75,19 @@ if(isset($_GET['action']))
 {
     if($_GET['action'] == 'querytaxiplate')
     {
-$a=$_POST['t_a'];
+	$a=$_POST['t_a'];
     }
 }
 
 
-	$sql = SELECT AVG(star) FROM trip WHERE taxiplate='$a';
-
+	$sql = "SELECT AVG(star) FROM trip WHERE taxiplate='$a'";
+	$result = mysqli_query($conn,$sql);
+	
     print("<table border='1px'>");
     print("<tr><td>Taxi Plate</td>");
     print("<td>Point</td>");
-    print("<tr><td>".$row['taxiplate']."</td>");
-    print("<td>".$sql."</td></tr>");
+    print("<tr><td>".$a."</td>");
+    print("<td>".$result."</td></tr>");
     print("</table>");
 
 
