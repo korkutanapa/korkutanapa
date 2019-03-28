@@ -54,13 +54,14 @@ background-repeat:no-repeat;
 <div id ="flex-kutu">
 <div class="alt-kutularana">
 
-<a href="query.php"> GO TO QUERY TAXI</a>
 
 
 </div>
 
 
 <div class="alt-kutular">
+
+<a href="query.php"> GO TO QUERY TAXI</a>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
