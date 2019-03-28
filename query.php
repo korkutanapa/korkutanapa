@@ -89,14 +89,15 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
   
-    print("Taxi plate $a ");
-    print("has a point ");
+    print("<tr><td>Taxi plate $a </td>");
+    print("<td> has a point </td>");
        
     while($row = sqlsrv_fetch_array($stmt))
     {
-     print("$row['th']");
+     
+        print("<td>".$row['th']."</td></tr>");
     }
- 
+    print("</table>");
 }
 
 
