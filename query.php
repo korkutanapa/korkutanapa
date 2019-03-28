@@ -95,7 +95,7 @@ if(sqlsrv_has_rows($stmt))
     while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row[$a]."</td>");
+        print("<tr><td>".$row['taxiplate']."</td>");
      
         print("<td>".$row['th']."</td></tr>");
     }
