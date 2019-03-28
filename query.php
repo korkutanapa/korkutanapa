@@ -89,13 +89,13 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>Taxi Plate.$a.</td>");
+    print("<tr><td>$a</td>");
     print("<td>Point</td>");
        
     while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row['taxiplate']."</td>");
+        //print("<tr><td>".$row['taxiplate']."</td>");//
      
         print("<td>".$row['th']."</td></tr>");
     }
