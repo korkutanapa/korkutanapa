@@ -81,7 +81,7 @@ if(isset($_GET['action']))
 
 
 	$sql = "SELECT AVG(star) FROM trip WHERE taxiplate='$a'";
-	$result = mysqli_query($conn,$sql);
+	$result = mysql_query($conn,$sql);
 	
     print("<table border='1px'>");
     print("<tr><td>Taxi Plate</td>");
