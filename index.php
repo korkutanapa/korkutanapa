@@ -1,9 +1,7 @@
 
-<!-- AÇILIŞ SAYFASI-->
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
 
-<!-- INTERNAL STYLE SHEET İLE SAYFA TASARIMI-->
 <style type="text/css">
 #flex-kutu{
 width:auto;
@@ -49,18 +47,19 @@ background-repeat:no-repeat;
 
 </style>
 
-<!-- SAYFA DA BÖLÜMLER FLEX KUTU İLE YAPILDI. ALT KUTULAR İLE SAYFALAR BÖLÜNDÜ-->
 <body>
 <div id ="flex-kutu">
+
 <div class="alt-kutularana">
 
-
+<h1>RATE THE TAXI WEB APPLICATION </h1>
 
 </div>
 
 
 <div class="alt-kutular">
 
+<h1>RATE THE TAXI GIVE A STAR  </h1>
 <a href="query.php"> GO TO QUERY TAXI</a>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
