@@ -91,7 +91,7 @@ $result = mysql_query($query) or die(mysql_error());
 while($row = mysql_fetch_array($result))
 
 {
-	echo "The average price of ". $a. " is $".$row['AVG(star)'];
+	echo "The average price of ".$a. " is ".$row['AVG(star)'].;
 	echo "<br />";
 }
 
