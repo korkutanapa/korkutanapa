@@ -51,7 +51,7 @@ background-repeat:no-repeat;
 <div id ="flex-kutu">
 
 <div class="alt-kutular">
-
+<a href="index.php"> GO TO MAIN PAGE </a>
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
     Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
@@ -88,16 +88,15 @@ if($stmt === false)
 }
 if(sqlsrv_has_rows($stmt))
 {
-    print("<table border='1px'>");
-    print("<tr><td>Taxi plate $a </td>");
-    print("<td> has a point </td>");
+  
+    print("Taxi plate $a ");
+    print("has a point ");
        
     while($row = sqlsrv_fetch_array($stmt))
     {
-     
-        print("<td>".$row['th']."</td></tr>");
+     print("$row['th']");
     }
-    print("</table>");
+ 
 }
 
 
