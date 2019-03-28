@@ -102,6 +102,7 @@ if(sqlsrv_has_rows($stmt))
     print("</table>");
 }
 
+
 $sql = "SELECT * FROM trip ORDER BY taxiplate";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
