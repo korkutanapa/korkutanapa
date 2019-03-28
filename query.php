@@ -85,7 +85,7 @@ if(isset($_GET['action']))
 
 $query = "SELECT AVG(star) FROM trip WHERE taxiplate='$a'"; 
 	 
-$result = mysql_query($query) or die(mysql_error());
+$result = mysql_query($conn,$query) or die(mysql_error());
 
 // Print out result
 while($row = mysql_fetch_array($result))
