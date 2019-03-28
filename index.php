@@ -52,14 +52,14 @@ background-repeat:no-repeat;
 
 <div class="alt-kutularana">
 
-<h1>RATE THE TAXI WEB APPLICATION </h1>
+<h3>RATE THE TAXI WEB APPLICATION </h3>
 
 </div>
 
 
 <div class="alt-kutular">
 
-<h1>RATE THE TAXI GIVE A STAR  </h1>
+<h3>RATE THE TAXI GIVE A STAR  </h3>
 <a href="query.php"> GO TO QUERY TAXI</a>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >

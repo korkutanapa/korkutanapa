@@ -51,7 +51,7 @@ background-repeat:no-repeat;
 <div id ="flex-kutu">
 
 <div class="alt-kutular">
-<h1>SEARCH FOR A TAXI POINT FROM THE UNIVERSAL DATA BASE OF THE APPLICATION  </h1>
+<h3>SEARCH FOR A TAXI POINT FROM THE UNIVERSAL DATA BASE OF THE APPLICATION  </h3>
 <a href="index.php"> GO TO MAIN PAGE </a>
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
