@@ -89,7 +89,7 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>Taxi Plate</td>");
+    print("<tr><td>Taxi Plate.$a.</td>");
     print("<td>Point</td>");
        
     while($row = sqlsrv_fetch_array($stmt))
@@ -101,7 +101,6 @@ if(sqlsrv_has_rows($stmt))
     }
     print("</table>");
 }
-
 
 
 
