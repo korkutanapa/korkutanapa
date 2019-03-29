@@ -83,7 +83,7 @@ background-repeat:no-repeat;
 
 
 <div class="alt-kutular">
-<h3>SEARCH FOR A TAXI POINT FROM THE UNIVERSAL DATA BASE OF THE APPLICATION  </h3>
+<h3>SEARCH A TAXI  </h3>
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
