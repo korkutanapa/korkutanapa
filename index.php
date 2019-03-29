@@ -58,8 +58,6 @@ background-repeat:no-repeat;
 <h4>by BECKS </h4>
 
 
-<a href="anonymousrating.php"> GO TO ANONYMOUS RATING OF A TAXI  </a><br>
-
 <form id="form1" name="form1" method="post" action="anonymousrating.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="Anonymous Rating " />
@@ -67,11 +65,19 @@ background-repeat:no-repeat;
 </form>
 
 
+<form id="form1" name="form1" method="post" action="login_a.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="Login " />
+</p>
+</form>
 
 
-<a href="login_a.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a><br>
+<form id="form1" name="form1" method="post" action="registration.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="New User Registration " />
+</p>
+</form>
 
-<a href="registration.php"> IF YOU ARE NOT, PLEASE REGISTER FOR DETAIL EVALUATION OF A TAXI </a><br>
 
 </div>
 
