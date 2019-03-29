@@ -57,20 +57,26 @@ background-repeat:no-repeat;
 <h3>RATE THE TAXI WEB APPLICATION </h3>
 <h4>by BECKS </h4>
 
+
+<a href="anonymousrating.php"> GO TO ANONYMOUS RATING OF A TAXI  </a><br>
+
+<a href="login.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a><br>
+
+<a href="registration.php"> IF YOU ARE NOT, PLEASE REGISTER FOR DETAIL EVALUATION OF A TAXI </a><br>
+
 </div>
 
 
 <div class="alt-kutular">
 <h3>SEARCH FOR A TAXI POINT FROM THE UNIVERSAL DATA BASE OF THE APPLICATION  </h3>
-<a href="anonymousrating.php"> GO TO ANONYMOUS RATING OF A TAXI  </a>
+
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
     Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
         <input type="submit" name="submit" value="Submit" />
 </form>
 
-<a href="login.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a>
-<a href="registration.php"> IF YOU ARE NOT, PLEASE REGISTER FOR DETAIL EVALUATION OF A TAXI </a>
+
 
 <?php
 /*Connect using SQL Server authentication.*/
