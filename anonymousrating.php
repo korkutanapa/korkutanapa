@@ -63,7 +63,7 @@ background-repeat:no-repeat;
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
-<input style="background-color:#D3D3D3;width:100px;height:20px;font-size:16pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
+<input style="background-color:#D3D3D3;width:100px;height:20px;font-size:5pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
 </p>
 </form>
 
