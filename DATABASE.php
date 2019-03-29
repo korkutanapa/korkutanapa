@@ -63,14 +63,14 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 ?>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
-    Point <input type="text" name="t_b" id="t_b"/></br>
-	Date of Trip<input type="text" name="t_c" id="t_c"/></br>
-	Time of Trip<input type="text" name="t_d" id="t_d"/></br>
-	Location of Trip<input type="text" name="t_e" id="t_e"/></br>
-	Weather<input type="text" name="t_g" id="t_g"/></br>
-	Feedback<input type="text" name="t_h" id="t_h"/></br>
-	Complaint<input type="text" name="t_i" id="t_i"/></br>
+    Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
+    Point<br> <input type="text" name="t_b" id="t_b"/></br>
+	Date of Trip<br><input type="text" name="t_c" id="t_c"/></br>
+	Time of Trip<br><input type="text" name="t_d" id="t_d"/></br>
+	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
+	Weather<br><input type="text" name="t_g" id="t_g"/></br>
+	Feedback<br><input type="text" name="t_h" id="t_h"/></br>
+	Complaint<br><input type="text" name="t_i" id="t_i"/></br>
 <input type="submit" name="submit" value="Submit" />
 </form>
 
