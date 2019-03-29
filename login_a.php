@@ -66,32 +66,33 @@ background-repeat:no-repeat;
 
 
 <?php
-/*Connect using SQL Server authentication.*/
 
-$serverName = "tcp:mssmssdb.database.windows.net,1433";
-$connectionOptions = array("Database"=>"mssdb",
-                           "UID"=>"korkutanapa@mssmssdb",
-                           "PWD" => "774761Ka.");
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if($conn === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
 
 if(isset($_GET['action']))
 {
     if($_GET['action'] == 'login')
     {
        
+	   
+		$serverName = "tcp:mssmssdb.database.windows.net,1433";
+		$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+		$conn = sqlsrv_connect($serverName, $connectionOptions);
+		if($conn === false)
+		{
+		die(print_r(sqlsrv_errors(), true));
+		}
+	   
+	   	session_start();
+		$kadi=$_POST["t_a"];
+		$sifre=$_POST["t_b"];
 
-			session_start();
-			$kadi=$_POST["t_a"];
-			$sifre=$_POST["t_b"];
+		echo $kadi;
+		echo $sifre;
 
 
-
-
-		$sql = "SELECT * FROM [dbo].[users]WHERE (password='$sifre' and username='$kadi' and onay='0')";
+		$sql = "SELECT * FROM [dbo].[users] WHERE (password='$sifre' and username='$kadi' and onay='0')";
 		if ($result=mysqli_query($conn,$sql))
 		
 				{$count=mysqli_num_rows($result);
@@ -119,7 +120,7 @@ if(isset($_GET['action']))
 				}
 	
 		
-mysqli_close($conn);
+				mysqli_close($conn);
 }}
 ?>	
 
