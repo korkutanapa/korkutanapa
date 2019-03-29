@@ -69,7 +69,7 @@ background-repeat:no-repeat;
         <input type="submit" name="submit" value="Submit" />
 </form>
 
-<a href="anonymousrating.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a>
+<a href="login.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a>
 <a href="registration.php"> IF YOU ARE NOT, PLEASE REGISTER FOR DETAIL EVALUATION OF A TAXI </a>
 
 <?php
