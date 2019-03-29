@@ -62,6 +62,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 
 ?>
 
+<h3> Please enter your evaluation about your taxi trip </h3>
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
     Point<br> <input type="text" name="t_b" id="t_b"/></br>
