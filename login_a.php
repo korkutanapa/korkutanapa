@@ -92,7 +92,9 @@ if(isset($_GET['action']))
 		echo $sifre;
 
 
-		$sql = "SELECT * FROM [dbo].[users] WHERE (password='$sifre' and username='$kadi' and onay='0')";
+			
+
+		$sql = "SELECT * FROM [dbo].[users] WHERE (password='$sifre' and username='$kadi' and approve='0')";
 		if ($result=mysqli_query($conn,$sql))
 		
 				{$count=mysqli_num_rows($result);
