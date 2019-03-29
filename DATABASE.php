@@ -59,6 +59,92 @@ session_start();
 echo $_SESSION["username"];
 ?>
 
+<form method="post" action="?action=add" enctype="multipart/form-data" >
+    Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
+    Point <input type="text" name="t_b" id="t_b"/></br>
+	Date of Trip<input type="text" name="t_c" id="t_c"/></br>
+	Time of Trip<input type="text" name="t_d" id="t_d"/></br>
+	Location of Trip<input type="text" name="t_e" id="t_e"/></br>
+	Weather<input type="text" name="t_g" id="t_g"/></br>
+	Feedback<input type="text" name="t_h" id="t_h"/></br>
+	Complaint<input type="text" name="t_i" id="t_i"/></br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'add')
+    {
+        /*Insert data.*/
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
+     $params = array(	&$_POST['t_a'],
+             
+                        &$_POST['t_b'],
+						
+						&$_POST['t_c'],
+             
+                        &$_POST['t_d'],
+						&$_POST['t_e'],
+             
+                        &$_SESSION["username"],
+						&$_POST['t_g'],
+             
+                        &$_POST['t_h'],
+						&$_POST['t_i']
+            
+					);
+	
+
+					
+        $stmt = sqlsrv_query($conn, $insertSql, $params);
+        if($stmt === false)
+        {
+            /*Handle the case of a duplicte e-mail address.*/
+            $errors = sqlsrv_errors();
+            if($errors[0]['code'] == 2601)
+            {
+                echo "The e-mail address you entered has already been used.</br>";
+            }
+            /*Die if other errors occurred.*/
+            else
+            {
+                die(print_r($errors, true));
+            }
+        }
+        else
+        {
+            echo "Registration complete.</br>";
+		
+        }
+    }
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
