@@ -56,7 +56,10 @@ background-repeat:no-repeat;
 <?php
 
 session_start();
-echo $_SESSION["username"];
+echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
+
+
+
 ?>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
