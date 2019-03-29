@@ -14,7 +14,9 @@ if(empty($cekoKullaniciAdi) or empty($cekopassword) or empty($cekoAdSoyad)or emp
 }
 else {
 
-$sql = "INSERT INTO users (username,password,name_surname,phone_no,id_no,approve)
+
+
+$sql = "INSERT INTO [dbo].[users] ([username],[password],[name_surname],[phone_no],[id_no],[approve])
  VALUES ('$cekoKullaniciAdi','$cekopassword','$cekoAdSoyad','$cekoEPosta','$cekoBiografi','0')";
 
  
