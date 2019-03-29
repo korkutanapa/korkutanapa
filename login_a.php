@@ -47,6 +47,7 @@ background-repeat:no-repeat;
 
 
 <body>
+
 <div id ="flex-kutu">
 <div class="alt-kutularana">
 <h3>RATE THE TAXI WEB APPLICATION </h3>
@@ -119,7 +120,7 @@ if(isset($_GET['action']))
 	
 		
 mysqli_close($conn);
-	
+}}
 ?>	
 
 
