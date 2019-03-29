@@ -84,7 +84,7 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'registration')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[users] ([username],[password],[name_surname],[phone_no],[id_no],[approve]) VALUES (?,?,?,?,?,'0')";
+     $insertSql = "INSERT INTO [dbo].[users] ([username],[password],[name_surname],[phone_no],[id_no],[approve]) VALUES (?,?,?,?,?,'5')";
  
      $params = array(	&$_POST['t_a'],
 						&$_POST['t_b'],
