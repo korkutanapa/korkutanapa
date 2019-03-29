@@ -56,12 +56,19 @@ background-repeat:no-repeat;
 <div class="alt-kutular">
 
 
+<form id="form1" name="form1" method="post" action="index.php">
+<p>
+<input style="background-color:#D3D3D3;width:150px;height:20px;font-size:10pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
+</p>
+</form>
+
+
 <form method="post" action="?action=registration" enctype="multipart/form-data" >
-    Username<input type="text" name="t_a" id="t_a"/></br>
-    Password <input type="text" name="t_b" id="t_b"/></br>
-	Name Surname <input type="text" name="t_c" id="t_c"/></br>
-    Phone No<input type="text" name="t_d" id="t_d"/></br>
-	Id No<input type="text" name="t_e" id="t_e"/></br>
+    Username<br><input type="text" name="t_a" id="t_a"/></br>
+    Password<br> <input type="text" name="t_b" id="t_b"/></br>
+	Name Surname<br> <input type="text" name="t_c" id="t_c"/></br>
+    Phone No<br><input type="text" name="t_d" id="t_d"/></br>
+	Id No<br><input type="text" name="t_e" id="t_e"/></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
 
