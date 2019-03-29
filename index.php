@@ -15,7 +15,7 @@ background-color:#FFA500;
 
 h1 {
 font-size: 80px;
-font-family: Comic Sans MS;
+font-family: Times New Roman;
 color: blue;
 text-align:center;
 }
@@ -23,7 +23,7 @@ text-align:center;
 p{
 margin-left: 50px;
 font-size: 30px;
-font-family: comic sans ms;
+font-family: Times New Roman;
 color: black;
 }
 .alt-kutular{
@@ -60,21 +60,21 @@ background-repeat:no-repeat;
 
 <form id="form1" name="form1" method="post" action="anonymousrating.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="Anonymous Rating " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Anonymous Rating " />
 </p>
 </form>
 
 
 <form id="form1" name="form1" method="post" action="login_a.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="Login " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Login " />
 </p>
 </form>
 
 
 <form id="form1" name="form1" method="post" action="registration.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="New User Registration " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New User Registration " />
 </p>
 </form>
 

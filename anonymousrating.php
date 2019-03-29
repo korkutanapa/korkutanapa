@@ -15,7 +15,7 @@ background-color:#FFA500;
 
 h1 {
 font-size: 80px;
-font-family: Comic Sans MS;
+font-family: Times New Roman;
 color: blue;
 text-align:center;
 }
@@ -23,7 +23,7 @@ text-align:center;
 p{
 margin-left: 50px;
 font-size: 30px;
-font-family: comic sans ms;
+font-family: Times New Roman;
 color: black;
 }
 .alt-kutular{
