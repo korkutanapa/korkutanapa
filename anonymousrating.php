@@ -61,7 +61,7 @@ background-repeat:no-repeat;
 
 <h3>RATE THE TAXI GIVE A STAR  </h3>
 <a href="index.php"> GO TO QUERY TAXI</a>
-
+<a href="DATABASE.php"> GO TO RESULTS OF TAXIPLATES ( FOR DEVELOPMENT ISSUES)</a>
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
     Point <input type="text" name="t_b" id="t_b"/></br>
@@ -112,30 +112,6 @@ if(isset($_GET['action']))
             echo "Registration complete.</br>";
         }
     }
-}
-
-
-/*Display registered people.*/
-$sql = "SELECT * FROM trip ORDER BY taxiplate";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Taxi Plate</td>");
-    print("<td>Point</td>");
-       
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['taxiplate']."</td>");
-     
-        print("<td>".$row['star']."</td></tr>");
-    }
-    print("</table>");
 }
 
 
