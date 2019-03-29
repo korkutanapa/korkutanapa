@@ -53,6 +53,11 @@ background-repeat:no-repeat;
 <div class="alt-kutularana">
 
 <h3>TAXI DATABASE OF THE WORLD   </h3>
+<?php
+
+session_start();
+echo $_SESSION["username"];
+?>
 
 </div>
 
