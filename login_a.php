@@ -99,7 +99,7 @@ if(isset($_GET['action']))
 		}
 
 		$row = sqlsrv_fetch_array($stmt);
-		if($row['th']==0)
+		if($row['th']==5)
 		{
   
 		
