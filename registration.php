@@ -111,7 +111,7 @@ if(isset($_GET['action']))
         else
         {
             echo "Registration complete.</br>";
-			print(<a href="login.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a><br>);
+			
         }
     }
 }
