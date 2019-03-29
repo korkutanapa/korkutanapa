@@ -54,37 +54,77 @@ background-repeat:no-repeat;
 </div>
 
 <div class="alt-kutular">
-<form id="form1" name="form1" method="post" action="registration_a.php">
-  <p text-align: center style="color: blue;">REGISTRATION</p>
-    <br>  <br>     
-    
-  <table >
-		<tr>
-		<td height="60px"><p>Username: </p></td><td ><input style="height:30px;width:200px;font-size:12pt;" type="text" name="oKullaniciAdi" id="oKullaniciAdi"  ></td>
-		</tr>
-		<tr>
-		<td><p>Password: </p></td><td><input style="height:30px;width:200px;font-size:12pt;" type="password" name="opassword" id="opassword" /></td>
-		</tr>
-		<tr>
-		<td height="60px"><p>Name Surname</p></td><td ><input style="height:30px;width:200px;font-size:12pt;" type="text" name="oAdSoyad" id="oAdSoyad"  ></td>
-		</tr>
-		<tr>
-		<td height="60px"><p>Phone No: </p></td><td ><input style="height:30px;width:200px;font-size:12pt;" type="text" name="oEPosta" id="oEPosta" ></td>
-		</tr>
-		<tr>
-		<td height="60px"><p>Identification no: </p></td><td ><textarea style="font-size:12pt;" type="text" name="oBiografi" id="oBiografi" cols="30" rows="4"  ></textarea></td>
-		</tr>
-	</table>
-  
-  
-  
-  
-  <br>  <br>
-    <<button style="background-color:#D3D3D3;width:100px;height:50px;font-size:16pt;margin-left:270px;font-family: comic sans ms;"  type="submit" name="Submit" id="button"> <b> register </button>
- <br>  <br>
+
+
+<form method="post" action="?action=registration" enctype="multipart/form-data" >
+    Username<input type="text" name="t_a" id="t_a"/></br>
+    Password <input type="text" name="t_b" id="t_b"/></br>
+	Name Surname <input type="text" name="t_c" id="t_c"/></br>
+    Phone No<input type="text" name="t_d" id="t_d"/></br>
+	Id No<input type="text" name="t_e" id="t_e"/></br>
+    <input type="submit" name="submit" value="Submit" />
 </form>
 
-</div>
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'registration')
+    {
+        /*Insert data.*/
+     $insertSql = "INSERT INTO [dbo].[users] ([username],[password],[name_surname],[phone_no],[id_no],[approve]) VALUES (?,?,?,?,?,'0')";
+ 
+     $params = array(	&$_POST['t_a'],
+						&$_POST['t_b'],
+						&$_POST['t_c'],
+						&$_POST['t_d'],
+						&$_POST['t_e']
+					);
+					
+        $stmt = sqlsrv_query($conn, $insertSql, $params);
+        if($stmt === false)
+        {
+            /*Handle the case of a duplicte e-mail address.*/
+            $errors = sqlsrv_errors();
+            if($errors[0]['code'] == 2601)
+            {
+                echo "The e-mail address you entered has already been used.</br>";
+            }
+            /*Die if other errors occurred.*/
+            else
+            {
+                die(print_r($errors, true));
+            }
+        }
+        else
+        {
+            echo "Registration complete.</br>";
+        }
+    }
+}
+
+
+?>
+
+
+
+
+
+
+
+
 
 
 
