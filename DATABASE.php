@@ -65,7 +65,15 @@ echo $_SESSION["username"];
 <div class="alt-kutular">
 
 <h3>TAXI DATABASE ( ONLY FOR DEVELOPMENT ISSUES )  </h3>
-<a href="index.php"> GO TO QUERY TAXI</a>
+
+
+<form id="form1" name="form1" method="post" action="logout.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: comic sans ms;" type="submit" name="Submit" id="button" value="logout" />
+</p>
+</form>
+
+
 
 
 
