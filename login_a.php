@@ -91,15 +91,19 @@ if(isset($_GET['action']))
 		echo $kadi;
 		echo $sifre;
 
+		$sql = "SELECT AVG(approve) AS th FROM users WHERE(password='$sifre' and username='$kadi')";
+		$stmt = sqlsrv_query($conn, $sql);
+		if($stmt === false)
+		{
+		die(print_r(sqlsrv_errors(), true));
+		}
 
-			
-
-		$sql = "SELECT * FROM [dbo].[users] WHERE (password='$sifre' and username='$kadi' and approve='0')";
-		if ($result=mysqli_query($conn,$sql))
+		$row = sqlsrv_fetch_array($stmt);
+		if($row['th']==0)
+		{
+  
 		
-				{$count=mysqli_num_rows($result);
-
-						if ($count==1){
+		
 						$_SESSION["username"] = $kadi;
 						switch ($kadi)  {
 						case "admin":
@@ -108,22 +112,19 @@ if(isset($_GET['action']))
 						break;
 						default:
 						header('Location:DATABASE.php');
-										}
+		
+						echo "Taxi plate". $a."has a point";
 						
-			
-						}else {
+		}}
+		else {
 				echo " something went wrong <a href=index.php> please enter </a>" ;
 				}
 		
 				}
-		
-				else {
-				echo " something went wrong <a href=index.php> please enter </a>" ;
-				}
-	
+       
 		
 				mysqli_close($conn);
-}}
+}
 ?>	
 
 
