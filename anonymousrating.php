@@ -68,7 +68,6 @@ background-repeat:no-repeat;
         <input type="submit" name="submit" value="Submit" />
 </form>
 
-<a href="DATABASE.php"> GO TO RESULTS OF TAXIPLATES ( FOR DEVELOPMENT ISSUES)</a>
 
 <?php
 /*Connect using SQL Server authentication.*/
