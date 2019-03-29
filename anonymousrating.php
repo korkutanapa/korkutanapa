@@ -111,6 +111,7 @@ if(isset($_GET['action']))
         else
         {
             echo "Registration complete.</br>";
+			header('Location:index.php');
         }
     }
 }
