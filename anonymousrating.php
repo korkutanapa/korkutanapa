@@ -63,15 +63,15 @@ background-repeat:no-repeat;
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
+<input style="background-color:#D3D3D3;width:100px;height:20px;font-size:16pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
 </p>
 </form>
 
 <br>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
-    Point <input type="text" name="t_b" id="t_b"/></br>
+    Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
+    Point <br><input type="text" name="t_b" id="t_b"/></br>
         <input type="submit" name="submit" value="Submit" />
 </form>
 
