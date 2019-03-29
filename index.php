@@ -60,7 +60,7 @@ background-repeat:no-repeat;
 
 <a href="anonymousrating.php"> GO TO ANONYMOUS RATING OF A TAXI  </a><br>
 
-<a href="login.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a><br>
+<a href="login_a.php"> ARE YOU A REGISTERED USER? PLEASE LOGIN </a><br>
 
 <a href="registration.php"> IF YOU ARE NOT, PLEASE REGISTER FOR DETAIL EVALUATION OF A TAXI </a><br>
 
