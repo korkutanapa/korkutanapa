@@ -61,12 +61,14 @@ background-repeat:no-repeat;
 
 <h3>RATE THE TAXI GIVE A STAR  </h3>
 <a href="index.php"> GO TO QUERY TAXI</a>
-<a href="DATABASE.php"> GO TO RESULTS OF TAXIPLATES ( FOR DEVELOPMENT ISSUES)</a>
+
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <input type="text" name="t_a" id="t_a"/></br>
     Point <input type="text" name="t_b" id="t_b"/></br>
         <input type="submit" name="submit" value="Submit" />
 </form>
+
+<a href="DATABASE.php"> GO TO RESULTS OF TAXIPLATES ( FOR DEVELOPMENT ISSUES)</a>
 
 <?php
 /*Connect using SQL Server authentication.*/
