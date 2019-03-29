@@ -83,7 +83,7 @@ background-repeat:no-repeat;
 
 
 <div class="alt-kutular">
-<h3>SEARCH A TAXI  </h3>
+<h3>search a taxi  </h3>
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >

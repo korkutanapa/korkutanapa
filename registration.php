@@ -54,7 +54,7 @@ background-repeat:no-repeat;
 </div>
 
 <div class="alt-kutular">
-
+<h3>please register </h3>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>

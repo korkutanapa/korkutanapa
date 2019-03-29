@@ -59,7 +59,7 @@ background-repeat:no-repeat;
 
 <div class="alt-kutular">
 
-<h3>RATE THE TAXI GIVE A STAR  </h3><br>
+<h3>rate a taxi from your trip  </h3><br>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
