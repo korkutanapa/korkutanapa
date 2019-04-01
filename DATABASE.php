@@ -66,8 +66,30 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
     Point<br> <input type="text" name="t_b" id="t_b"/></br>
-	Date of Trip<br><input type="text" name="t_c" id="t_c"/></br>
-	Time of Trip<br><input list="browsers" name="t_d" value="choose the time" >
+	
+	Point or stars<br><input list="browsers" name="t_b" >
+	<datalist id="browsers">
+    <option value="1"> poor
+    <option value="2"> fair
+    <option value="3"> good
+    <option value="4"> very good
+    <option value="5"> excellent
+    </datalist></br>
+	
+	
+	
+	
+	Date of Trip<br><input list="browsers" name="t_c" >
+	<datalist id="browsers">
+    <option value="Monday">
+    <option value="Tuesday">
+    <option value="wednesday">
+    <option value="Thursday">
+    <option value="Friday">
+	<option value="Saturday">
+    <option value="Sunday">
+    </datalist></br>
+	Time of Trip<br><input list="browsers" name="t_d" >
 	<datalist id="browsers">
     <option value="00">
     <option value="01">
@@ -94,8 +116,20 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     <option value="22">
     <option value="23">
 	</datalist></br>
+	
+	
+	
+	
 	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
-	Weather<br><input type="text" name="t_g" id="t_g"/></br>
+	
+	Weather<br><input list="browsers" name="t_g" >
+	<datalist id="browsers">
+    <option value="Sunny">
+    <option value="Rainy">
+    <option value="Snowy">
+    </datalist></br>
+	
+	
 	Feedback<br><input type="text" name="t_h" id="t_h"/></br>
 	Complaint<br><input type="text" name="t_i" id="t_i"/></br>
 <input type="submit" name="submit" value="Submit" />
