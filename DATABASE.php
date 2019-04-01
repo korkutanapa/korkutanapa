@@ -127,10 +127,35 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     <option value="Rainy">
     <option value="Snowy">
     </datalist></br>
+
+
+	
+
+	
+	Feedback<br><input list="feedback" name="t_h" >
+	<datalist id="feedback">
+    <option value="Good driver"> 
+    <option value="Obeys the traffic rules"> 
+    <option value="Very polite"> 
+    <option value="Assists with the baggage">
+    </datalist></br>
 	
 	
-	Feedback<br><input type="text" name="t_h" id="t_h"/></br>
-	Complaint<br><input type="text" name="t_i" id="t_i"/></br>
+	
+	
+	Complaint<br><input list="complaint" name="t_i" >
+	<datalist id="complaint">
+    <option value="Uses cigarette"> 
+    <option value="Bad smell"> 
+    <option value="Foul language"> 
+    <option value="Violation of the traffic rules">
+    </datalist></br>
+	
+	
+	
+	
+	
+	
 <input type="submit" name="submit" value="Submit" />
 </form>
 
