@@ -68,17 +68,33 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     Point<br> <input type="text" name="t_b" id="t_b"/></br>
 	Date of Trip<br><input type="text" name="t_c" id="t_c"/></br>
 	
-	Time of Trip<input list="browsers" name="browser">
-	<datalist id="browsers">
+	Time of Trip<br><input list="browsers" name="t_d">
+	<datalist id="t_d">
     <option value="00">
     <option value="01">
     <option value="02">
     <option value="03">
     <option value="04">
-	</datalist>
-	
-	
-	Time of Trip<br><input type="text" name="t_d" id="t_d"/></br>
+	<option value="05">
+    <option value="06">
+    <option value="07">
+    <option value="08">
+    <option value="09">
+	<option value="10">
+    <option value="11">
+    <option value="12">
+    <option value="13">
+    <option value="14">
+	<option value="15">
+    <option value="16">
+    <option value="17">
+    <option value="18">
+    <option value="19">
+	<option value="20">
+    <option value="21">
+    <option value="22">
+    <option value="23">
+	</datalist></br>
 	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
 	Weather<br><input type="text" name="t_g" id="t_g"/></br>
 	Feedback<br><input type="text" name="t_h" id="t_h"/></br>
