@@ -110,14 +110,11 @@ if($stmt === false)
     die(print_r(sqlsrv_errors(), true));
 }
 if(sqlsrv_has_rows($stmt))
-{
-  
-    echo "Taxi plate  ". $a."  has a point  ";
-       
+{       
     while($row = sqlsrv_fetch_array($stmt))
     {
-			echo $row['$a'];
-             echo $row['th'];
+			echo $row['username'];
+            echo $row['th'];
     }
   
 }
