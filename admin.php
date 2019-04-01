@@ -126,4 +126,14 @@ if(sqlsrv_has_rows($stmt))
 }
 ?>
 
+<form id="form1" name="form1" method="post" action="userregistration.php">
+<p>REGISTER USER</p>
+<p>
+<label> 
+<input type="text" name="oindexkisiler" id="oindexkisiler"  />
+</label>
+</p>
+<p>
+
+
 
