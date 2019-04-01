@@ -103,7 +103,7 @@ if(isset($_GET['action']))
     }
 }
 
-$sql = "SELECT AVG(star) AS th FROM trip GROUP BY '$a'";
+$sql = "SELECT AVG(star) AS th FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
