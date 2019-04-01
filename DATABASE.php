@@ -69,7 +69,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 	Date of Trip<br><input type="text" name="t_c" id="t_c"/></br>
 	Time of Trip<br><input list="browsers" name="t_d">
 	<datalist id="browsers">
-    <option value="00">
+    <option value="00"> choose the time </option>
     <option value="01">
     <option value="02">
     <option value="03">
