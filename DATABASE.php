@@ -67,8 +67,8 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
     Point<br> <input type="text" name="t_b" id="t_b"/></br>
 	Date of Trip<br><input type="text" name="t_c" id="t_c"/></br>
-	Time of Trip<br><input list="browsers" name="t_d">
-	<datalist id="browsers" value="choose the time">
+	Time of Trip<br><input list="browsers" name="t_d" value="choose the time" >
+	<datalist id="browsers">
     <option value="00">
     <option value="01">
     <option value="02">
