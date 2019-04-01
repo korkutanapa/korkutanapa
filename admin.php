@@ -131,9 +131,64 @@ if(sqlsrv_has_rows($stmt))
 <p>
 <label> 
 <input type="text" name="oindexkisiler" id="oindexkisiler"  />
+<input type="submit" name="submit" value="Submit" />
 </label>
 </p>
 <p>
 
+
+<form method="post" action="?action=registeruser" enctype="multipart/form-data" >
+    ENTER ID NO FOR REGISTRATION  <br><input type="text" name="t_a" id="t_a"/></br>
+	
+<input type="submit" name="submit" value="Submit" />
+</form>
+
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'registeruser')
+    {
+        /*Insert data.*/
+		
+	"UPDATE dna.kisiler SET onay= '1' WHERE indexkisiler=('$cekoindexkisiler')";	
+     $insertSql = "UPDATE  [dbo].[user] SET approve='6' WHERE Id=('$_POST['t_a']')";
+     $stmt = sqlsrv_query($conn, $insertSql);
+        if($stmt === false)
+        {
+            /*Handle the case of a duplicte e-mail address.*/
+            $errors = sqlsrv_errors();
+            if($errors[0]['code'] == 2601)
+            {
+                echo "The e-mail address you entered has already been used.</br>";
+            }
+            /*Die if other errors occurred.*/
+            else
+            {
+                die(print_r($errors, true));
+            }
+        }
+        else
+        {
+            echo "Registration complete.</br>";
+		
+        }
+    }
+}
+
+
+?>
 
 
