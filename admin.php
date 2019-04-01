@@ -129,8 +129,7 @@ if(sqlsrv_has_rows($stmt))
 
 
 <form method="post" action="?action=registeruser" enctype="multipart/form-data" >
-    ENTER ID NO FOR REGISTRATION  <br><input type="text" name="t_a" id="t_a"/></br>
-	
+ENTER ID NO FOR REGISTRATION  <br><input type="text" name="t_a" id="t_a"/></br>
 <input type="submit" name="submit" value="Submit" />
 </form>
 
@@ -154,31 +153,22 @@ if(isset($_GET['action']))
 {
     if($_GET['action'] == 'registeruser')
     {
+		$a=$_POST['t_a'];
 		
-
-     $insertSql = "UPDATE  [dbo].[users] SET approve='6' WHERE Id=('$_POST['t_a']')";
-     $stmt = sqlsrv_query($conn, $insertSql);
-        if($stmt === false)
-        {
-            /*Handle the case of a duplicte e-mail address.*/
-            $errors = sqlsrv_errors();
-            if($errors[0]['code'] == 2601)
-            {
-                echo "The e-mail address you entered has already been used.</br>";
-            }
-            /*Die if other errors occurred.*/
-            else
-            {
-                die(print_r($errors, true));
-            }
-        }
-        else
-        {
-            echo "Registration complete.</br>";
+	}
 		
-        }
-    }
+$sql = "UPDATE  [dbo].[users] SET approve='6' WHERE Id=('$a')";
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
+{
+    die(print_r(sqlsrv_errors(), true));
 }
+if(sqlsrv_has_rows($stmt))
+{
+  
+    echo "registerede ";
+}}      
+
 
 
 ?>
