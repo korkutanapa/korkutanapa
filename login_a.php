@@ -115,7 +115,7 @@ if(isset($_GET['action']))
 						$_SESSION["username"] = $kadi;
 						switch ($kadi)  {
 						case "admin":
-						header('Location:DATABASE.php');
+						header('Location:admin.php');
 					
 						break;
 						default:
