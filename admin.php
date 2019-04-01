@@ -126,15 +126,6 @@ if(sqlsrv_has_rows($stmt))
 }
 ?>
 
-<form id="form1" name="form1" method="post" action="userregistration.php">
-<p>REGISTER USER</p>
-<p>
-<label> 
-<input type="text" name="oindexkisiler" id="oindexkisiler"  />
-<input type="submit" name="submit" value="Submit" />
-</label>
-</p>
-<p>
 
 
 <form method="post" action="?action=registeruser" enctype="multipart/form-data" >
@@ -163,7 +154,7 @@ if(isset($_GET['action']))
     {
         /*Insert data.*/
 		
-	"UPDATE dna.kisiler SET onay= '1' WHERE indexkisiler=('$cekoindexkisiler')";	
+
      $insertSql = "UPDATE  [dbo].[user] SET approve='6' WHERE Id=('$_POST['t_a']')";
      $stmt = sqlsrv_query($conn, $insertSql);
         if($stmt === false)
@@ -190,5 +181,8 @@ if(isset($_GET['action']))
 
 
 ?>
+</div>
+</div>
+</body>
 
-
+</html>
