@@ -103,12 +103,47 @@ if(isset($_GET['action']))
     }
 }
 
-$sql = "SELECT AVG(star) AS th FROM trip GROUP BY username";
+$sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
+
+if(sqlsrv_has_rows($stmt))
+{
+    print("<table border='1px'>");
+    print("<tr><td>criteria</td>");
+	print("<td>Average Point</td></tr>");
+	
+	
+	
+	
+       
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['username']."</td>");
+  		print("<td>".$row['th']."</td></tr>");
+		
+		
+				
+    }
+    print("</table>");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 if(sqlsrv_has_rows($stmt))
 {       
     while($row = sqlsrv_fetch_array($stmt))
