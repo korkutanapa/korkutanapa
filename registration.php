@@ -108,7 +108,7 @@ if(isset($_GET['action']))
         {
             /*Handle the case of a duplicte e-mail address.*/
             $errors = sqlsrv_errors();
-            if($errors[0]['code'] == 2601)
+            if($errors[0]['username'] == 2601)
             {
                 echo "The e-mail address you entered has already been used.</br>";
             }
