@@ -62,13 +62,13 @@ background-repeat:no-repeat;
 </div>
 
 <div class="alt-kutular">
-<h3>LOGIN THE SYSTEM
+<h3>LOGIN THE SYSTEM</h3>
 
 <form method="post" action="?action=login" enctype="multipart/form-data" >
-    Username<br><input type="text" name="t_a" id="t_a"/></br>
-    Password <br><input type="password" name="t_b" id="t_b"/></br>
+    <h3>Username</h3><br><input type="text" name="t_a" id="t_a"/></br>
+    <h3>Password</h3><input type="password" name="t_b" id="t_b"/><br>
 	
-    <input type="submit" name="submit" value="Submit" /></h3>
+    <input type="submit" name="submit" value="Submit" />
 </form>
 
 
