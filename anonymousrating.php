@@ -1,5 +1,7 @@
+
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
+
 <style type="text/css">
 #flex-kutu{
 width:auto;
@@ -7,14 +9,14 @@ height:auto;
 display:flex;
 border:2px solid silver;
 flex-direction:row;
-background-color:#FFF600;
+background-color:#FFA500;
 }
 
 
 h1 {
 font-size: 80px;
 font-family: Times New Roman;
-color:blue;
+color: blue;
 text-align:center;
 }
 
@@ -24,12 +26,12 @@ font-size: 30px;
 font-family: Times New Roman;
 color: black;
 }
-
 .alt-kutular{
 width:1500;
 margin:30px;
 padding:5px;
 background-color:#D3D3D3;
+background-repeat:no-repeat;
 
 }
 
@@ -45,16 +47,19 @@ background-repeat:no-repeat;
 
 </style>
 
-
 <body>
 <div id ="flex-kutu">
+
 <div class="alt-kutularana">
-<h3>RATE THE TAXI WEB APPLICATION </h3>
-<h4>REGISTRATION </h4>
+
+<h3>ANONYMOUS RATING OF A TAXI  </h3>
+
 </div>
 
+
 <div class="alt-kutular">
-<h3>please register </h3>
+
+<h3>rate a taxi from your trip  </h3><br>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
@@ -62,14 +67,12 @@ background-repeat:no-repeat;
 </p>
 </form>
 
+<br>
 
-<form method="post" action="?action=registration" enctype="multipart/form-data" >
-    Username<br><input type="text" name="t_a" id="t_a"/></br>
-    Password<br> <input type="text" name="t_b" id="t_b"/></br>
-	Name Surname<br> <input type="text" name="t_c" id="t_c"/></br>
-    Phone No<br><input type="text" name="t_d" id="t_d"/></br>
-	Id No<br><input type="text" name="t_e" id="t_e"/></br>
-    <input type="submit" name="submit" value="Submit" />
+<form method="post" action="?action=add" enctype="multipart/form-data" >
+    Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
+    Point <br><input type="text" name="t_b" id="t_b"/></br>
+        <input type="submit" name="submit" value="Submit" />
 </form>
 
 
@@ -88,16 +91,13 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'registration')
+    if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[users] ([username],[password],[name_surname],[phone_no],[id_no],[approve]) VALUES (?,?,?,?,?,'5')";
- 
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star]) VALUES (?,?)";
      $params = array(	&$_POST['t_a'],
-						&$_POST['t_b'],
-						&$_POST['t_c'],
-						&$_POST['t_d'],
-						&$_POST['t_e']
+             
+                        &$_POST['t_b']
 					);
 					
         $stmt = sqlsrv_query($conn, $insertSql, $params);
@@ -119,7 +119,6 @@ if(isset($_GET['action']))
         {
             echo "Registration complete.</br>";
 			header('Location:index.php');
-			
         }
     }
 }
@@ -128,14 +127,9 @@ if(isset($_GET['action']))
 ?>
 
 
-
-
-
-
-
-
-
-
-
+</body>
+</div>
+</div>
+</html>
 
 

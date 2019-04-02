@@ -7,7 +7,7 @@ height:auto;
 display:flex;
 border:2px solid silver;
 flex-direction:row;
-background-color:#FFA500;
+background-color:#FFF600;
 }
 
 
@@ -67,7 +67,7 @@ background-repeat:no-repeat;
 
 <form method="post" action="?action=login" enctype="multipart/form-data" >
     Username<br><input type="text" name="t_a" id="t_a"/></br>
-    Password <br><input type="text" name="t_b" id="t_b"/></br>
+    Password <br><input type="password" name="t_b" id="t_b"/></br>
 	
     <input type="submit" name="submit" value="Submit" />
 </form>
