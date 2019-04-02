@@ -81,8 +81,8 @@ background-repeat:no-repeat;
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
-    <h3>Taxi Plate</h3><br> <input type="text" name="t_a" id="t_a"/><br>
-    <input type="submit" name="submit" value="Submit" />
+    <h3>Taxi Plate</h3><input type="text" name="t_a" id="t_a"/>
+    <input type="submit" name="submit" value="Submit" /><br>
 </form>
 
 
