@@ -77,11 +77,11 @@ background-repeat:no-repeat;
 
 
 <div class="alt-kutular">
-<h3>search a taxi  </h3>
+<h3>SEARCH A TAXI BY PLATE NUMBER</h3>
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
-    <h3>Taxi Plate</h3><input type="text" name="t_a" id="t_a"/>
+    <h3>Taxi Plate Number</h3><input type="text" name="t_a" id="t_a"/>
     <input type="submit" name="submit" value="Submit" /><br>
 </form>
 
