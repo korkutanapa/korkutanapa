@@ -17,12 +17,22 @@ if($conn === false)
 $sql = "SELECT username AS label, AVG(star) AS y FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 
-$dataPoints = array();
+
+$dataPoints = array( 
 
 while(($row =  mysql_fetch_assoc($stmt)))
 {
-    $dataPoints[] = $row['label'];
+$a[] = $row['y'];
+},
+while(($row =  mysql_fetch_assoc($stmt)))
+{
+$b[] = $row['label'];
 }
+
+
+);
+
+
  
 ?>
 
