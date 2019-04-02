@@ -1,64 +1,66 @@
-
+<!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
-
-<style type="text/css">
-#flex-kutu{
-width:auto;
-height:auto;
-display:flex;
-border:2px solid silver;
-flex-direction:row;
-background-color:#FFA500;
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
 }
 
-
-h1 {
-font-size: 80px;
-font-family: Times New Roman;
-color: blue;
-text-align:center;
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
 }
 
-p{
-margin-left: 50px;
-font-size: 30px;
-font-family: Times New Roman;
-color: black;
-}
-.alt-kutular{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#D3D3D3;
-background-repeat:no-repeat;
-
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
 
-.alt-kutularana{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#D3D3D3;
-background-image: url("BobB.mp4");
-background-position:center;
-background-repeat:no-repeat;
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
 }
 
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
 </style>
-
+</head>
 <body>
 
+<video autoplay muted loop id="myVideo">
+  <source src="BobB.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-<div id ="flex-kutu">
-
-<div class="alt-kutularana">
-
-<h3>RATE THE TAXI WEB APPLICATION </h3>
-<h4>by BECKS </h4>
-
-
-<form id="form1" name="form1" method="post" action="login_a.php">
+<div class="content">
+  <h1>RATE THE TAXI WEB APPLICATION by BECKS</h1>
+  <p></p>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+  
+  
+  
+  <form id="form1" name="form1" method="post" action="login_a.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Login " />
 </p>
@@ -70,12 +72,9 @@ background-repeat:no-repeat;
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New User Registration " />
 </p>
 </form>
-
-
 </div>
 
 
-<div class="alt-kutular">
 <h3>search a taxi  </h3>
 
 
@@ -129,11 +128,20 @@ if(sqlsrv_has_rows($stmt))
 ?>
 
 
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
 
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
 
 </body>
-</div>
-</div>
 </html>
-
-
