@@ -105,8 +105,6 @@ chart.render();
 </form>
 
 
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <?php
 /*Connect using SQL Server authentication.*/
@@ -297,6 +295,10 @@ $dataPoints = array(
 );
 	
 ?>
+
+
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </body>
 </div>
