@@ -81,8 +81,8 @@ background-repeat:no-repeat;
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
-    <h3>Taxi Plate</h3><br> <input type="text" name="t_a" id="t_a"/></br>
-        <input type="submit" name="submit" value="Submit" />
+    <h3>Taxi Plate</h3><br> <input type="text" name="t_a" id="t_a"/><br>
+    <input type="submit" name="submit" value="Submit" />
 </form>
 
 
@@ -118,11 +118,11 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
   
-    echo "<h3>Taxi plate  ". $a."  has a point </h3> ";
+    echo "<h3>Taxi plate  ". $a."  has a point";
        
     while($row = sqlsrv_fetch_array($stmt))
     {
-             echo $row['th'];
+             echo" ". $row['th']."</h3>";
     }
   
 }
