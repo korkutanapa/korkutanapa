@@ -19,7 +19,7 @@ $stmt = sqlsrv_query($conn, $sql);
 
 while($row = sqlsrv_fetch_array($stmt))
     {
-$dataPoints = array( array("y" => $row['y'], "label" => $row['label'] ));
+$dataPoints[] = array( array("y" => $row['y'], "label" => $row['label'] ));
 	}
 
 
