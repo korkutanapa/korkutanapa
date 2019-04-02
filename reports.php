@@ -83,8 +83,6 @@ background-repeat:no-repeat;
         <input type="submit" name="submit" value="Submit" />
 </form>
 
-
-
 <?php
 /*Connect using SQL Server authentication.*/
 
@@ -125,7 +123,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['username']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 
@@ -147,7 +145,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['tripdate']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 $sql = "SELECT triptime , AVG(star) AS th FROM trip GROUP BY triptime";
@@ -168,7 +166,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['triptime']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 $sql = "SELECT triplocationin , AVG(star) AS th FROM trip GROUP BY triplocationin";
@@ -189,7 +187,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['triplocationin']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 $sql = "SELECT weather , AVG(star) AS th FROM trip GROUP BY weather";
@@ -210,7 +208,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['weather']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 $sql = "SELECT feedback , AVG(star) AS th FROM trip GROUP BY feedback";
@@ -231,7 +229,7 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['feedback']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
 
 $sql = "SELECT complaint , AVG(star) AS th FROM trip GROUP BY complaint";
@@ -252,23 +250,9 @@ if(sqlsrv_has_rows($stmt))
         print("<tr><td>".$row['complaint']."</td>");
   		print("<td>".$row['th']."</td></tr>");
     }
-    print("</table>");
+    print("</table><br>");
 }
-
-
-
-
-
-
-
-
-
-
 ?>
-
-
-
-
 </body>
 </div>
 </div>
