@@ -10,7 +10,7 @@ if($conn === false)
     die(print_r(sqlsrv_errors(), true));
 }
 
-$sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
+$sql = "SELECT username AS label , AVG(star) AS y FROM trip GROUP BY username";
 $dataPoints = sqlsrv_query($conn, $sql);
  
  
