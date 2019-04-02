@@ -23,7 +23,7 @@ while($row = sqlsrv_fetch_array($stmt))
 		
     
 $dataPoints = array( 
-	array("y" => $row['y'], "label" => $row['username'] ),
+	array("y" => $row['y'], "label" => $row['label'] ),
 
 );
 	}
