@@ -1,8 +1,5 @@
 <?php
  
-$dataPoints = 
-
-
 $serverName = "tcp:mssmssdb.database.windows.net,1433";
 $connectionOptions = array("Database"=>"mssdb",
                            "UID"=>"korkutanapa@mssmssdb",
@@ -22,9 +19,6 @@ while($row = sqlsrv_fetch_array($stmt))
 $dataPoints[] = array( array("y" => $row['y'], "label" => $row['label'] ));
 	}
 
-
-
- 
 ?>
 
 <!DOCTYPE HTML>
