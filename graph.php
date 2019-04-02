@@ -17,20 +17,16 @@ if($conn === false)
 $sql = "SELECT username AS label, AVG(star) AS y FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 
-
 $dataPoints = array( 
-
-while(($row =  mysql_fetch_assoc($stmt)))
-{
-$a[] = $row['y'];
-},
-while(($row =  mysql_fetch_assoc($stmt)))
-{
-$b[] = $row['label'];
-}
-
-
+	array("y" => 3373.64, "label" => "Germany" ),
+	array("y" => 2435.94, "label" => "France" ),
+	array("y" => 1842.55, "label" => "China" ),
+	array("y" => 1828.55, "label" => "Russia" ),
+	array("y" => 1039.99, "label" => "Switzerland" ),
+	array("y" => 765.215, "label" => "Japan" ),
+	array("y" => 612.453, "label" => "Netherlands" )
 );
+
 
 
  
