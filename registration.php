@@ -68,7 +68,7 @@ background-repeat:no-repeat;
 
 <form method="post" action="?action=registration" enctype="multipart/form-data" >
     Username<br><input type="text" name="t_a" id="t_a"/></br>
-    Password<br> <input type="text" name="t_b" id="t_b"/></br>
+    Password<br> <input type="password" name="t_b" id="t_b"/></br>
 	Name Surname<br> <input type="text" name="t_c" id="t_c"/></br>
     Phone No<br><input type="text" name="t_d" id="t_d"/></br>
 	Id No<br><input type="text" name="t_e" id="t_e"/></br>
