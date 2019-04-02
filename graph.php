@@ -15,7 +15,8 @@ $stmt = sqlsrv_query($conn, $sql);
 
 $dataPoints = array();
 
-while(($row =  mysql_fetch_assoc($result))) {
+while(($row =  mysql_fetch_assoc($stmt)))
+{
     $dataPoints[] = $row['label','y'];
 }
  
