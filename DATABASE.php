@@ -132,7 +132,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 	
 
 	
-	Feedback<br><input list="feedback" name="t_h" >
+	Satisfaction<br><input list="feedback" name="t_h" >
 	<datalist id="feedback">
     <option value="Good driver"> 
     <option value="Obeys the traffic rules"> 
@@ -286,7 +286,7 @@ if(sqlsrv_has_rows($stmt))
 	print("<td>Location of Trip</td>");
 	print("<td>Customer</td>");
 	print("<td>Weather</td>");
-	print("<td>Feedback</td>");
+	print("<td>Satisfaction</td>");
 	print("<td>Complaint</td></tr>");
 	
 	
