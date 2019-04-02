@@ -9,6 +9,10 @@ $connectionOptions = array("Database"=>"mssdb",
                            "PWD" => "774761Ka.");
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
 
 $sql = "SELECT username AS label, AVG(star) AS y FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
@@ -17,7 +21,7 @@ $dataPoints = array();
 
 while(($row =  mysql_fetch_assoc($stmt)))
 {
-    $dataPoints[] = $row['label','y'];
+    $dataPoints[] = $row['label'];
 }
  
 ?>
