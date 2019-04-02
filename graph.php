@@ -18,7 +18,7 @@ if($conn === false)
 $sql = "SELECT username AS label, AVG(star) AS y FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 
-$dataPoints = sqlsrv_has_rows($stmt);
+$dataPoints = $stmt;
 
 
  
