@@ -130,6 +130,7 @@ if(sqlsrv_has_rows($stmt))
          
         print("<tr><td>".$row['username']."</td>");
   		print("<td>".$row['th']."</td></tr>");
+		
     }
     print("</table><br>");
 }

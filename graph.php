@@ -1,14 +1,26 @@
 <?php
  
-$dataPoints = array( 
-	array("y" => 3373.64, "label" => "Germany" ),
-	array("y" => 2435.94, "label" => "France" ),
-	array("y" => 1842.55, "label" => "China" ),
-	array("y" => 1828.55, "label" => "Russia" ),
-	array("y" => 1039.99, "label" => "Switzerland" ),
-	array("y" => 765.215, "label" => "Japan" ),
-	array("y" => 612.453, "label" => "Netherlands" )
-);
+$dataPoints = 
+
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+
+$sql = "SELECT username AS label, AVG(star) AS y FROM trip GROUP BY username";
+$stmt = sqlsrv_query($conn, $sql);
+
+$dataPoints = sqlsrv_has_rows($stmt);
+
+
  
 ?>
 <!DOCTYPE HTML>
