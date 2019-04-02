@@ -51,16 +51,19 @@ background-repeat:no-repeat;
 <div class="alt-kutularana">
 <h3>RATE THE TAXI WEB APPLICATION </h3>
 <h4>REGISTRATION </h4>
-</div>
 
-<div class="alt-kutular">
-<h3>please register </h3>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
-<input style="background-color:#D3D3D3;width:150px;height:20px;font-size:10pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Home Page " />
 </p>
 </form>
+</div>
+
+<div class="alt-kutular">
+<h3>REGISTRATION INFO </h3>
+
+
 
 
 <form method="post" action="?action=registration" enctype="multipart/form-data" >
