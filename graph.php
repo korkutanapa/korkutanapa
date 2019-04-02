@@ -36,10 +36,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "Gold Reserves"
+		text: "User Name vs Points"
 	},
 	axisY: {
-		title: "Gold Reserves (in tonnes)"
+		title: "points"
 	},
 	data: [{
 		type: "column",
