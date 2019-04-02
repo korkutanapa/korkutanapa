@@ -52,24 +52,23 @@ background-repeat:no-repeat;
 <div class="alt-kutularana">
 <h3>RATE THE TAXI WEB APPLICATION </h3>
 <h4>LOGIN </h4>
-</div>
-
-<div class="alt-kutular">
-<h3>login the system by using your username and password</h3>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
-<input style="background-color:#D3D3D3;width:150px;height:20px;font-size:10pt;margin-left:0px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="back to home page " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Home Page " />
 </p>
 </form>
 
+</div>
 
+<div class="alt-kutular">
+<h3>LOGIN THE SYSTEM
 
 <form method="post" action="?action=login" enctype="multipart/form-data" >
     Username<br><input type="text" name="t_a" id="t_a"/></br>
     Password <br><input type="password" name="t_b" id="t_b"/></br>
 	
-    <input type="submit" name="submit" value="Submit" />
+    <input type="submit" name="submit" value="Submit" /></h3>
 </form>
 
 
