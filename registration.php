@@ -106,17 +106,9 @@ if(isset($_GET['action']))
         $stmt = sqlsrv_query($conn, $insertSql, $params);
         if($stmt === false)
         {
-            /*Handle the case of a duplicte e-mail address.*/
-            $errors = sqlsrv_errors();
-            if($errors[0]['username'] == 2601)
-            {
-                echo "The e-mail address you entered has already been used.</br>";
-            }
-            /*Die if other errors occurred.*/
-            else
-            {
-                die(print_r($errors, true));
-            }
+       
+                echo "The username you entered has already been used.</br>";
+          
         }
         else
         {
