@@ -68,6 +68,12 @@ background-repeat:no-repeat;
 </p>
 </form>	
 
+<form id="form1" name="form1" method="post" action="graphs.html">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="graph" />
+</p>
+</form>
+
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
 	 report criteria<br><input list="reports" name="t_a" >
