@@ -71,6 +71,16 @@ background-repeat:no-repeat;
 </p>
 </form>
 
+
+
+</div>
+
+
+<div class="alt-kutular">
+<h3>STANDART REPORTS  </h3>
+
+
+
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
 	 report criteria<br><input list="reports" name="t_a" >
@@ -80,17 +90,11 @@ background-repeat:no-repeat;
     <option value="triplocationin"> report according to location
     <option value="username"> report according to username
     <option value="weather"> report according to weather
-	<option value="satisfaction"> report according to feedbacks
+	<option value="feedback"> report according to feedbacks
     <option value="complaint"> report according to complaints
     </datalist></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
-
-</div>
-
-
-<div class="alt-kutular">
-<h3>STANDART REPORTS  </h3>
 
 <?php
 /*Connect using SQL Server authentication.*/
