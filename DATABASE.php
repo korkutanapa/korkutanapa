@@ -152,7 +152,9 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
 if($query && $query['status'] == 'success') 
 {$location=$query['district'];
-echo 'Location is:'.$location.'';
+$locationb=$query['city'];
+
+echo 'Location is:'.$location.'  '.$locationb.' ';
 }
 ?>
 	
