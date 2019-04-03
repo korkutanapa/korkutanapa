@@ -85,10 +85,10 @@ background-repeat:no-repeat;
     <option value="triplocationin"> report according to location
     <option value="username"> report according to username
     <option value="weather"> report according to weather
-	<option value="feedback"> report according to feedbacks
+	<option value="satisfaction"> report according to feedbacks
     <option value="complaint"> report according to complaints
     </datalist></br>
-        <input type="submit" name="submit" value="Submit" />
+    <input type="submit" name="submit" value="Submit" />
 </form>
 
 
@@ -118,7 +118,8 @@ if(isset($_GET['action']))
 print("The Selection is".$a."vay be");
 
 
-$sql = "SELECT $a , AVG(star) AS th FROM trip GROUP BY $a";
+username
+$sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
@@ -128,7 +129,7 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>".$a."</td>");
+    print("<tr><td>username</td>");
 	print("<td>Average Point</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
