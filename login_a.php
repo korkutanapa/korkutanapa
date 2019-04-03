@@ -50,7 +50,7 @@ background-repeat:no-repeat;
 
 <div id ="flex-kutu">
 <div class="alt-kutularana">
-<h3>RATE THE TAXI WEB APPLICATION </h3>
+<h3>REPORTAXI WEB APPLICATION </h3>
 <h4>LOGIN </h4>
 
 <form id="form1" name="form1" method="post" action="index.php">

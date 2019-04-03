@@ -53,9 +53,8 @@ background-repeat:no-repeat;
 <div id ="flex-kutu">
 
 <div class="alt-kutularana">
-
-<h3>REPORTS </h3>
-<h4>by BECKS </h4>
+<h3>REPORTAXI WEB APPLICATION </h3>
+<h4>REPORTS </h4>
 
 <form id="form1" name="form1" method="post" action="logout.php">
 <p>

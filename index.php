@@ -54,7 +54,7 @@ background-repeat:no-repeat;
 
 <div class="alt-kutularana">
 
-<h3>RATE THE TAXI WEB APPLICATION </h3>
+<h3>REPORTAXI WEB APPLICATION </h3>
 <h4>by BECKS </h4>
 
 
