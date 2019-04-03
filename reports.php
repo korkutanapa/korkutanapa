@@ -57,16 +57,18 @@ background-repeat:no-repeat;
 <h3>REPORTS </h3>
 <h4>by BECKS </h4>
 
-</div>
-
-
-<div class="alt-kutular">
-<h3>STANDART REPORTS  </h3>
 <form id="form1" name="form1" method="post" action="logout.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="logout" />
 </p>
 </form>	
+
+</div>
+
+
+<div class="alt-kutular">
+<h3>STANDART REPORTS  </h3>
+
 
 <form id="form1" name="form1" method="post" action="graph.php">
 <p>
@@ -112,6 +114,9 @@ if(isset($_GET['action']))
 	$a=$_POST['t_a'];
     }
 }
+
+print("The Selection is".$a."vay be");
+
 
 $sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
