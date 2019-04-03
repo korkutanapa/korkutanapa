@@ -120,10 +120,7 @@ if(isset($_GET['action']))
 
 $sql = "SELECT $a as tr, AVG(star) AS th FROM trip GROUP BY $a ";
 $stmt = sqlsrv_query($conn,$sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
+
 
 if(sqlsrv_has_rows($stmt))
 {
