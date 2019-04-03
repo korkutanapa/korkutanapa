@@ -91,7 +91,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 <h3> Please enter your evaluation about your taxi trip </h3>
 
 
-<form id="form1" name="form1" method="post" action="cityname.html">
+<form id="form1" name="form1" method="post" action="cityname.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Cityname" />
 </p>
