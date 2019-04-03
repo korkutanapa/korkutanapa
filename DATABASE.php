@@ -92,9 +92,8 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 
 
 <form id="form1" name="form1" method="post" action="cityname.php">
-<p>
+To get the location automatically please click the CITYNAME button.<br>
 <input type="submit" name="Submit" id="button" value="Cityname" />
-</p>
 </form>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
