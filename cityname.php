@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>Country: <span id="country"></span>
-    <div>State: <span id="state"></span>
+    <div>State: <span id="street"></span>
     <div>City: <span id="city"></span>
     <div>Latitude: <span id="latitude"></span>
     <div>Longitude: <span id="longitude"></span>
@@ -18,7 +18,7 @@
             dataType: "jsonp",
             success: function( location ) {
                 $('#country').html(location.country_name);
-                $('#state').html(location.state);
+                $('#state').html(location.street);
                 $('#city').html(location.city);
                 $('#latitude').html(location.latitude);
                 $('#longitude').html(location.longitude);
