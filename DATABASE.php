@@ -151,7 +151,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 $ip = $_SERVER['REMOTE_ADDR']; 
 $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
 if($query && $query['status'] == 'success') 
-{$location=$query['city'];
+{$location=$query['district'];
 echo 'Location is:'.$location.'';
 }
 ?>
