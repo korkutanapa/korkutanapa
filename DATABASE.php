@@ -52,7 +52,32 @@ background-repeat:no-repeat;
 
 <div class="alt-kutularana">
 
-<h3>TAXI DATABASE OF THE WORLD   </h3>
+<h3>TAXI EVALUATION   </h3>
+
+<form id="form1" name="form1" method="post" action="logout.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="logout" />
+</p>
+</form>
+
+<form id="form1" name="form1" method="post" action="reports.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Reports" />
+</p>
+</form>
+
+<form id="form1" name="form1" method="post" action="database_result.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Database" />
+</p>
+</form>
+
+</div>
+
+
+<div class="alt-kutular">
+
+<h3>TAXI EVALUATION  </h3>
 <?php
 
 session_start();
@@ -223,98 +248,6 @@ if(isset($_GET['action']))
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<div class="alt-kutular">
-
-<h3>TAXI DATABASE ( ONLY FOR DEVELOPMENT ISSUES )  </h3>
-
-
-<form id="form1" name="form1" method="post" action="logout.php">
-<p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="logout" />
-</p>
-</form>
-
-<form id="form1" name="form1" method="post" action="reports.php">
-<p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Reports" />
-</p>
-</form>
-
-
-
-<?php
-/*Connect using SQL Server authentication.*/
-
-$serverName = "tcp:mssmssdb.database.windows.net,1433";
-$connectionOptions = array("Database"=>"mssdb",
-                           "UID"=>"korkutanapa@mssmssdb",
-                           "PWD" => "774761Ka.");
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if($conn === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-
-/*Display registered people.*/
-$sql = "SELECT * FROM trip ORDER BY taxiplate";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Taxi Plate</td>");
-    print("<td>Point</td>");
-	print("<td>Date of Trip</td>");
-	print("<td>Time of Trip</td>");
-	print("<td>Location of Trip</td>");
-	print("<td>Customer</td>");
-	print("<td>Weather</td>");
-	print("<td>Satisfaction</td>");
-	print("<td>Complaint</td></tr>");
-	
-	
-	
-	
-       
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['taxiplate']."</td>");
-        print("<td>".$row['star']."</td>");
-		print("<td>".$row['tripdate']."</td>");
-		print("<td>".$row['triptime']."</td>");
-		print("<td>".$row['triplocationin']."</td>");
-		print("<td>".$row['username']."</td>");
-		print("<td>".$row['weather']."</td>");
-		print("<td>".$row['feedback']."</td>");
-		print("<td>".$row['complaint']."</td></tr>");
-		
-		
-				
-    }
-    print("</table>");
-}
-
-
-?>
-
 
 </body>
 </div>
