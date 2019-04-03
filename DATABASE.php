@@ -102,7 +102,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     </datalist></br>
 	
 	
-	
+	Date of Trip<br><input type="date" name="t_w1"><br>
 	
 	Date of Trip<br><input list="days" name="t_c" >
 	<datalist id="days">
