@@ -63,11 +63,6 @@ background-repeat:no-repeat;
 </p>
 </form>	
 
-</div>
-
-
-<div class="alt-kutular">
-<h3>STANDART REPORTS  </h3>
 
 
 <form id="form1" name="form1" method="post" action="graph.php">
@@ -91,7 +86,11 @@ background-repeat:no-repeat;
     <input type="submit" name="submit" value="Submit" />
 </form>
 
+</div>
 
+
+<div class="alt-kutular">
+<h3>STANDART REPORTS  </h3>
 
 <?php
 /*Connect using SQL Server authentication.*/
