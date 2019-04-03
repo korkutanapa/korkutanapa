@@ -13,47 +13,33 @@ background-color:#FFF600;
 
 h1 {
 font-size: 80px;
-font-family: Times New roman;
+font-family: Times New Roman;
 color: blue;
 text-align:center;
 }
 
 p{
-margin-left: 20px;
+margin-left: 50px;
 font-size: 30px;
-font-family: Times New roman;
+font-family: Times New Roman;
 color: black;
 }
-ppp{
-margin-left: 2px;
-font-size: 20px;
-font-family: Times New roman;
-color: black;
-}
-
 .alt-kutular{
 width:1500;
-margin:15px;
+margin:30px;
 padding:5px;
-background-color:#D3D3D3;
+background-color:#F7F7F7;
 background-repeat:no-repeat;
 
 }
+
 .alt-kutularana{
-width:3000;
-margin:15px;
+width:1500;
+margin:30px;
 padding:5px;
-background-color:#D3D3D3;
-background-image: url("iconel.jpg");
-background-position:lrft;
-background-repeat:no-repeat;
-}
-.alt-kutularana2{
-width:3000;
-margin:15px;
-padding:5px;
-background-color:#D3D3D3;
-background-position:lrft;
+background-color:#F7F7F7;
+background-image: url("taxi.jpeg");
+background-position:center;
 background-repeat:no-repeat;
 }
 

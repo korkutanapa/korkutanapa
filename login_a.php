@@ -14,7 +14,7 @@ background-color:#FFF600;
 h1 {
 font-size: 80px;
 font-family: Times New Roman;
-color:blue;
+color: blue;
 text-align:center;
 }
 
@@ -24,12 +24,12 @@ font-size: 30px;
 font-family: Times New Roman;
 color: black;
 }
-
 .alt-kutular{
 width:1500;
 margin:30px;
 padding:5px;
-background-color:#D3D3D3;
+background-color:#F7F7F7;
+background-repeat:no-repeat;
 
 }
 
@@ -37,8 +37,8 @@ background-color:#D3D3D3;
 width:1500;
 margin:30px;
 padding:5px;
-background-color:#D3D3D3;
-background-image: url("ELLER11.jpg");
+background-color:#F7F7F7;
+background-image: url("taxi.jpeg");
 background-position:center;
 background-repeat:no-repeat;
 }

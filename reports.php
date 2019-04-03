@@ -30,7 +30,7 @@ color: black;
 width:1500;
 margin:30px;
 padding:5px;
-background-color:#D3D3D3;
+background-color:#F7F7F7;
 background-repeat:no-repeat;
 
 }
@@ -39,8 +39,8 @@ background-repeat:no-repeat;
 width:1500;
 margin:30px;
 padding:5px;
-background-color:#D3D3D3;
-background-image: url("ELLER11.jpg");
+background-color:#F7F7F7;
+background-image: url("taxi.jpeg");
 background-position:center;
 background-repeat:no-repeat;
 }
