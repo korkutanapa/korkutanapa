@@ -115,7 +115,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     <option value="Sunday">
     </datalist></br>
 	
-	Time of Trip<br><input type="hour" name="t_w">
+	Time of Trip<br><input type="time" name="t_w"><br>
 	
 	Time of Trip<br><input list="hours" name="t_d" >
 	<datalist id="hours">
