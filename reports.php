@@ -114,9 +114,7 @@ if(isset($_GET['action']))
     }
 }
 
-
-
-$sql = "SELECT $a, AVG(star) AS th FROM trip GROUP BY $a ";
+$sql = "SELECT $a as tr, AVG(star) AS th FROM trip GROUP BY $a ";
 $stmt = sqlsrv_query($conn,$sql);
 if($stmt === false)
 {
@@ -131,143 +129,12 @@ if(sqlsrv_has_rows($stmt))
     while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row[$a]."</td>");
+        print("<tr><td>".$row['tr']."</td>");
   		print("<td>".$row['th']."</td></tr>");
 		
     }
     print("</table><br>");
 }
-
-
-$sql = "SELECT tripdate , AVG(star) AS th FROM trip GROUP BY tripdate";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Day of Week</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['tripdate']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-$sql = "SELECT triptime , AVG(star) AS th FROM trip GROUP BY triptime";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Time of a Day</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['triptime']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-$sql = "SELECT triplocationin , AVG(star) AS th FROM trip GROUP BY triplocationin";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Location of Trip</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['triplocationin']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-$sql = "SELECT weather , AVG(star) AS th FROM trip GROUP BY weather";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>wheather</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['weather']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-$sql = "SELECT feedback , AVG(star) AS th FROM trip GROUP BY feedback";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Satisfaction</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['feedback']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-$sql = "SELECT complaint , AVG(star) AS th FROM trip GROUP BY complaint";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>Complaint</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['complaint']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-    }
-    print("</table><br>");
-}
-
-
-
-	
 ?>
 
 
