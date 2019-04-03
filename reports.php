@@ -126,7 +126,7 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>username</td>");
+    print("<tr><td>".$a."</td>");
 	print("<td>Average Point</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
