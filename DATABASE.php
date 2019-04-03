@@ -156,19 +156,13 @@ To get the location automatically please click the CITYNAME button.<br>
 $ip = $_SERVER['REMOTE_ADDR']; 
 $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
 if($query && $query['status'] == 'success') 
-{
-echo 'Location is: '.$query['regionName'].', '.$query['city'].'!';
-
-} 
-else {
-echo 'Unable to get location';
+{$location=$query['city'];
+echo 'Location is:'.$location.'';
 }
-
-	
 ?>
 	
 	
-	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
+	<br>Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
 	
 	Weather<br><input list="weather" name="t_g" >
 	<datalist id="weather">
