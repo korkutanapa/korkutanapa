@@ -118,7 +118,7 @@ if(isset($_GET['action']))
 print("The Selection is".$a."vay be");
 
 
-$sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
+$sql = "SELECT $a , AVG(star) AS th FROM trip GROUP BY $a";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
@@ -128,7 +128,7 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>User Name</td>");
+    print("<tr><td>".$a."</td>");
 	print("<td>Average Point</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
