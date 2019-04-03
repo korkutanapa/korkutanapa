@@ -117,8 +117,6 @@ if(isset($_GET['action']))
 
 print("The Selection is".$a."vay be");
 
-
-username
 $sql = "SELECT username , AVG(star) AS th FROM trip GROUP BY username";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
