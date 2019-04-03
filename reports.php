@@ -114,9 +114,11 @@ if(isset($_GET['action']))
     }
 }
 
+$sql = "UPDATE users SET approve='$a' WHERE Id=6"; 
+$stmta = sqlsrv_query($conn,$sql);
+  
 
-
-$sql = "SELECT $a, AVG(star) AS th FROM trip GROUP BY $a ";
+$sql = "SELECT (SELECT approve FROM users WHERE Id=6), AVG(star) AS th FROM trip GROUP BY (SELECT approve FROM users WHERE Id=6) ";
 $stmt = sqlsrv_query($conn,$sql);
 if($stmt === false)
 {
@@ -126,7 +128,7 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
     print("<table border='1px'>");
-    print("<tr><td>username</td>");
+    print("<tr><td>".$a."</td>");
 	print("<td>Average Point</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
