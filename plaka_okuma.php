@@ -37,6 +37,11 @@ echo $data;
 </head>
 
     <body>
+<input type="file" id="take-picture" accept="image/*"
+style="position:absolute;top:-50;left:-50;"  />
+	
+	
+	
         JSON response: <p id="response"></p><br>
     </body>
 </html>
