@@ -2,6 +2,7 @@
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
 
+
 <style type="text/css">
 #flex-kutu{
 width:auto;
@@ -58,6 +59,13 @@ background-repeat:no-repeat;
 <form id="form1" name="form1" method="post" action="logout.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Logout" />
+</p>
+</form>
+
+
+<form id="form1" name="form1" method="post" action="plaka_okuma.php">
+<p>
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Recognition Plate" />
 </p>
 </form>
 
@@ -218,7 +226,7 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint],[trip_date_time) VALUES (?,?,?,?,?,?,?,?,?,?)";
      $params = array(	&$_POST['t_a'],
              
                         &$_POST['t_b'],
@@ -232,7 +240,8 @@ if(isset($_GET['action']))
 						&$_POST['t_g'],
              
                         &$_POST['t_h'],
-						&$_POST['t_i']
+						&$_POST['t_i'],
+						&$_POST['t_w']
             
 					);
 	
