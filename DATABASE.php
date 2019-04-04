@@ -82,10 +82,6 @@ background-repeat:no-repeat;
 </form>
 
 
-<input type="file" id="take-picture" accept="image/*"
-style="position:absolute;top:-50;left:-50;"  />
-
-
 </div>
 
 
