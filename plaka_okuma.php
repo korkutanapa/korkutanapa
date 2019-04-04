@@ -4,7 +4,7 @@
     </title>
 
 <?php
-$img = file_get_contents( 'a.jpg'); 
+$img = file_get_contents( 'a.png'); 
   
 // Encode the image string data into base64 
 $data = base64_encode($img); 
