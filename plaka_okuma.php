@@ -3,7 +3,7 @@
         Cloud API Demo
     </title>
 
-	<?php
+<?php
 $img = file_get_contents( 'a.jpeg'); 
   
 // Encode the image string data into base64 
@@ -20,7 +20,8 @@ echo $data;
         var secret_key = "sk_7e23fe78c0d325918f2c9f08";
         var url = "https://api.openalpr.com/v2/recognize_bytes?recognize_vehicle=1&country=us&secret_key=" + secret_key;
         var xhr = new XMLHttpRequest();
-		var data= "$data"
+		
+		var data = "<?php echo $data ?>";
         xhr.open("POST", url);
 
         // Send POST data and display response
