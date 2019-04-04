@@ -62,13 +62,6 @@ background-repeat:no-repeat;
 </p>
 </form>
 
-
-<form id="form1" name="form1" method="post" action="plaka_okuma.php">
-<p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Recognition Plate" />
-</p>
-</form>
-
 <form id="form1" name="form1" method="post" action="reports.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Reports" />
@@ -99,6 +92,16 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
 
 <h3> Please enter your evaluation about your taxi trip </h3>
 
+<?php
+$ip = $_SERVER['REMOTE_ADDR']; 
+$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+if($query && $query['status'] == 'success') 
+{$location=$query['district'];
+$locationb=$query['city'];
+
+echo 'Location is:'.$location.'  '.$locationb.' ';
+}
+?>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
@@ -156,16 +159,7 @@ echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
     <option value="23">
 	</datalist></br>
 	
-<?php
-$ip = $_SERVER['REMOTE_ADDR']; 
-$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
-if($query && $query['status'] == 'success') 
-{$location=$query['district'];
-$locationb=$query['city'];
 
-echo 'Location is:'.$location.'  '.$locationb.' ';
-}
-?>
 	
 	
 	<br>Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
