@@ -116,48 +116,13 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
     </datalist></br>
 	
 	
-	Date of Trip<br><input type="date" name="t_w1"><br>
+	Date of Trip<br><input type="date" name="t_c"><br>
 	
-	Date of Trip<br><input list="days" name="t_c" >
-	<datalist id="days">
-    <option value="Monday">
-    <option value="Tuesday">
-    <option value="wednesday">
-    <option value="Thursday">
-    <option value="Friday">
-	<option value="Saturday">
-    <option value="Sunday">
-    </datalist></br>
+
 	
-	Time of Trip<br><input type="time" name="t_w"><br>
+	Time of Trip<br><input type="time" name="t_d"><br>
 	
-	Time of Trip<br><input list="hours" name="t_d" >
-	<datalist id="hours">
-    <option value="00">
-    <option value="01">
-    <option value="02">
-    <option value="03">
-    <option value="04">
-	<option value="05">
-    <option value="06">
-    <option value="07">
-    <option value="08">
-    <option value="09">
-	<option value="10">
-    <option value="11">
-    <option value="12">
-    <option value="13">
-    <option value="14">
-	<option value="15">
-    <option value="16">
-    <option value="17">
-    <option value="18">
-    <option value="19">
-	<option value="20">
-    <option value="21">
-    <option value="22">
-    <option value="23">
-	</datalist></br>
+
 	
 
 	
