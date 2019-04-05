@@ -205,9 +205,9 @@ if(isset($_GET['action']))
             
 					);
 	
-
+		$sqlb="SELECT DATENAME(weekday, tripdate) AS weekday_given from trip"	;
 					
-        $stmt = sqlsrv_query($conn, $insertSql, $params);
+        $stmt = sqlsrv_query($conn, $insertSql, $params,$sqlb);
         if($stmt === false)
         {
             /*Handle the case of a duplicte e-mail address.*/
