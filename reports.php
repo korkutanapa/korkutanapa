@@ -58,7 +58,7 @@ background-repeat:no-repeat;
 
 <form id="form1" name="form1" method="post" action="logout.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="logout" />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Logout" />
 </p>
 </form>	
 
@@ -66,7 +66,7 @@ background-repeat:no-repeat;
 
 <form id="form1" name="form1" method="post" action="graph.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="graph" />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Graph" />
 </p>
 </form>
 
