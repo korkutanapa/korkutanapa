@@ -137,21 +137,21 @@ if(sqlsrv_has_rows($stmt))
     print("</table><br>");
 }
 
-
-//initialize the array to store the processed data
 $dataPoints = array();
 
-//check if there is any data returned by the SQL Query
-if ($stmt->num_rows > 0) {
-  //Converting the results into an associative array
-  while($row = $stmt->fetch_assoc()) {
-    $jsonArrayItem = array();
+if(sqlsrv_has_rows($stmt))
+
+{  while($row = sqlsrv_fetch_array($stmt))
+    {
+       $jsonArrayItem = array();
     $jsonArrayItem['x'] = $row['tr'];
     $jsonArrayItem['y'] = $row['th'];
     //append the above created object into the main array.
-    array_push($dataPoints, $jsonArrayItem);
-  }
-}
+    array_push($dataPoints, $jsonArrayItem);   
+        
+		
+}}
+
 
 	
 ?>
