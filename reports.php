@@ -138,16 +138,13 @@ if(sqlsrv_has_rows($stmt))
 }
 
 
-//storing the result of the executed query
-$result = $stmt;
-
 //initialize the array to store the processed data
 $dataPoints = array();
 
 //check if there is any data returned by the SQL Query
-if ($result->num_rows > 0) {
+if ($stmt->num_rows > 0) {
   //Converting the results into an associative array
-  while($row = $result->fetch_assoc()) {
+  while($row = $stmt->fetch_assoc()) {
     $jsonArrayItem = array();
     $jsonArrayItem['x'] = $row['tr'];
     $jsonArrayItem['y'] = $row['th'];
