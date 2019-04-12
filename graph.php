@@ -6,6 +6,7 @@ $connectionOptions = array("Database"=>"mssdb",
                            "PWD" => "774761Ka.");
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
+
 if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
