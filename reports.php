@@ -77,6 +77,7 @@ background-repeat:no-repeat;
 
 <div class="alt-kutular">
 <h3>STANDART REPORTS  </h3>
+<h5> please note that: reports according to date means the weekdays. 1 for SUNDAY, 2 for MONDAY, ... , 7 for SATURDAY</h5>
 
 
 
