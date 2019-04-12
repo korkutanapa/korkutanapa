@@ -155,14 +155,6 @@ if ($result->num_rows > 0) {
     array_push($dataPoints, $jsonArrayItem);
   }
 }
-$dataPoints=
-
-		
-foreach($result as $row){
-      array_push($dataPoints, $jsonArrayItem);
-    }
-	$link = null;
-}
 
 	
 ?>
