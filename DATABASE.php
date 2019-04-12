@@ -116,8 +116,8 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
     </datalist></br>
 	
 	
-	Date & Time of Trip<br><input type="datetime-local" name="t_c"><br>
-	
+	Date of Trip<br><input type="date" name="t_c"><br>
+	Time of Trip<br><input type="time" name="t_d"><br>
 
 
 	
@@ -183,16 +183,21 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-	 $aa=$_POST['t_c'];
-	 echo $aa;
+	$a=$_POST['t_c'];
+		
+
+		
+		
 	 $a="DATEPART(dw,$aa)";
 	 $b="DATEPART(hh,$aa)";
 	 $aaa = sqlsrv_query($conn,$a);
 	 $bbb=  sqlsrv_query($conn,$b);
 	 echo $aaa;
-     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[triplocationin],[username],[weather],[feedback],[complaint],[tripdate],[triptime]) VALUES (?,?,?,?,?,?,?,$aaa,$bbb";
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
      $params = array(	&$_POST['t_a'],
                         &$_POST['t_b'],
+						  &$_POST['t_c'],
+						    &$_POST['t_d'],
 						&$_POST['t_e'],
                         &$_SESSION["username"],
 						&$_POST['t_g'],
