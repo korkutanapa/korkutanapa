@@ -32,10 +32,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "User Name vs Points"
+		text: "User Name vs Taxi Rating"
 	},
 	axisY: {
-		title: "points"
+		title: "Taxi Rating"
 	},
 	data: [{
 		type: "column",
