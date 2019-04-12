@@ -142,33 +142,55 @@ if(sqlsrv_has_rows($stmt))
 $result = $stmt;
 
 //initialize the array to store the processed data
-$jsonArray = array();
+$dataPoints = array();
 
 //check if there is any data returned by the SQL Query
 if ($result->num_rows > 0) {
   //Converting the results into an associative array
   while($row = $result->fetch_assoc()) {
     $jsonArrayItem = array();
-    $jsonArrayItem['label'] = $row['player'];
-    $jsonArrayItem['value'] = $row['wickets'];
+    $jsonArrayItem['x'] = $row['tr'];
+    $jsonArrayItem['y'] = $row['th'];
     //append the above created object into the main array.
-    array_push($jsonArray, $jsonArrayItem);
+    array_push($dataPoints, $jsonArrayItem);
   }
 }
+$dataPoints=
 
-//Closing the connection to DB
-$conn->close();
+		
+foreach($result as $row){
+      array_push($dataPoints, $jsonArrayItem);
+    }
+	$link = null;
+}
 
-//set the response content type as JSON
-header('Content-type: application/json');
-//output the return value of json encode using the echo function. 
-echo json_encode($jsonArray);
-
-
+	
 ?>
-
-
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "PHP Column Chart from Database"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc  
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
-</div>
-</div>
-</html>
+</html>                              
