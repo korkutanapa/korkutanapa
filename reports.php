@@ -146,10 +146,7 @@ if(sqlsrv_has_rows($stmt))
        $jsonArrayItem = array();
     $jsonArrayItem['x'] = $row['tr'];
     $jsonArrayItem['y'] = $row['th'];
-    //append the above created object into the main array.
-    array_push($dataPoints, $jsonArrayItem);   
-        
-		
+    array_push($dataPoints, '1','1','2','3','3','4','5','6');   
 }}
 
 
@@ -166,7 +163,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "PHP Column Chart from Database"
+		text: "Graph of The Report"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc  
