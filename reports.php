@@ -139,11 +139,6 @@ if(sqlsrv_has_rows($stmt))
 
 
 
-
-
-
-
-
 $dataPoints = array(
 	array("x"=> 10, "y"=> 41),
 	array("x"=> 20, "y"=> 35, "indexLabel"=> "Lowest"),
@@ -160,15 +155,6 @@ $dataPoints = array(
 	array("x"=> 130, "y"=> 41)
 );
 
-if(sqlsrv_has_rows($stmt))
-
-{  while($row = sqlsrv_fetch_array($stmt))
-    {
-       $jsonArrayItem = array();
-    $jsonArrayItem['x'] = $row['tr'];
-    $jsonArrayItem['y'] = $row['th'];
-    array_push(, '1','1','2','3','3','4','5','6');   
-}}
 
 
 	
