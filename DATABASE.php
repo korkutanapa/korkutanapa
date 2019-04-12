@@ -187,15 +187,15 @@ if(isset($_GET['action']))
 	 $a="DATEPART(dw,$aa)";
 	 $b="DATEPART(hh,$aa)";
 	 $aaa = sqlsrv_query($conn,$a);
-	 $bbb=sqlsrv_query($conn,$b);
-     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[triplocationin],[username],[weather],[feedback],[complaint],[tripdate],[triptime]) VALUES (?,?,?,?,?,?,?,$aaa,$bbbb";
+	 $bbb=  sqlsrv_query($conn,$b);
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[triplocationin],[username],[weather],[feedback],[complaint],[tripdate],[triptime]) VALUES (?,?,?,?,?,?,?,$aaa,$bbb";
      $params = array(	&$_POST['t_a'],
                         &$_POST['t_b'],
 						&$_POST['t_e'],
                         &$_SESSION["username"],
 						&$_POST['t_g'],
                         &$_POST['t_h'],
-						&$_POST['t_i'],
+						&$_POST['t_i']
 					);
 	
 		
