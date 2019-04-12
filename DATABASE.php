@@ -183,16 +183,6 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-	$a=$_POST['t_c'];
-		
-
-		
-		
-	 $a="DATEPART(dw,$aa)";
-	 $b="DATEPART(hh,$aa)";
-	 $aaa = sqlsrv_query($conn,$a);
-	 $bbb=  sqlsrv_query($conn,$b);
-	 echo $aaa;
      $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
      $params = array(	&$_POST['t_a'],
                         &$_POST['t_b'],
