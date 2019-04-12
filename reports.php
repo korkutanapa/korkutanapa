@@ -84,8 +84,8 @@ background-repeat:no-repeat;
 
 	 report criteria<br><input list="reports" name="t_a" >
 	<datalist id="reports">
-    <option value="tripdate"> report according to date
-    <option value="triptime"> report according to time
+    <option value="wed"> report according to date
+    <option value="hp"> report according to time
     <option value="triplocationin"> report according to location
     <option value="username"> report according to username
     <option value="weather"> report according to weather

@@ -186,8 +186,8 @@ if(isset($_GET['action']))
      $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
      $params = array(	&$_POST['t_a'],
                         &$_POST['t_b'],
-						  &$_POST['t_c'],
-						    &$_POST['t_d'],
+						&$_POST['t_c'],
+						&$_POST['t_d'],
 						&$_POST['t_e'],
                         &$_SESSION["username"],
 						&$_POST['t_g'],
@@ -195,7 +195,6 @@ if(isset($_GET['action']))
 						&$_POST['t_i']
 					);
 	
-		
 					
         $stmt = sqlsrv_query($conn, $insertSql, $params);
         if($stmt === false)
