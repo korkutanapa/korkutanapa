@@ -139,7 +139,7 @@ if(sqlsrv_has_rows($stmt))
 
 
 
-
+$dataPoints=array();
 
 if(sqlsrv_has_rows($stmt))
 
