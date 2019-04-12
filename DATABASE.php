@@ -183,21 +183,16 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdatetime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?)";
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[triplocationin],[username],[weather],[feedback],[complaint],[tripdate],[triptime]) VALUES (?,?,?,?,?,?,?,DATEPART(dw,?),DATEPART(dw,?)";
      $params = array(	&$_POST['t_a'],
-             
                         &$_POST['t_b'],
-						
-						&$_POST['t_c'],
-             
-              
 						&$_POST['t_e'],
-             
                         &$_SESSION["username"],
 						&$_POST['t_g'],
-             
                         &$_POST['t_h'],
-						&$_POST['t_i']
+						&$_POST['t_i'],
+						&$_POST['t_c'],
+						&$_POST['t_c'],
 		
 					);
 	
