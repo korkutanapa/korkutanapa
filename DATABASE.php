@@ -116,12 +116,9 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
     </datalist></br>
 	
 	
-	Date of Trip<br><input type="date" name="t_c"><br>
+	Date & Time of Trip<br><input type="datetime-local" name="t_c"><br>
 	
 
-	
-	Time of Trip<br><input type="time" name="t_d"><br>
-	
 
 	
 
@@ -186,14 +183,14 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'add')
     {
         /*Insert data.*/
-     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
+     $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdatetime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?)";
      $params = array(	&$_POST['t_a'],
              
                         &$_POST['t_b'],
 						
 						&$_POST['t_c'],
              
-                        &$_POST['t_d'],
+              
 						&$_POST['t_e'],
              
                         &$_SESSION["username"],
