@@ -155,7 +155,20 @@ if(sqlsrv_has_rows($stmt))
 	
 }};
 
-
+if(sqlsrv_has_rows($stmt))
+{
+    print("<table border='1px'>");
+    print("<tr><td>".$a."</td>");
+	print("<td>Average Point</td></tr>");
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['tr']."</td>");
+  		print("<td>".$row['th']."</td></tr>");
+		
+    }
+    print("</table><br>");
+};
 
 
 
