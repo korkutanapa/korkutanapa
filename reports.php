@@ -137,39 +137,21 @@ if(sqlsrv_has_rows($stmt))
     print("</table><br>");
 };
 
-
+$sqlA = "SELECT $a as tra, AVG(star) AS tha FROM trip GROUP BY $a ";
+$stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
 
-if(sqlsrv_has_rows($stmt))
+if(sqlsrv_has_rows($stmtA))
 
-{  while($row = sqlsrv_fetch_array($stmt))
+{  while($row = sqlsrv_fetch_array($stmtA))
     {
     $GRAPH = array();
-    $GRAPH['x'] = $row['tr'];
-    $GRAPH['y'] = $row['th'];
+    $GRAPH['x'] = $row['tra'];
+    $GRAPH['y'] = $row['tha'];
     array_push($dataPoints,$GRAPH);  
-        print("<tr><td>".$row['tr']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-
-	
+        
 }};
-
-if(sqlsrv_has_rows($stmt))
-{
-    print("<table border='1px'>");
-    print("<tr><td>".$a."</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['tr']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-		
-    }
-    print("</table><br>");
-};
-
 
 
 	
