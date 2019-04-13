@@ -147,7 +147,7 @@ if(sqlsrv_has_rows($stmtA))
 {  while($rowa = sqlsrv_fetch_array($stmtA))
     {
     $GRAPH = array();
-    $GRAPH['x'] = $rowa['tra'];
+    $GRAPH['label'] = $rowa['tra'];
     $GRAPH['y'] = $rowa['tha'];
     array_push($dataPoints,$GRAPH);  
         
