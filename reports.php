@@ -144,11 +144,11 @@ $dataPoints=array();
 
 if(sqlsrv_has_rows($stmtA))
 
-{  while($row = sqlsrv_fetch_array($stmtA))
+{  while($rowa = sqlsrv_fetch_array($stmtA))
     {
     $GRAPH = array();
-    $GRAPH['x'] = $row['tra'];
-    $GRAPH['y'] = $row['tha'];
+    $GRAPH['x'] = $rowa['tra'];
+    $GRAPH['y'] = $rowa['tha'];
     array_push($dataPoints,$GRAPH);  
         
 }};
@@ -169,10 +169,15 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	title:{
 		text: "Graph of The Report"
 	},
+	
 	data: [{
-		type: "column", //change type to bar, line, area, pie, etc  
+		type: "column",
+		yValueFormatString: "#,##0.## tonnes",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
+	
+	
+
 });
 chart.render();
  
