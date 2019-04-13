@@ -145,10 +145,14 @@ if(sqlsrv_has_rows($stmt))
 
 {  while($row = sqlsrv_fetch_array($stmt))
     {
-    $jsonArrayItem = array();
-    $jsonArrayItem['x'] = $row['tr'];
-    $jsonArrayItem['y'] = $row['th'];
-    array_push($dataPoints,$jsonArrayItem);   
+    $GRAPH = array();
+    $GRAPH['x'] = $row['tr'];
+    $GRAPH['y'] = $row['th'];
+    array_push($dataPoints,$GRAPH);  
+        print("<tr><td>".$row['tr']."</td>");
+  		print("<td>".$row['th']."</td></tr>");
+
+	
 }};
 
 
