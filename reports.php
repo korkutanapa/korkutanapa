@@ -85,13 +85,13 @@ background-repeat:no-repeat;
 
 	 report criteria<br><input list="reports" name="t_a" >
 	<datalist id="reports">
-    <option value="wed"> report according to date
-    <option value="hp"> report according to time
-    <option value="triplocationin"> report according to location
-    <option value="username"> report according to username
-    <option value="weather"> report according to weather
-	<option value="feedback"> report according to feedbacks
-    <option value="complaint"> report according to complaints
+    <option value="wed"> report according to DAY OF THE WEEK
+    <option value="hp"> report according to HOUR OF THE DAY
+    <option value="triplocationin"> report according to LOCATION
+    <option value="username"> report according to USERS
+    <option value="weather"> report according to WEATHER TYPE
+	<option value="feedback"> report according to SATISFACTION TYPE
+    <option value="complaint"> report according to COMPLAINTS TYPE
     </datalist></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
