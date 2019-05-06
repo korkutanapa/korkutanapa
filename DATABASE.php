@@ -139,6 +139,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 	
 	Satisfaction<br><input list="feedback" name="t_h">
 	<datalist id="feedback">
+	 <option value="None"> 
     <option value="Good driver"> 
     <option value="Obeys the traffic rules"> 
     <option value="Very polite"> 
@@ -150,6 +151,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 	
 	Complaint<br><input list="complaint" name="t_i">
 	<datalist id="complaint">
+	 <option value="None"> 
     <option value="Uses cigarette"> 
     <option value="Bad smell"> 
     <option value="Foul language"> 
