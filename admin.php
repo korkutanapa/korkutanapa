@@ -156,6 +156,51 @@ else{
 
 
 ?>
+
+
+
+<form method="post" action="?action=ignoreuser" enctype="multipart/form-data" >
+ENTER ID NO FOR IGNORE  <br><input type="text" name="t_b" id="t_b"/></br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'ignoreuser')
+    {
+		$b=$_POST['t_b'];
+		
+	}
+
+$sql = "DELETE FROM  [dbo].[users] WHERE Id=('$b')";
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+else{  
+    echo "registered ";
+}}      
+
+
+
+?>
 </div>
 </div>
 </body>
