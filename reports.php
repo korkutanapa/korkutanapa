@@ -124,8 +124,10 @@ $stmt = sqlsrv_query($conn,$sql);
 
 if(sqlsrv_has_rows($stmt))
 {
+	 if($a=="wed") {$aa="day of the week";}
+	 if($a=="hp") {$aa="hour of the day";}
     print("<table border='1px'>");
-    print("<tr><td>".$a."</td>");
+    print("<tr><td>".$aa."</td>");
 	print("<td>Average Point</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
