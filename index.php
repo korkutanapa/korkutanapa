@@ -75,7 +75,7 @@ background-repeat:no-repeat;
 
 
 <div class="alt-kutular">
-<h3>SEARCH A TAXI BY PLATE NUMBER</h3>
+
 <h3>TOP 3 BEST TAXI</h3>
 <?php
 /*Connect using SQL Server authentication.*/
@@ -113,10 +113,10 @@ if(sqlsrv_has_rows($stmt))
 
 
 ?>
-
+<h3>SEARCH A TAXI BY PLATE NUMBER</h3>
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
-    <h3>Taxi Plate Number</h3><input type="text" name="t_a" id="t_a"/>
+    <h3>ENTER TAXI PLATE FOR SEARCH</h3><input type="text" name="t_a" id="t_a"/>
     <input type="submit" name="submit" value="Submit" /><br>
 </form>
 
@@ -158,12 +158,12 @@ if(sqlsrv_has_rows($stmt))
     while($row = sqlsrv_fetch_array($stmt))
     {
             
-			 if($row['th']==1) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." poor taxi</h3>";}
-			 if($row['th']==2) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." fair taxi</h3>";}
-			 if($row['th']==3) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." good taxi</h3>";}
-			 if($row['th']==4) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." very good taxi</h3>";}
-			 if($row['th']==5) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." excellent taxi</h3>";}
-			 if($row['th']==0) {echo"<h3> no taxi like that please enter a valid plate number  </h3>";}
+			 if($row['th']==1) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." POOR TAXI</h3>";}
+			 if($row['th']==2) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." FAIR TAXI</h3>";}
+			 if($row['th']==3) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." GOOD TAXI</h3>";}
+			 if($row['th']==4) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." VERY GOOD TAXI</h3>";}
+			 if($row['th']==5) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." EXCELLENT TAXI</h3>";}
+			 if($row['th']==0) {echo"<h3> sorry no taxi like that, please enter a valid taxi plate  </h3>";}
     }
   
 }
