@@ -90,7 +90,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT TOP 3 taxiplate as tr, AVG(star) AS th FROM trip GROUP BY taxiplate ";
+$sql = "SELECT TOP 3 taxiplate as tr, AVG(star) AS th FROM trip GROUP BY taxiplate ORDER BY th ASC ";
 
 $stmt = sqlsrv_query($conn,$sql);
 
