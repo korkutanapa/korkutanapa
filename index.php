@@ -121,12 +121,12 @@ if(sqlsrv_has_rows($stmt))
     while($row = sqlsrv_fetch_array($stmt))
     {
             
-			 if($row['th']==1) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."poor taxi</h3>";}
-			 if($row['th']==2) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."fair taxi</h3>";}
-			 if($row['th']==3) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."good taxi</h3>";}
-			 if($row['th']==4) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."very good taxi</h3>";}
-			 if($row['th']==5) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."excellent taxi</h3>";}
-			 if($row['th']==0) {echo"<h3>Taxi plate  ". $a."  has a point". $row['th']."no taxi like that </h3>";}
+			 if($row['th']==1) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." poor taxi</h3>";}
+			 if($row['th']==2) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." fair taxi</h3>";}
+			 if($row['th']==3) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." good taxi</h3>";}
+			 if($row['th']==4) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." very good taxi</h3>";}
+			 if($row['th']==5) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." excellent taxi</h3>";}
+			 if($row['th']==0) {echo"<h3> no taxi like that please enter a valid plate number  </h3>";}
     }
   
 }
