@@ -76,6 +76,43 @@ background-repeat:no-repeat;
 
 <div class="alt-kutular">
 <h3>SEARCH A TAXI BY PLATE NUMBER</h3>
+<h3>TOP 3 BEST TAXI</h3>
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:mssmssdb.database.windows.net,1433";
+$connectionOptions = array("Database"=>"mssdb",
+                           "UID"=>"korkutanapa@mssmssdb",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+$sql = "SELECT TOP 3 taxiplate as tr, AVG(star) AS th FROM trip GROUP BY taxiplate ";
+
+$stmt = sqlsrv_query($conn,$sql);
+
+
+if(sqlsrv_has_rows($stmt))
+{
+	 
+    print("<table border='1px'>");
+    print("<tr><td>".taxiplate."</td>");
+	print("<td>Average Point</td></tr>");
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['tr']."</td>");
+  		print("<td>".$row['th']."</td></tr>");
+		
+    }
+    print("</table><br>");
+};
+
+
+?>
 
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
@@ -130,26 +167,7 @@ if(sqlsrv_has_rows($stmt))
     }
   
 }
-$sql = "SELECT taxiplate as tr, AVG(star) AS th FROM trip GROUP BY taxiplate ";
 
-$stmt = sqlsrv_query($conn,$sql);
-
-
-if(sqlsrv_has_rows($stmt))
-{
-	 
-    print("<table border='1px'>");
-    print("<tr><td>".taxiplate."</td>");
-	print("<td>Average Point</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['tr']."</td>");
-  		print("<td>".$row['th']."</td></tr>");
-		
-    }
-    print("</table><br>");
-};
 
 
 ?>
