@@ -67,11 +67,11 @@ background-repeat:no-repeat;
 
 
 <form method="post" action="?action=registration" enctype="multipart/form-data" >
-    Username<br><input type="text" name="t_a" id="t_a"/></br>
-    Password<br> <input type="password" name="t_b" id="t_b"/></br>
-	Name Surname<br> <input type="text" name="t_c" id="t_c"/></br>
-    Phone No<br><input type="text" name="t_d" id="t_d"/></br>
-	Id No<br><input type="text" name="t_e" id="t_e"/></br>
+    Username<br><input type="text" name="t_a" id="t_a" required="required"/></br>
+    Password<br> <input type="password" name="t_b" required="required" id="t_b"/></br>
+	Name Surname<br> <input type="text" name="t_c" required="required" id="t_c"/></br>
+    Phone No<br><input type="text" name="t_d" required="required" id="t_d"/></br>
+	Id No<br><input type="text" name="t_e" required="required" id="t_e"/></br>
     <input type="submit" name="submit" value="Submit" />
 </form>
 
