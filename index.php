@@ -121,7 +121,10 @@ if(sqlsrv_has_rows($stmt))
        
     while($row = sqlsrv_fetch_array($stmt))
     {
-             echo" ". $row['th']."</h3>";
+            
+			 echo" ". $row['th']."</h3>";
+			 if($row['th']==1) {echo"poor taxi</h3>";}
+			 
     }
   
 }
