@@ -77,9 +77,16 @@ background-repeat:no-repeat;
 
 <div class="alt-kutular">
 <h3>STANDART REPORTS  </h3>
-<h5> please note that: reports according to date means the weekdays. 1 for SUNDAY, 2 for MONDAY, ... , 7 for SATURDAY</h5>
-
-
+<h5> This page is for REPORTS</h5>
+<h5> You can take the results of the reports from the list below</h5>
+<h5> Reports can be taken according to:</h5>
+<h5>DAY OF THE WEEK ( please note that 1: SUNDAY 2: MONDAY .... 7: SATURDAY)</h5>
+<h5>HOUR OF THE DAY</h5>
+<h5>LOCATION</h5>
+<h5>USERS</h5>
+<h5>WEATHER TYPE</h5>
+<h5>SATISFACTION TYPE</h5>
+<h5>COMPLAINTS TYPE</h5>
 
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
