@@ -124,18 +124,16 @@ if(sqlsrv_has_rows($stmt))
             
 			 echo" ". $row['th']."</h3>";
 			 if($row['th']==1) {echo"poor taxi</h3>";}
+			 if($row['th']==2) {echo"fair taxi</h3>";}
+			 if($row['th']==3) {echo"good taxi</h3>";}
+			 if($row['th']==4) {echo"very good taxi</h3>";}
+			 if($row['th']==5) {echo"excellent taxi</h3>";}
 			 
     }
   
 }
 
 ?>
-
-<h3> 5 Excellent Taxi</h3>
-<h3> 4 Very Good Taxi</h3>
-<h3> 3 Good Taxi</h3>
-<h3> 2 Fair Taxi</h3>
-<h3> 1 Poor Taxi</h3>
 
 </body>
 </div>
