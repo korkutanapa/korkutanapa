@@ -126,6 +126,14 @@ if(sqlsrv_has_rows($stmt))
 {
 	 if($a=="wed") {$aa="day of the week";}
 	 if($a=="hp") {$aa="hour of the day";}
+	  if($a=="triplocationin") {$aa="location";}
+	 if($a=="username") {$aa="users";}
+	  if($a=="weather") {$aa="weather type";}
+	 if($a=="feedback") {$aa="satisfaction type";}
+	  if($a=="complaint") {$aa="complaint type";}
+	
+	 
+	 
     print("<table border='1px'>");
     print("<tr><td>".$aa."</td>");
 	print("<td>Average Point</td></tr>");
