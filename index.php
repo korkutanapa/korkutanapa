@@ -116,18 +116,18 @@ if($stmt === false)
 if(sqlsrv_has_rows($stmt))
 {
   
-    echo "<h3>Taxi plate  ". $a."  has a point";
+    echo "<h3>". $a." ";
        
     while($row = sqlsrv_fetch_array($stmt))
     {
             
-			 echo" ". $row['th']."</h3>";
-			 if($row['th']==1) {echo"poor taxi</h3>";}
-			 if($row['th']==2) {echo"fair taxi</h3>";}
-			 if($row['th']==3) {echo"good taxi</h3>";}
-			 if($row['th']==4) {echo"very good taxi</h3>";}
-			 if($row['th']==5) {echo"excellent taxi</h3>";}
-			 if($row['th']==0) {echo"no taxi like that </h3>";}
+			 echo" <h3>Taxi plate  ". $a."  has a point". $row['th']."</h3>";
+			 if($row['th']==1) {echo"<h3>poor taxi</h3>";}
+			 if($row['th']==2) {echo"<h3>fair taxi</h3>";}
+			 if($row['th']==3) {echo"<h3>good taxi</h3>";}
+			 if($row['th']==4) {echo"<h3>very good taxi</h3>";}
+			 if($row['th']==5) {echo"<h3>excellent taxi</h3>";}
+			 if($row['th']==0) {echo"<h3>no taxi like that </h3>";}
     }
   
 }
