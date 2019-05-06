@@ -130,8 +130,33 @@ if(sqlsrv_has_rows($stmt))
     }
   
 }
+$sql = "SELECT taxiplate as tr, AVG(star) AS th FROM trip GROUP BY taxiplate ";
+
+$stmt = sqlsrv_query($conn,$sql);
+
+
+if(sqlsrv_has_rows($stmt))
+{
+	 
+    print("<table border='1px'>");
+    print("<tr><td>".taxiplate."</td>");
+	print("<td>Average Point</td></tr>");
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['tr']."</td>");
+  		print("<td>".$row['th']."</td></tr>");
+		
+    }
+    print("</table><br>");
+};
+
 
 ?>
+
+
+
+
 
 </body>
 </div>
