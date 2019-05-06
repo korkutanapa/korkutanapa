@@ -111,7 +111,8 @@ $sql = "SELECT AVG(star) AS th FROM trip WHERE taxiplate='$a'";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
-    die(print_r(sqlsrv_errors(), true));
+	echo "<h3>There is no taxi plate like that!</h3>";
+	die(print_r(sqlsrv_errors(), true));
 }
 if(sqlsrv_has_rows($stmt))
 {
@@ -127,8 +128,11 @@ if(sqlsrv_has_rows($stmt))
 
 ?>
 
-
-
+<h3> 5 Excellent Taxi</h3>
+<h3> 4 Very Good Taxi</h3>
+<h3> 3 Good Taxi</h3>
+<h3> 2 Fair Taxi</h3>
+<h3> 1 Poor Taxi</h3>
 
 </body>
 </div>
