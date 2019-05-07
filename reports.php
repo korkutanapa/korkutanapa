@@ -70,16 +70,15 @@ background-repeat:no-repeat;
 
 <div class="alt-kutular">
 <h3>STANDART REPORTS  </h3>
-<p> This page is for REPORTS<br>
-You can take the results of the reports from the list below<br>
+<p>You can take the results of the reports from the list below<br>
 Reports can be taken according to:<br>
-DAY OF THE WEEK ( please note that 1: SUNDAY 2: MONDAY .... 7: SATURDAY)<br>
-HOUR OF THE DAY<br>
-LOCATION<br>
-USERS<br>
-WEATHER TYPE<br>
-SATISFACTION TYPE<br>
-COMPLAINTS TYPE</p>
+* DAY OF THE WEEK ( please note that 1: SUNDAY 2: MONDAY .... 7: SATURDAY)<br>
+* HOUR OF THE DAY<br>
+* LOCATION<br>
+* USERS<br>
+* WEATHER TYPE<br>
+* SATISFACTION TYPE<br>
+* COMPLAINTS TYPE</p>
 
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
