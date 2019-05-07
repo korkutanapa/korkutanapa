@@ -115,12 +115,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 	Date of Trip<br><input type="date" name="t_c"><br>
 	Time of Trip<br><input type="time" name="t_d"><br>
 
-
-	
-
-	
-	
-	<br>Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
+	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
 	
 	Weather<br><input list="weather" name="t_g" >
 	<datalist id="weather">
@@ -128,36 +123,24 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
     <option value="Rainy">
     <option value="Snowy">
     </datalist></br>
-
-
-	
-
 	
 	Satisfaction<br><input list="feedback" required="required" name="t_h">
 	<datalist id="feedback">
-	 <option value="None"> 
+	<option value="None"> 
     <option value="Good driver"> 
     <option value="Obeys the traffic rules"> 
     <option value="Very polite"> 
     <option value="Assists with the baggage">
     </datalist></br>
-	
-	
-	
-	
+		
 	Complaint<br><input list="complaint" required="required" name="t_i">
 	<datalist id="complaint">
-	 <option value="None"> 
+	<option value="None"> 
     <option value="Uses cigarette"> 
     <option value="Bad smell"> 
     <option value="Foul language"> 
     <option value="Violation of the traffic rules">
     </datalist></br>
-	
-	
-	
-	
-	
 	
 <input type="submit" name="submit" value="Submit" />
 </form>
