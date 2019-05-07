@@ -21,9 +21,8 @@ text-align:center;
 }
 
 p{
-margin-left: 50px;
-font-size: 30px;
-font-family: Times New Roman;
+font-size: 20px;
+font-family: verdana;
 color: black;
 }
 
@@ -42,7 +41,7 @@ width:1500;
 margin:30px;
 padding:5px;
 background-color:#F7F7F7;
-background-image: url("taxi.jpeg");
+background-image: url("taxii.jpeg");
 background-position:center;
 background-repeat:no-repeat;
 }
