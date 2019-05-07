@@ -41,7 +41,7 @@ width:1500;
 margin:30px;
 padding:5px;
 background-color:#F7F7F7;
-background-image: url("taxi.jpeg");
+background-image: url("taxii.jpeg");
 background-position:center;
 background-repeat:no-repeat;
 }
