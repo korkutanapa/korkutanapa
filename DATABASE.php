@@ -22,9 +22,9 @@ text-align:center;
 }
 
 p{
-margin-left: 50px;
-font-size: 30px;
-font-family: Times New Roman;
+
+font-size: 20px;
+font-family: Verdana;
 color: black;
 }
 .alt-kutular{
@@ -80,7 +80,7 @@ background-repeat:no-repeat;
 <?php
 
 session_start();
-echo "<h3>Hello</h3>  ".$_SESSION["username"]."  <h3>you are wellcome</h3> ";
+echo "<p>Hello</p>  ".$_SESSION["username"]."  <p>you are wellcome</p> ";
 
 
 
