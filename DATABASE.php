@@ -23,7 +23,7 @@ text-align:center;
 
 p{
 
-font-size: 20px;
+font-size: 15px;
 font-family: Verdana;
 color: black;
 }
@@ -80,7 +80,7 @@ background-repeat:no-repeat;
 <?php
 
 session_start();
-echo "<p>Hello</p>  ".$_SESSION["username"]."  <p>you are wellcome</p> ";
+echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 
 
 
