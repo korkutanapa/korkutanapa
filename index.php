@@ -26,6 +26,8 @@ font-size: 30px;
 font-family: Times New Roman;
 color: black;
 }
+
+
 .alt-kutular{
 width:1500;
 margin:30px;
@@ -158,12 +160,12 @@ if(sqlsrv_has_rows($stmt))
     while($row = sqlsrv_fetch_array($stmt))
     {
             
-			 if($row['th']==1) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." POOR TAXI</h3>";}
-			 if($row['th']==2) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." FAIR TAXI</h3>";}
-			 if($row['th']==3) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." GOOD TAXI</h3>";}
-			 if($row['th']==4) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." VERY GOOD TAXI</h3>";}
-			 if($row['th']==5) {echo"<h3>Taxi plate  ". $a."  has a point ". $row['th']." EXCELLENT TAXI</h3>";}
-			 if($row['th']==0) {echo"<h3> sorry no taxi like that, please enter a valid taxi plate  </h3>";}
+			 if($row['th']==1) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." POOR TAXI</p>";}
+			 if($row['th']==2) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." FAIR TAXI</p>";}
+			 if($row['th']==3) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." GOOD TAXI</p>";}
+			 if($row['th']==4) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." VERY GOOD TAXI</p>";}
+			 if($row['th']==5) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." EXCELLENT TAXI</p>";}
+			 if($row['th']==0) {echo"<p> sorry no taxi like that, please enter a valid taxi plate  </p>";}
     }
   
 }
