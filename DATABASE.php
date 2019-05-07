@@ -86,7 +86,7 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 
 ?>
 
-<h3> Please enter your evaluation about your taxi trip </h3>
+<p> Please enter your evaluation about your taxi trip </p>
 
 <?php
 $ip = $_SERVER['REMOTE_ADDR']; 
