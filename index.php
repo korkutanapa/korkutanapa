@@ -114,7 +114,6 @@ if(sqlsrv_has_rows($stmt))
 
 
 ?>
-<h3>SEARCH A TAXI BY PLATE NUMBER</h3>
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
     <h3>ENTER TAXI PLATE FOR SEARCH</h3><input type="text" name="t_a" id="t_a"/>
