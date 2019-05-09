@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>REPORTAXI</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -81,14 +81,14 @@ footer {
 
 <form id="form1" name="form1" method="post" action="login_a.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Login " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;" type="submit" name="Submit" id="button" value="Login " />
 </p>
 </form>
 
 
 <form id="form1" name="form1" method="post" action="registration.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New User Registration " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;" type="submit" name="Submit" id="button" value="New User Registration " />
 </p>
 </form>
   </nav>
