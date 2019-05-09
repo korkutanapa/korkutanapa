@@ -1,73 +1,90 @@
-
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
-
-<style type="text/css">
-#flex-kutu{
-width:auto;
-height:auto;
-display:flex;
-border:2px solid silver;
-flex-direction:row;
-background-color:#ADADA8;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
 }
 
-
-h1 {
-font-size: 80px;
-font-family: Times New Roman;
-color: blue;
-text-align:center;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
-font-size: 20px;
-font-family: verdana;
-color: black;
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
 
-
-.alt-kutular{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#F7F7F7;
-background-repeat:no-repeat;
-
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
 }
 
-.alt-kutularana{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#F7F7F7;
-background-image: url("taxii.jpeg");
-background-position:center;
-background-repeat:no-repeat;
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
 }
 
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
 </style>
-
+</head>
 <body>
 
+<h2>REPORTAXI WEB APPLICATION</h2>
+<p>by BECKS</p>
 
-<div id ="flex-kutu">
 
-<div class="alt-kutularana">
+<header>
+  <h2>Cities</h2>
+</header>
 
-<h3>REPORTAXI WEB APPLICATION </h3>
-<h4>by BECKS </h4>
-
+<section>
+  <nav>
 
 <form id="form1" name="form1" method="post" action="login_a.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Login " />
-</p>
-</form>
-
-<form id="form1" name="form1" method="post" action="abc.php">
-<p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New Version " />
 </p>
 </form>
 
@@ -77,13 +94,10 @@ background-repeat:no-repeat;
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New User Registration " />
 </p>
 </form>
-
-</div>
-
-
-<div class="alt-kutular">
-
-<h3>TOP 3 BEST TAXI</h3>
+  </nav>
+  
+  <article>
+    <h3>TOP 3 BEST TAXI</h3>
 <?php
 /*Connect using SQL Server authentication.*/
 
@@ -181,10 +195,13 @@ if(sqlsrv_has_rows($stmt))
 
 
 
+	
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
 
 </body>
-</div>
-</div>
 </html>
-
-
