@@ -36,6 +36,7 @@ nav {
   background: #ccc;
   padding: 20px;
   background-image: url("taxii.jpeg");
+  background-size: auto;
   background-position:center;
 }
 
