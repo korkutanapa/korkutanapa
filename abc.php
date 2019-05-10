@@ -35,9 +35,7 @@ nav {
   flex: 1;
   background: #ccc;
   padding: 20px;
-  background-image: url("taxii.jpeg");
-  background-size: auto;
-  background-position:center;
+
 }
 
 /* Style the list inside the menu */
