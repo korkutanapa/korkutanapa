@@ -169,7 +169,7 @@ if(sqlsrv_has_rows($stmt))
 			 if($row['th']==3) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." GOOD TAXI</p>";}
 			 if($row['th']==4) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." VERY GOOD TAXI</p>";}
 			 if($row['th']==5) {echo"<p>Taxi plate  ". $a."  has a point ". $row['th']." EXCELLENT TAXI</p>";}
-			 if($row['th']==0) {echo"<p> sorry no taxi like that, please enter a valid taxi plate  </p>";}
+			 if($row['th']==0) {echo"<p> sorry no taxi with  ". $a ."  please enter a valid taxi plate  </p>";}
     }
   
 }
