@@ -51,12 +51,14 @@ background-repeat:no-repeat;
 		
 		
 <div class="alt-kutularana">
+
 <p style="margin-left:150px;"> HELLO MASTER
 <form id="form1" name="form1" method="post" action="logout.php">
 
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="logout" />
 </p>
 </form>	
+
 </div>
 </div>
 
@@ -195,7 +197,7 @@ if($stmt === false)
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
-    echo "registered ";
+    echo "Registration is DELETED ";
 }}      
 
 
