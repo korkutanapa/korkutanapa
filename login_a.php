@@ -65,8 +65,8 @@ background-repeat:no-repeat;
 <h3>LOGIN THE SYSTEM</h3>
 
 <form method="post" action="?action=login" enctype="multipart/form-data" >
-    <h3>Username</h3><input type="text" name="t_a" id="t_a"/>
-    <h3>Password</h3><input type="password" name="t_b" id="t_b"/>
+    <h3>Username</h3><input type="text" autocomplete="off" name="t_a" id="t_a"/>
+    <h3>Password</h3><input type="password" autocomplete="off" name="t_b" id="t_b"/>
 	
     <input type="submit" name="submit" value="Submit" />
 </form>
