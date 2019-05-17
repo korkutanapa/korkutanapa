@@ -119,8 +119,7 @@ th {
 </p>
 </form>
 
-<a class="twitter-timeline" href="https://twitter.com/AnapaKorkut?ref_src=twsrc%5Etfw">Tweets by AnapaKorkut</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<a class="twitter-timeline" data-height="1500" href="https://twitter.com/AnapaKorkut?ref_src=twsrc%5Etfw">Tweets by AnapaKorkut</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </nav>
 
 
