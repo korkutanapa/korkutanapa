@@ -191,8 +191,8 @@ if(isset($_GET['action']))
 	}
 
 $sql = "DELETE FROM  [dbo].[users] WHERE Id=('$b')";
-$stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
+$stmtt = sqlsrv_query($conn, $sql);
+if($stmtt === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
