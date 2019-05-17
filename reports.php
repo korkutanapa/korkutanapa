@@ -140,19 +140,19 @@ $stmt = sqlsrv_query($conn,$sql);
 
 if(sqlsrv_has_rows($stmt))
 {
-	 if($a=="wed") {$aa="day of the week";}
-	 if($a=="hp") {$aa="hour of the day";}
-	  if($a=="triplocationin") {$aa="location";}
-	 if($a=="username") {$aa="users";}
-	  if($a=="weather") {$aa="weather type";}
-	 if($a=="feedback") {$aa="satisfaction type";}
-	  if($a=="complaint") {$aa="complaint type";}
+	 if($a=="wed") {$aa="DAY OF THE WEEK";}
+	 if($a=="hp") {$aa="HOUR OF THE DAY";}
+	  if($a=="triplocationin") {$aa="LOCATION";}
+	 if($a=="username") {$aa="USERS";}
+	  if($a=="weather") {$aa="WEATHER TYPE";}
+	 if($a=="feedback") {$aa="SATISFACTION TYPE";}
+	  if($a=="complaint") {$aa="COMPLAINT TYPE";}
 	
 	 
 	 
     print("<table border='1px'>");
     print("<tr><td>".$aa."</td>");
-	print("<td>Average Point</td></tr>");
+	print("<td>AVERAGE POINT</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
          
