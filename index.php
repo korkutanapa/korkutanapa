@@ -161,7 +161,7 @@ if(sqlsrv_has_rows($stmt))
 ?>
 
 <form method="post" action="?action=querytaxiplate" enctype="multipart/form-data" >
-    <h3>ENTER TAXI PLATE FOR SEARCH (format must be 11T1111)</h3><input type="text" autocomplete="off" pattern="[0-9]{2}[A-Z]{1}[0-9]{4}" name="t_a" id="t_a"/>
+    <h3>ENTER TAXI PLATE FOR SEARCH (format must be 01T0001)</h3><input type="text" autocomplete="off" pattern="[0-9]{2}[A-Z]{1}[0-9]{4}" name="t_a" id="t_a"/>
     <input type="submit" name="submit" value="Submit" /><br>
 </form>
 
