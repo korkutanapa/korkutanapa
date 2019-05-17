@@ -88,17 +88,6 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 
 <p> Please enter your evaluation about your taxi trip </p>
 
-<?php
-$ip = $_SERVER['REMOTE_ADDR']; 
-$query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
-if($query && $query['status'] == 'success') 
-{$location=$query['district'];
-$locationb=$query['city'];
-
-echo 'Location is:'.$location.'  '.$locationb.' ';
-}
-?>
-
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate <br><input type="text" autocomplete="off" name="t_a" id="t_a"/></br>
 
