@@ -48,7 +48,7 @@ background-repeat:no-repeat;
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 75%;
 }
 
 th, td {
