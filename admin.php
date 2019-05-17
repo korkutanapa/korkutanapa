@@ -143,7 +143,7 @@ if(isset($_GET['action']))
     {
 		$a=$_POST['t_a'];
 		
-	}
+	
 		
 $sql = "UPDATE  [dbo].[users] SET approve='6' WHERE Id=('$a')";
 $stmt = sqlsrv_query($conn, $sql);
@@ -153,7 +153,7 @@ if($stmt === false)
 }
 else{  
     echo "Registration is approved ";
-}}      
+}}   }   
 
 
 
@@ -188,17 +188,17 @@ if(isset($_GET['action']))
     {
 		$b=$_POST['t_b'];
 		
-	}
+	
 
 $sql = "DELETE FROM  [dbo].[users] WHERE Id=('$b')";
-$stmtt = sqlsrv_query($conn, $sql);
-if($stmtt === false)
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
     echo "Registration is rejected ";
-}}      
+}}  }    
 
 
 
