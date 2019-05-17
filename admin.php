@@ -117,7 +117,7 @@ if(sqlsrv_has_rows($stmt))
 
 
 <form method="post" action="?action=registeruser" enctype="multipart/form-data" >
-ENTER ID NO FOR REGISTRATION  <br><input type="text" name="t_a" id="t_a"/></br>
+ENTER ID NO FOR REGISTRATION  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="submit" name="submit" value="Submit" />
 </form>
 
@@ -162,7 +162,7 @@ else{
 
 
 <form method="post" action="?action=ignoreuser" enctype="multipart/form-data" >
-ENTER ID NO FOR IGNORE  <br><input type="text" name="t_b" id="t_b"/></br>
+ENTER ID NO FOR IGNORE  <br><input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
 <input type="submit" name="submit" value="Submit" />
 </form>
 
