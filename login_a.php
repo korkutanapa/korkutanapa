@@ -35,7 +35,7 @@ nav {
   flex: 1;
   background: #ccc;
   padding: 20px;
-	background-image: url("taxii.jpeg");
+	background-image: url("");
 	background-position:center;
 	background-repeat:no-repeat;
 
