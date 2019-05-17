@@ -99,7 +99,7 @@ Reports can be taken according to:<br>
 
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
-	 report criteria<br><input list="reports" autocomplete="off" name="t_a" >
+	 PLEASE ENTER THE DESIRED REPORT CRITERIA<br><input list="reports" autocomplete="off" name="t_a" >
 	<datalist id="reports">
     <option value="wed"> report according to DAY OF THE WEEK
     <option value="hp"> report according to HOUR OF THE DAY
