@@ -35,7 +35,7 @@ nav {
   flex: 1;
   background: #ccc;
   padding: 20px;
-	background-image: url("taxii.jpeg");
+	background-image: url("");
 	background-position:center;
 	background-repeat:no-repeat;
 
@@ -109,11 +109,6 @@ th {
 </p>
 </form>
 
-<form id="form1" name="form1" method="post" action="abc.php">
-<p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="New Version " />
-</p>
-</form>
 
 
 <form id="form1" name="form1" method="post" action="registration.php">
