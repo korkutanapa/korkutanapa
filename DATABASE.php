@@ -91,7 +91,7 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 <form method="post" action="?action=add" enctype="multipart/form-data" >
     Taxi Plate (format must be 11T1111)<br><input type="text" autocomplete="off" pattern="[0-9]{2}[A-Z]{1}[0-9]{4}" name="t_a" id="t_a"/></br>
 
-	Point or stars<br><input list="stars" name="t_b" >
+	Point or stars<br><input list="stars" autocomplete="off" name="t_b" >
 	<datalist id="stars">
     <option value="1"> poor
     <option value="2"> fair
@@ -106,14 +106,14 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 
 	Location of Trip<br><input type="text" name="t_e" autocomplete="off" id="t_e"/></br>
 	
-	Weather<br><input list="weather" name="t_g" >
+	Weather<br><input list="weather" autocomplete="off"  name="t_g" >
 	<datalist id="weather">
     <option value="Sunny">
     <option value="Rainy">
     <option value="Snowy">
     </datalist></br>
 	
-	Satisfaction<br><input list="feedback" required="required" name="t_h">
+	Satisfaction<br><input list="feedback" autocomplete="off" required="required" name="t_h">
 	<datalist id="feedback">
 	<option value="None">
     <option value="Good driver"> 
@@ -122,7 +122,7 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
     <option value="Assists with the baggage">
     </datalist></br>
 		
-	Complaint<br><input list="complaint" required="required" name="t_i">
+	Complaint<br><input list="complaint" autocomplete="off" required="required" name="t_i">
 	<datalist id="complaint">
 	<option value="None"> 
     <option value="Uses cigarette"> 
