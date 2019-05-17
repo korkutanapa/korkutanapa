@@ -99,7 +99,7 @@ Reports can be taken according to:<br>
 
 <form method="post" action="?action=report" enctype="multipart/form-data" >
 
-	<h3>PLEASE ENTER THE DESIRED REPORT CRITERIA</h3><br><input list="reports" autocomplete="off" name="t_a" >
+	<h3>PLEASE ENTER THE DESIRED REPORT CRITERIA</h3><input list="reports" autocomplete="off" name="t_a" >
 	<datalist id="reports">
     <option value="wed"> report according to DAY OF THE WEEK
     <option value="hp"> report according to HOUR OF THE DAY
@@ -108,7 +108,7 @@ Reports can be taken according to:<br>
     <option value="weather"> report according to WEATHER TYPE
 	<option value="feedback"> report according to SATISFACTION TYPE
     <option value="complaint"> report according to COMPLAINTS TYPE
-    </datalist></br>
+    </datalist><br>
     <input type="submit" name="submit" value="Submit" />
 </form>
 
