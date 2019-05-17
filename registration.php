@@ -1,66 +1,117 @@
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head>
-<style type="text/css">
-#flex-kutu{
-width:auto;
-height:auto;
-display:flex;
-border:2px solid silver;
-flex-direction:row;
-background-color:#ADADA8;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>REPORTAXI</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
 }
 
-
-h1 {
-font-size: 80px;
-font-family: Times New Roman;
-color: blue;
-text-align:center;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
-margin-left: 50px;
-font-size: 30px;
-font-family: Times New Roman;
-color: black;
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
-.alt-kutular{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#F7F7F7;
-background-repeat:no-repeat;
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+	background-image: url("taxii.jpeg");
+	background-position:center;
+	background-repeat:no-repeat;
 
 }
 
-.alt-kutularana{
-width:1500;
-margin:30px;
-padding:5px;
-background-color:#F7F7F7;
-background-image: url("taxii.jpeg");
-background-position:center;
-background-repeat:no-repeat;
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+/* For tables  */
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
 }
 
 </style>
+</head>
 
 
 <body>
-<div id ="flex-kutu">
-<div class="alt-kutularana">
-<h3>REPORTAXI WEB APPLICATION </h3>
-<h4>REGISTRATION </h4>
 
+<header>
+ <h2>REPORTAXI WEB APPLICATION</h2>
+ <p>by BECKS</p>
+</header>
+
+			<section>
+					<nav>
 
 <form id="form1" name="form1" method="post" action="index.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="Home Page " />
 </p>
 </form>
-</div>
+	</nav>
 
-<div class="alt-kutular">
+<article>
 <h3>REGISTRATION INFO </h3>
 
 
@@ -122,7 +173,59 @@ if(isset($_GET['action']))
 
 ?>
 
+</article>
+			</section>
 
+<footer>
+  <div id="share-buttons">
+    
+
+    
+
+    
+    <!-- Email -->
+    <a href="mailto:kanapa79@gmail.com">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    
+    <!-- Google+ -->
+    <a href="https://plus.google.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+    
+        
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    </a>
+    
+
+    
+    <!-- Tumblr-->
+    <a href="http://www.tumblr.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+    </a>
+     
+    <!-- Twitter -->
+    <a href="https://twitter.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+
+	</div>
+</footer>
+
+</body>
+</html>
 
 
 
