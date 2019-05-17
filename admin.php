@@ -152,7 +152,7 @@ if($stmt === false)
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
-    echo "registered ";
+    echo "Registration is approved ";
 }}      
 
 
@@ -197,7 +197,7 @@ if($stmt === false)
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
-    echo "Registration is DELETED ";
+    echo "Registration is rejected ";
 }}      
 
 
