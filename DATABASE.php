@@ -100,7 +100,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 ?>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Taxi Plate <br><input type="text" name="t_a" id="t_a"/></br>
+    Taxi Plate <br><input type="text" autocomplete="off" name="t_a" id="t_a"/></br>
 
 	Point or stars<br><input list="stars" name="t_b" >
 	<datalist id="stars">
@@ -115,7 +115,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 	Date of Trip<br><input type="date" name="t_c"><br>
 	Time of Trip<br><input type="time" name="t_d"><br>
 
-	Location of Trip<br><input type="text" name="t_e" id="t_e"/></br>
+	Location of Trip<br><input type="text" name="t_e" autocomplete="off" id="t_e"/></br>
 	
 	Weather<br><input list="weather" name="t_g" >
 	<datalist id="weather">
@@ -126,7 +126,7 @@ echo 'Location is:'.$location.'  '.$locationb.' ';
 	
 	Satisfaction<br><input list="feedback" required="required" name="t_h">
 	<datalist id="feedback">
-	<option value="None"> 
+	<option value="None">
     <option value="Good driver"> 
     <option value="Obeys the traffic rules"> 
     <option value="Very polite"> 
