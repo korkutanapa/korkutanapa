@@ -89,7 +89,7 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 <p> Please enter your evaluation about your taxi trip </p>
 
 <form method="post" action="?action=add" enctype="multipart/form-data" >
-    Taxi Plate <br><input type="text" autocomplete="off" name="t_a" id="t_a"/></br>
+    Taxi Plate (format must be 11T1111)<br><input type="text" autocomplete="off" pattern="[0-9]{2}[A-Z]{1}[0-9]{4}" name="t_a" id="t_a"/></br>
 
 	Point or stars<br><input list="stars" name="t_b" >
 	<datalist id="stars">
