@@ -45,6 +45,23 @@ background-position:center;
 background-repeat:no-repeat;
 }
 
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
 </style>
 
 <body>
