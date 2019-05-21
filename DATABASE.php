@@ -212,6 +212,8 @@ if(isset($_GET['action']))
 	
 				
         $stmt = sqlsrv_query($conn, $insertSql, $params);
+		$sqla = "DELETE FROM  [dbo].[trip] WHERE taxiplate='NULL'";
+		$stmta = sqlsrv_query($conn, $sqla);
         if($stmt === false)
         {
 		
@@ -226,8 +228,7 @@ if(isset($_GET['action']))
     }
 }
 
-$sql = "DELETE FROM  [dbo].[trip] WHERE taxiplate='NULL'";
-$stmt = sqlsrv_query($conn, $sql);
+
 
 ?>
 </article>
