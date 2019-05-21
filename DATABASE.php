@@ -133,8 +133,8 @@ echo "<p>Hello  ".$_SESSION["username"]." you are wellcome</p> ";
 
 <p> Please enter your evaluation about your taxi trip </p>
 
-<form method="post" action="?action=addd" enctype="multipart/form-data" >
-    Taxi Plate (format must be 01T0001)<br><input type="text" autocomplete="off" pattern="[0-9]{2}[A-Z]{1}[0-9]{4}" name="t_a" id="t_a"/></br>
+<form method="post" action="?action=add" enctype="multipart/form-data" >
+    Taxi Plate (format must be 01T0001)<br><input type="text" autocomplete="off"  name="t_a" id="t_a"/></br>
 
 	Point or stars<br><input list="stars" autocomplete="off" name="t_b" >
 	<datalist id="stars">
@@ -195,7 +195,7 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'addd')
+    if($_GET['action'] == 'add')
     {
         /*Insert data.*/
      $insertSql = "INSERT INTO [dbo].[trip] ([taxiplate],[star],[tripdate],[triptime],[triplocationin],[username],[weather],[feedback],[complaint]) VALUES (?,?,?,?,?,?,?,?,?)";
