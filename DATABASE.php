@@ -225,6 +225,10 @@ if(isset($_GET['action']))
         }
     }
 }
+
+$sql = "DELETE FROM  [dbo].[trip] WHERE taxiplate=' '";
+$stmt = sqlsrv_query($conn, $sql);
+
 ?>
 </article>
 </section>
