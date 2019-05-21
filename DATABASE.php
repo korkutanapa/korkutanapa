@@ -226,7 +226,7 @@ if(isset($_GET['action']))
     }
 }
 
-$sql = "DELETE FROM  [dbo].[trip] WHERE taxiplate=' '";
+$sql = "DELETE FROM  [dbo].[trip] WHERE taxiplate='NULL'";
 $stmt = sqlsrv_query($conn, $sql);
 
 ?>
