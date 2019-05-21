@@ -212,7 +212,7 @@ if(isset($_GET['action']))
 	
 				
         $stmt = sqlsrv_query($conn, $insertSql, $params);
-		$sqla = "DELETE FROM  [dbo].[trip] WHERE taxiplate='NULL'";
+		$sqla = "DELETE FROM  [dbo].[trip] WHERE taxiplate IS NULL";
 		$stmta = sqlsrv_query($conn, $sqla);
         if($stmt === false)
         {
