@@ -170,7 +170,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, explanation AS exp ORDER BY no DESC ";
+$sql = "SELECT alarmno AS no, explanation AS exp FROM closedalarms ORDER BY no DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
