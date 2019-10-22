@@ -108,10 +108,10 @@ th {
 
 
 <h3>SOLVED ALARMS</h3>
-
 <form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
-please enter the alarm no to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
-<input type="submit" name="submit" value="Submit" />
+Please enter the alarm no to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
+<input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
+<input type="submit" name="submit" value="Close The Alarm" />
 </form>
 
 
@@ -135,12 +135,16 @@ if(isset($_GET['action']))
     if($_GET['action'] == 'closedalarm')
     {
 		$a=$_POST['t_a'];
-		
+		$b=$_POST['t_b'];
 	
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
+$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation) VALUES ('$a','$b')";
 $stmt = sqlsrv_query($conn, $sql);
-if($stmt === false)
+$stmt2 = sqlsrv_query($conn, $sql2);
+
+
+if($stmt&$stmt2 === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
@@ -149,20 +153,19 @@ else{
 }}   }   
 
 ?>
-
-
 </form>
 </nav>
 
 
 <article>
+<h3>PREVIOUS ALARMS</h3>
 
-<h3>ALARMS</h3>
 <form id="form1" name="form1" method="post" action="previousalarms.php">
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="PREVIOUS ALARMS " />
 </p>
 
+<h3>CURRENT ALARMS</h3>
 
 <?php
 /*Connect using SQL Server authentication.*/

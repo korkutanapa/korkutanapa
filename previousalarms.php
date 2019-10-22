@@ -113,7 +113,7 @@ th {
 
 <article>
 
-<h3>ALARMS</h3>
+<h3>CLOSED ALARMS</h3>
 <?php
 /*Connect using SQL Server authentication.*/
 
@@ -156,8 +156,44 @@ if(sqlsrv_has_rows($stmt))
 
 ?>
 
+<h3>CLOSED ALARMS</h3>
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+$sql = "SELECT alarmno AS no, explanation AS exp ORDER BY no DESC ";
 
 
+$stmt = sqlsrv_query($conn,$sql);
+
+
+if(sqlsrv_has_rows($stmt))
+{
+	 
+    print("<table border='1px'>");
+    print("<tr><td>Alarm No</td>");
+	print("<td>Explanation</td></tr>");
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['no']."</td>");
+  		print("<td>".$row['exp']."</td></tr>");
+		
+    }
+    print("</table><br>");
+};
+
+
+?>
 
 </article>
 </section>
