@@ -108,6 +108,54 @@ th {
 <p>
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="PREVIOUS ALARMS " />
 </p>
+
+
+<h3>SOLVED ALARMS</h3>
+
+<form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
+please enter the alarm no to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'closedalarm')
+    {
+		$a=$_POST['t_a'];
+		
+	
+		
+$sql = "UPDATE  [dbo].[users] SET completed='1' WHERE Id=('$a')";
+$stmt = sqlsrv_query($conn, $sql);
+if($stmt === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+else{  
+    echo "alarm is closed ";
+}}   }   
+
+
+
+?>
+
+
 </form>
 </nav>
 
