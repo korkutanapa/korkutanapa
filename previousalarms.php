@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <meta name="keywords" content="IoT, sensor, alarm, Azure, cloud">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="60">
 <style>
 * {
   box-sizing: border-box;
@@ -104,9 +103,9 @@ th {
 
 <section>
 <nav>
-<form id="form1" name="form1" method="post" action="registration.php">
+<form id="form1" name="form1" method="post" action="index.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="PREVIOUS ALARMS " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="ALARMS " />
 </p>
 </form>
 </nav>
@@ -128,7 +127,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, currentTemperature AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=0 ORDER BY Time_of_Alarm DESC ";
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, currentTemperature AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=1 ORDER BY Time_of_Alarm DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
@@ -174,5 +173,3 @@ if(sqlsrv_has_rows($stmt))
 </body>
 
 </html>
-
-
