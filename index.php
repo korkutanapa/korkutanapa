@@ -119,7 +119,7 @@ th {
 
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $connectionOptions = array("Database"=>"korkutse599db",
-                           "UID"=>"korkut@korkutse599db",
+                           "UID"=>"korkut",
                            "PWD" => "774761Ka.");
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
