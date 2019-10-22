@@ -138,14 +138,14 @@ if(sqlsrv_has_rows($stmt))
 	 
     print("<table border='1px'>");
     print("<tr><td>Pres Adress</td>");
-	print("<tr><td>Alarm Temperature</td>");
-	print("<tr><td>Time of Alarm</td></tr>");
+	print("<td>Alarm Temperature</td>");
+	print("<td>Time of Alarm</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
          
         print("<tr><td>".$row['Pres_Adress']."</td>");
-		print("<tr><td>".$row['Alarm_Temperature']."</td>");
-  		print("<tr><td>".$row['Time_of_Alarm']."</td></tr>");
+		print("<td>".$row['Alarm_Temperature']."</td>");
+  		print("<td>".$row['Time_of_Alarm']."</td></tr>");
 		
     }
     print("</table><br>");
