@@ -141,7 +141,7 @@ if(isset($_GET['action']))
 		
 	
 		
-$sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE Id=('$a')";
+$sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
 $stmt = sqlsrv_query($conn, $sql);
 if($stmt === false)
 {
