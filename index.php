@@ -109,7 +109,7 @@ th {
 
 <h3>SOLVED ALARMS</h3>
 <form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
-Please enter the alarm no to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
+Please enter the alarm no and explanation to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
 <input type="submit" name="submit" value="Close The Alarm" />
 </form>
@@ -180,7 +180,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, currentTemperature AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=0 ORDER BY Time_of_Alarm DESC ";
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, temp AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=0 ORDER BY Time_of_Alarm DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
