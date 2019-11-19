@@ -180,7 +180,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, temp AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=0 ORDER BY Time_of_Alarm DESC ";
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, temp AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=0 and IsChangePointAnomaly=1 ORDER BY Time_of_Alarm DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
