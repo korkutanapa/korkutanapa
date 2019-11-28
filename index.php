@@ -165,7 +165,7 @@ else{
 <input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="PREVIOUS ALARMS " />
 </p>
 
-<h3>CURRENT ALARMS</h3>
+<h3>CURRENT ALARMS ANOMALIES</h3>
 
 <?php
 /*Connect using SQL Server authentication.*/
@@ -209,7 +209,49 @@ if(sqlsrv_has_rows($stmt))
 
 ?>
 
+<h3>CURRENT ALARMS THRESHOLDS</h3>
 
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, T1 AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM threshold ORDER BY Time_of_Alarm DESC ";
+
+
+$stmt = sqlsrv_query($conn,$sql);
+
+
+if(sqlsrv_has_rows($stmt))
+{
+	 
+    print("<table border='1px'>");
+    print("<tr><td>Alarm No</td>");
+	print("<td>Alarm Temperature</td>");
+	print("<td>Pres Adres </td>");
+	print("<td>Time of Alarm</td></tr>");
+    while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['no']."</td>");
+		print("<td>".$row['Alarm_Temperature']."</td>");
+		print("<td>".$row['Pres_Adress']."</td>");
+  		print("<td>".$row['Time_of_Alarm']."</td></tr>");
+		
+    }
+    print("</table><br>");
+};
+
+
+?>
 
 
 </article>
