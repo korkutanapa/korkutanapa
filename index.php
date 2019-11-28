@@ -224,7 +224,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, T1 AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM tresholdalarms ORDER BY Time_of_Alarm DESC ";
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, T1 AS Alarm_Temperature,S1 AS Alarm Temperature Change, alarmdate AS Time_of_Alarm FROM tresholdalarms ORDER BY Time_of_Alarm DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
@@ -236,6 +236,7 @@ if(sqlsrv_has_rows($stmt))
     print("<table border='1px'>");
     print("<tr><td>Alarm No</td>");
 	print("<td>Alarm Temperature</td>");
+	print("<td>Alarm Temperature Change </td>");
 	print("<td>Pres Adres </td>");
 	print("<td>Time of Alarm</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
