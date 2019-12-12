@@ -130,6 +130,7 @@ if($conn === false)
 $sql = "SELECT alarmno AS no, explanation AS exp, deviceId AS Id , alarmdate AS time FROM closedalarms ORDER BY no DESC ";
 
 
+
 $stmt = sqlsrv_query($conn,$sql);
 
 

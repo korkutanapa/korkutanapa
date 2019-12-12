@@ -150,12 +150,12 @@ if(isset($_GET['action']))
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
 $sql2="INSERT INTO [dbo].[closedalarms](closedv,alarmno,explanation,deviceId,alarmdate) VALUES ('100','$a','$b','$aa','$bb')";
-$sql7="INSERT INTO [dbo].[preses](closedv) VALUES ('100')WHERE alarmdate='$bb'";
+
 $stmt = sqlsrv_query($conn, $sql);
 $stmt2 = sqlsrv_query($conn, $sql2);
-$stmt7 = sqlsrv_query($conn, $sql7);
 
-if($stmt&$stmt2&$stmt7 === false)
+
+if($stmt&$stmt2 === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
@@ -204,10 +204,10 @@ if(isset($_GET['action']))
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
 $sql4="INSERT INTO [dbo].[closedalarms](closedv,alarmno,explanation,deviceId,alarmdate) VALUES ('100','$c','$d','$cc','$dd')";
-$sql8="INSERT INTO [dbo].[preses](closedv) VALUES ('100')WHERE alarmdate='$dd'";
+
 $stmt3 = sqlsrv_query($conn, $sql3);
 $stmt4 = sqlsrv_query($conn, $sql4);
-$stmt8 = sqlsrv_query($conn, $sql8);
+
 
 if($stmt3&$stmt4 === false)
 {
