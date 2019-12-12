@@ -137,7 +137,7 @@ if(isset($_GET['action']))
 	
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
-$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b',SELECT deviceId FROM preses WHERE alarmno=('$a'),SELECT alarmdate FROM preses WHERE alarmno=('$a')  )";
+$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b','SELECT deviceId FROM preses WHERE alarmno=('$a')','SELECT alarmdate FROM preses WHERE alarmno=('$a')'  )";
 $stmt = sqlsrv_query($conn, $sql);
 $stmt2 = sqlsrv_query($conn, $sql2);
 
@@ -184,7 +184,7 @@ if(isset($_GET['action']))
 	
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
-$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d',SELECT deviceId FROM preses WHERE alarmno=('$c'),SELECT alarmdate FROM preses WHERE alarmno=('$c')  )";
+$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d','SELECT deviceId FROM preses WHERE alarmno=('$c')','SELECT alarmdate FROM preses WHERE alarmno=('$c')'  )";
 $stmt = sqlsrv_query($conn, $sql3);
 $stmt2 = sqlsrv_query($conn, $sql4);
 
