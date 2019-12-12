@@ -222,11 +222,11 @@ else{
 
 
 <article>
-<h3>PREVIOUS ALARMS</h3>
+<h3>SYSTEM ALARM LIST ( CLOSED ) </h3>
 
 <form id="form1" name="form1" method="post" action="previousalarms.php">
 <p>
-<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="PREVIOUS ALARMS " />
+<input style="background-color:#D3D3D3;width:350px;height:40px;font-size:16pt;margin-left:20px;font-family: Times New Roman;" type="submit" name="Submit" id="button" value="SEE LIST " />
 </p>
 
 <h3>CURRENT ALARMS ANOMALIES</h3>
