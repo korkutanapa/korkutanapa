@@ -261,11 +261,14 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	data: [{
 		type: "line",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-	data: [{
+	},
+		
+		{
 		type: "line",
 		dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
-	}]
+	}
+	]
+	
 });
 chart.render();
  
