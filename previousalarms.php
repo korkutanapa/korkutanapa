@@ -182,7 +182,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses GROUP BY $a ";
+$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
@@ -209,10 +209,10 @@ window.onload = function () {
  
 var chart = new CanvasJS.Chart("chartContainer", {
 	title: {
-		text: "TEMPERATURE GRAPGH"
+		text: "DATA GRAPH"
 	},
 	axisY: {
-		title: "temperature"
+		title: "data"
 	},
 	data: [{
 		type: "line",
@@ -232,11 +232,6 @@ chart.render();
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>   
-
-
-
-
-
 
 
 </article>
