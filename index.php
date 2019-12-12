@@ -134,10 +134,18 @@ if(isset($_GET['action']))
     {
 		$a=$_POST['t_a'];
 		$b=$_POST['t_b'];
+		
+		
+		
+		$sql44 = SELECT deviceId,alarmdate FROM preses WHERE alarmno=('$a');
+		$stmt44 = sqlsrv_query($conn, $sql44);
+		$row11 = sqlsrv_fetch_array($stmt44);
+		$aa=$row11['deviceId'];
+		$bb=$row11['alarmdate'];
 	
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
-$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b','SELECT deviceId FROM preses WHERE alarmno=('$a')','SELECT alarmdate FROM preses WHERE alarmno=('$a')'  )";
+$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b','$aa','$bb')'  )";
 $stmt = sqlsrv_query($conn, $sql);
 $stmt2 = sqlsrv_query($conn, $sql2);
 
@@ -182,7 +190,7 @@ if(isset($_GET['action']))
 		$c=$_POST['t_c'];
 		$d=$_POST['t_d'];
 	
-		$sql33 = SELECT deviceId,alarmdate FROM preses WHERE alarmno=('$c');
+		$sql33 = SELECT deviceId,alarmdate FROM tresholdalarms WHERE alarmno=('$c');
 		$stmt33 = sqlsrv_query($conn, $sql33);
 		$row1 = sqlsrv_fetch_array($stmt33);
 		$cc=$row1['deviceId'];
@@ -191,8 +199,8 @@ if(isset($_GET['action']))
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
 $sql4=	"INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d','$cc','$dd'  )";
-$stmt = sqlsrv_query($conn, $sql3);
-$stmt2 = sqlsrv_query($conn, $sql4);
+$stmt3 = sqlsrv_query($conn, $sql3);
+$stmt4 = sqlsrv_query($conn, $sql4);
 
 
 if($stmt3&$stmt4 === false)
