@@ -127,50 +127,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, currentTemperature AS Alarm_Temperature, alarmdate AS Time_of_Alarm FROM preses WHERE completed=1 ORDER BY Time_of_Alarm DESC ";
-
-
-$stmt = sqlsrv_query($conn,$sql);
-
-
-if(sqlsrv_has_rows($stmt))
-{
-	 
-    print("<table border='1px'>");
-    print("<tr><td>Alarm No</td>");
-	print("<td>Alarm Temperature</td>");
-	print("<td>Pres Adres </td>");
-	print("<td>Time of Alarm</td></tr>");
-    while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['no']."</td>");
-		print("<td>".$row['Alarm_Temperature']."</td>");
-		print("<td>".$row['Pres_Adress']."</td>");
-  		print("<td>".$row['Time_of_Alarm']."</td></tr>");
-		
-    }
-    print("</table><br>");
-};
-
-
-?>
-
-<h3>CLOSED ALARMS</h3>
-<?php
-/*Connect using SQL Server authentication.*/
-
-$serverName = "tcp:korkutse599server.database.windows.net,1433";
-$connectionOptions = array("Database"=>"korkutse599db",
-                           "UID"=>"korkut",
-                           "PWD" => "774761Ka.");
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if($conn === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-$sql = "SELECT alarmno AS no, explanation AS exp FROM closedalarms ORDER BY no DESC ";
+$sql = "SELECT alarmno AS no, explanation AS exp, deviceId AS Id , alarmdate AS time FROM closedalarms ORDER BY no DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
@@ -182,11 +139,16 @@ if(sqlsrv_has_rows($stmt))
     print("<table border='1px'>");
     print("<tr><td>Alarm No</td>");
 	print("<td>Explanation</td></tr>");
+	print("<td>Device</td></tr>");
+	print("<td>Time</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
          
         print("<tr><td>".$row['no']."</td>");
-  		print("<td>".$row['exp']."</td></tr>");
+		  print("<td>".$row['exp']."</td>");
+		    print("<td>".$row['Id']."</td>");
+  		print("<td>".$row['time']."</td></tr>");
+
 		
     }
     print("</table><br>");
