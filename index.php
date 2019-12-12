@@ -182,9 +182,9 @@ if(isset($_GET['action']))
 		$c=$_POST['t_c'];
 		$d=$_POST['t_d'];
 	
-	$sql33 = SELECT deviceId FROM preses WHERE alarmno=('$c')
+	$sql33 = SELECT deviceId FROM preses WHERE alarmno=('$c');
 	$cc = sqlsrv_query($conn, $sql33);
-	$sql44 = SELECT alarmdate FROM preses WHERE alarmno=('$c')
+	$sql44 = SELECT alarmdate FROM preses WHERE alarmno=('$c');
 	$dd = sqlsrv_query($conn, $sql44);
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
