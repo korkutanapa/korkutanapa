@@ -105,8 +105,6 @@ th {
 <section>
 <nav>
 
-
-
 <h3>SOLVED ALARMS</h3>
 <form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
 Please enter the alarm no and explanation to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
@@ -149,7 +147,7 @@ if($stmt&$stmt2 === false)
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
-    echo "alarm is closed ";
+    echo "alarm has been closed ";
 }}   }   
 
 ?>
@@ -179,7 +177,7 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'closedalarm')
+    if($_GET['action'] == 'inputfailure')
     {
 		$c=$_POST['t_c'];
 		$d=$_POST['t_d'];
