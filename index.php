@@ -153,7 +153,60 @@ else{
 }}   }   
 
 ?>
+
+<h3>FAILURE INPUT</h3>
+<form method="post" action="?action=inputfailure" enctype="multipart/form-data" >
+Please enter the alarm no and explanation to write a failure  <br><input type="text" name="t_c" autocomplete="off" id="t_d"/></br>
+<input type="text" name="t_d" autocomplete="off" id="t_d"/></br>
+<input type="submit" name="submit" value="Input Failure" />
 </form>
+
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'closedalarm')
+    {
+		$c=$_POST['t_c'];
+		$d=$_POST['t_d'];
+	
+		
+$sql3 = "UPDATE  [dbo].[preses] SET IsChangePointAnomaly='110' WHERE alarmno=('$c')";
+$sql4 = "UPDATE  [dbo].[preses] SET explanation='$d' WHERE alarmno=('$c')";
+
+$stmt3 = sqlsrv_query($conn, $sq3);
+$stmt4 = sqlsrv_query($conn, $sql4);
+
+
+if($stmt3&$stmt4 === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+else{  
+    echo "failure has been writen ";
+}}   }   
+
+?>
+
+
+
+
+
+
 </nav>
 
 
