@@ -157,6 +157,73 @@ if(sqlsrv_has_rows($stmt))
 
 ?>
 
+<h3>DATA GRAPH FOR DEVICE </h3>
+<form method="post" action="?action=deviceid" enctype="multipart/form-data" >
+Please enter the device id  <br><input type="text" name="t_aa" autocomplete="off" id="t_aa"/></br>
+<input type="submit" name="submit" value="graph" />
+</form>
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'deviceid')
+    {
+		$a=$_POST['t_aa'];
+
+
+$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses GROUP BY $a ";
+$stmtA = sqlsrv_query($conn,$sqlA);
+
+$dataPoints=array();
+
+if(sqlsrv_has_rows($stmtA))
+
+{  while($rowa = sqlsrv_fetch_array($stmtA))
+    {
+    $GRAPH = array();
+    $GRAPH['label'] = $rowa['alarmdate'];
+    $GRAPH['y'] = $rowa['temp'];
+    array_push($dataPoints,$GRAPH);  
+        
+}};
+
+
+	
+?>
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "TEMPERATURE GRAPGH"
+	},
+	axisY: {
+		title: "temperature"
+	},
+	data: [{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+
+
 </article>
 </section>
 <footer>
