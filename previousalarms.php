@@ -138,8 +138,8 @@ if(sqlsrv_has_rows($stmt))
 	 
     print("<table border='1px'>");
     print("<tr><td>Alarm No</td>");
-	print("<td>Explanation</td></tr>");
-	print("<td>Device</td></tr>");
+	print("<td>Explanation</td>");
+	print("<td>Device</td>");
 	print("<td>Time</td></tr>");
     while($row = sqlsrv_fetch_array($stmt))
     {
