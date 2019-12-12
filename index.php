@@ -108,11 +108,11 @@ th {
 
 
 
-<h3>FAILURE ENTRY</h3>
-<form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
+<h3>CLOSE THE ANAMOLY ALARM</h3>
+<form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
 Please enter the failure indicator <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
-<input type="submit" name="submit" value="Close The Alarm" />
+<input type="submit" name="submit" value="Close The Anamoly Alarm" />
 </form>
 
 
@@ -133,7 +133,7 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'closedalarm')
+    if($_GET['action'] == 'closedanamoly')
     {
 		$a=$_POST['t_a'];
 		$b=$_POST['t_b'];
@@ -154,6 +154,53 @@ else{
 }}   }   
 
 ?>
+
+<h3>CLOSE THE THRESHOLD ALARM</h3>
+<form method="post" action="?action=closedthreshold" enctype="multipart/form-data" >
+Please enter the failure indicator <br><input type="text" name="t_c" autocomplete="off" id="t_c"/></br>
+<input type="text" name="t_d" autocomplete="off" id="t_d"/></br>
+<input type="submit" name="submit" value="Close The Threshold Alarm" />
+</form>
+
+<?php
+/*Connect using SQL Server authentication.*/
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'closedthreshold')
+    {
+		$c=$_POST['t_c'];
+		$d=$_POST['t_d'];
+	
+		
+$sql3 = "UPDATE  [dbo].[thresholdalarms] SET completed='1' WHERE alarmno=('$c')";
+$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation) VALUES ('$c','$d')";
+$stmt3 = sqlsrv_query($conn, $sql3);
+$stmt4 = sqlsrv_query($conn, $sql4);
+
+
+if($stmt3&$stmt4 === false)
+{
+    die(print_r(sqlsrv_errors(), true));
+}
+else{  
+    echo "alarm is closed ";
+}}   }   
+
+?>
+
 </form>
 </nav>
 
@@ -225,7 +272,7 @@ if($conn === false)
 {
     die(print_r(sqlsrv_errors(), true));
 }
-$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, T1 AS Alarm_Temperature,S1 AS AlarmTemperatureChange, alarmdate AS Time_of_Alarm FROM tresholdalarms ORDER BY Time_of_Alarm DESC ";
+$sql = "SELECT alarmno AS no, deviceId AS Pres_Adress, T1 AS Alarm_Temperature,S1 AS AlarmTemperatureChange, alarmdate AS Time_of_Alarm  FROM tresholdalarms WHERE completed=0 ORDER BY Time_of_Alarm DESC ";
 
 
 $stmt = sqlsrv_query($conn,$sql);
