@@ -192,10 +192,17 @@ if(isset($_GET['action']))
     {
 		$c=$_POST['t_c'];
 		$d=$_POST['t_d'];
+		
+		
+		$sql55 = "SELECT deviceId,alarmdate FROM tresholdalarms WHERE alarmno=('$c')";
+		$stmt66 = sqlsrv_query($conn, $sql55);
+		$row111 = sqlsrv_fetch_array($stmt66);
+		$cc=$row111['deviceId'];
+		$dd=$row111['alarmdate'];
 	
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
-$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation) VALUES ('$c','$d')";
+$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d','$cc','$dd')";
 $stmt3 = sqlsrv_query($conn, $sql3);
 $stmt4 = sqlsrv_query($conn, $sql4);
 
