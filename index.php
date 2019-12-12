@@ -185,7 +185,7 @@ if(isset($_GET['action']))
 		$d=$_POST['t_d'];
 	
 		
-$sql3 = "UPDATE  [dbo].[thresholdalarms] SET completed='1' WHERE alarmno=('$c')";
+$sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
 $sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation) VALUES ('$c','$d')";
 $stmt3 = sqlsrv_query($conn, $sql3);
 $stmt4 = sqlsrv_query($conn, $sql4);
