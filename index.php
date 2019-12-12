@@ -105,8 +105,8 @@ th {
 <section>
 <nav>
 
-<h3>SOLVED ALARMS</h3>
-<form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
+<h3>SOLVED ALARMS ANOMALY</h3>
+<form method="post" action="?action=closedanomaly" enctype="multipart/form-data" >
 Please enter the alarm no and explanation to close the alarm  <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
 <input type="submit" name="submit" value="Close The Alarm" />
@@ -130,14 +130,14 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'closedalarm')
+    if($_GET['action'] == 'closedanomaly')
     {
 		$a=$_POST['t_a'];
 		$b=$_POST['t_b'];
 	
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
-$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation) VALUES ('$a','$b')";
+$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b',SELECT deviceId FROM preses WHERE alarmno=('$a'),SELECT alarmdate FROM preses WHERE alarmno=('$a')  )";
 $stmt = sqlsrv_query($conn, $sql);
 $stmt2 = sqlsrv_query($conn, $sql2);
 
@@ -152,11 +152,11 @@ else{
 
 ?>
 
-<h3>FAILURE INPUT</h3>
-<form method="post" action="?action=inputfailure" enctype="multipart/form-data" >
-Please enter the alarm no and explanation to write a failure  <br><input type="text" name="t_c" autocomplete="off" id="t_d"/></br>
-<input type="text" name="t_d" autocomplete="off" id="t_d"/></br>
-<input type="submit" name="submit" value="Input Failure" />
+<h3>SOLVED ALARMS THRESHOLD </h3>
+<form method="post" action="?action=closedalarm" enctype="multipart/form-data" >
+Please enter the alarm no and explanation to close the alarm  <br><input type="text" name="t_c" autocomplete="off" id="t_a"/></br>
+<input type="text" name="t_b" autocomplete="off" id="t_d"/></br>
+<input type="submit" name="submit" value="Close The Alarm" />
 </form>
 
 
@@ -177,17 +177,16 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'inputfailure')
+    if($_GET['action'] == 'closedalarm')
     {
 		$c=$_POST['t_c'];
 		$d=$_POST['t_d'];
 	
 		
-$sql3 = "UPDATE  [dbo].[preses] SET completed='100' WHERE alarmno=('$c')";
-$sql4 = "UPDATE  [dbo].[preses] SET explanation='$d' WHERE alarmno=('$c')";
-
-$stmt3 = sqlsrv_query($conn, $sq3);
-$stmt4 = sqlsrv_query($conn, $sql4);
+$sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
+$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d',SELECT deviceId FROM preses WHERE alarmno=('$c'),SELECT alarmdate FROM preses WHERE alarmno=('$c')  )";
+$stmt = sqlsrv_query($conn, $sql3);
+$stmt2 = sqlsrv_query($conn, $sql4);
 
 
 if($stmt3&$stmt4 === false)
@@ -195,16 +194,17 @@ if($stmt3&$stmt4 === false)
     die(print_r(sqlsrv_errors(), true));
 }
 else{  
-    echo "failure has been writen ";
+    echo "alarm has been closed ";
 }}   }   
 
 ?>
+
 
 </nav>
 
 
 <article>
-<h3>PREVIOUS ALARMS</h3>
+<h3>FAILURE LIST </h3>
 
 <form id="form1" name="form1" method="post" action="previousalarms.php">
 <p>
