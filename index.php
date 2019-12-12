@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$d=$_POST['t_d'];
 	
 		
-$sql3 = "UPDATE  [dbo].[preses] SET IsChangePointAnomaly='110' WHERE alarmno=('$c')";
+$sql3 = "UPDATE  [dbo].[preses] SET completed='100' WHERE alarmno=('$c')";
 $sql4 = "UPDATE  [dbo].[preses] SET explanation='$d' WHERE alarmno=('$c')";
 
 $stmt3 = sqlsrv_query($conn, $sq3);
