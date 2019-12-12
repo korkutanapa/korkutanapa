@@ -223,6 +223,8 @@ chart.render();
  
 }
 
+</script>
+</head>
 
 </article>
 </section>
