@@ -196,7 +196,7 @@ if(sqlsrv_has_rows($stmtA))
     $GRAPH['y'] = $rowa['temp'];
     array_push($dataPoints,$GRAPH);  
         
-}};
+}}}};
 
 
 	
@@ -239,4 +239,5 @@ chart.render();
 
 </body>
 
+</html>
 </html>
