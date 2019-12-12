@@ -149,7 +149,7 @@ if(isset($_GET['action']))
 	
 		
 $sql = "UPDATE  [dbo].[preses] SET completed='1' WHERE alarmno=('$a')";
-$sql2="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$a','$b','$aa','$bb')";
+$sql2="INSERT INTO [dbo].[closedalarms](closedv,alarmno,explanation,deviceId,alarmdate) VALUES ('100','$a','$b','$aa','$bb')";
 $stmt = sqlsrv_query($conn, $sql);
 $stmt2 = sqlsrv_query($conn, $sql2);
 
@@ -202,7 +202,7 @@ if(isset($_GET['action']))
 	
 		
 $sql3 = "UPDATE  [dbo].[tresholdalarms] SET completed='1' WHERE alarmno=('$c')";
-$sql4="INSERT INTO [dbo].[closedalarms](alarmno,explanation,deviceId,alarmdate) VALUES ('$c','$d','$cc','$dd')";
+$sql4="INSERT INTO [dbo].[closedalarms](closedv,alarmno,explanation,deviceId,alarmdate) VALUES ('100','$c','$d','$cc','$dd')";
 $stmt3 = sqlsrv_query($conn, $sql3);
 $stmt4 = sqlsrv_query($conn, $sql4);
 
