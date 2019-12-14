@@ -187,7 +187,7 @@ $sqlA = "SELECT temp as temp,completed as AA, alarmdate as alarmdate FROM preses
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
-
+$dataPoints2=array();
 if(sqlsrv_has_rows($stmtA))
 
 {  while($rowa = sqlsrv_fetch_array($stmtA))
