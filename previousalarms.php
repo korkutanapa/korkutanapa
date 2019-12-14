@@ -97,8 +97,8 @@ th {
 <body>
 
 <header>
- <h2>ALARM SENSOR</h2>
- <p>by Korkut</p>
+ <h2>CONDITION BASED MAINTENANCE FRAMEWORK</h2>
+ <p>by N-deck</p>
 </header>
 
 <section>
