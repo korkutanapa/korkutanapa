@@ -193,7 +193,9 @@ if(sqlsrv_has_rows($stmtA))
 {  while($rowa = sqlsrv_fetch_array($stmtA))
     {
     $GRAPH = array();
+	$GRAPH2 = array();
     $GRAPH['label'] = $rowa['alarmdate'];
+	$GRAPH2['label'] = $rowa['alarmdate'];
     $GRAPH['y'] = $rowa['temp'];
 	$GRAPH2['y'] = $rowa['AA'];
     array_push($dataPoints,$GRAPH);  
