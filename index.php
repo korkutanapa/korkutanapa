@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ALARM SENSOR KORKUT</title>
+<title>CONDITION BASED MAINTENANCE FRAMEWORK</title>
 <meta charset="utf-8">
 <meta name="keywords" content="IoT, sensor, alarm, Azure, cloud">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,15 +91,15 @@ th {
   background-color: #4CAF50;
   color: white;
 }
+</head>
 
 </style>
-</head>
 
 <body>
 
 <header>
- <h2>ALARM SENSOR</h2>
- <p>by Korkut</p>
+ <h2>CONDITION BASED MAINTENANCE FRAMEWORK</h2>
+ <p>by N-deck</p>
 </header>
 
 <section>
