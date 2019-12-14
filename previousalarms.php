@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT T1 as temp, alarmdate as alarmdate,  FROM tresholdalarms WHERE deviceId='$a' ";
+$sqlA = "SELECT temp as temp, alarmdate as alarmdate,  FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
@@ -219,12 +219,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	axisY: {
 		title: "data"
 	},
-	data: [{
+	data: {
 		type: "line",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	},
-		
-	]
 	
 });
 chart.render();
