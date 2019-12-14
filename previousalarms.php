@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT temp as temp,IsChangePointAnomaly as AA, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
+$sqlA = "SELECT temp as temp,completed as AA, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
