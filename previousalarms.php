@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
+$sqlA = "SELECT temp as temp, alarmdate as alarmdate,  FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
@@ -223,7 +223,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlB = "SELECT closedv as closedv, alarmdate as alarmdate FROM closedalarms WHERE deviceId='$a' ";
+$sqlB = "SELECT IsChangePointAnomaly as AA, alarmdate as alarmdate,  FROM preses WHERE deviceId='$a' ";
 $stmtB = sqlsrv_query($conn,$sqlB);
 
 $dataPoints2=array();
@@ -234,7 +234,7 @@ if(sqlsrv_has_rows($stmtB))
     {
     $GRAPH1 = array();
     $GRAPH1['label'] = $rowb['alarmdate'];
-    $GRAPH1['y'] = $rowb['closedv'];
+    $GRAPH1['y'] = $rowb['AA'];
     array_push($dataPoints2,$GRAPH1);  
         
 }}}};
