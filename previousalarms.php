@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT temp as temp, alarmdate as alarmdate,  FROM preses WHERE deviceId='$a' ";
+$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
@@ -253,5 +253,4 @@ chart.render();
 
 </body>
 
-</html>
 </html>
