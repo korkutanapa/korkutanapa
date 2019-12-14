@@ -195,9 +195,9 @@ if(sqlsrv_has_rows($stmtA))
     $GRAPH = array();
     $GRAPH['label'] = $rowa['alarmdate'];
     $GRAPH['y'] = $rowa['temp'];
-	$GRAPH['y2'] = $rowa['AA'];
+	$GRAPH2['y'] = $rowa['AA'];
     array_push($dataPoints,$GRAPH);  
-        
+    array_push($dataPoints2,$GRAPH2);    
 }}}};
 
 
@@ -226,7 +226,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	},
 	{
 		type: "line",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
 	}
 	
 	]
