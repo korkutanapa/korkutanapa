@@ -183,7 +183,7 @@ if(isset($_GET['action']))
 		$a=$_POST['t_aa'];
 
 
-$sqlA = "SELECT temp as temp, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
+$sqlA = "SELECT temp as temp,IsChangePointAnomaly as AA, alarmdate as alarmdate FROM preses WHERE deviceId='$a' ";
 $stmtA = sqlsrv_query($conn,$sqlA);
 
 $dataPoints=array();
@@ -195,6 +195,7 @@ if(sqlsrv_has_rows($stmtA))
     $GRAPH = array();
     $GRAPH['label'] = $rowa['alarmdate'];
     $GRAPH['y'] = $rowa['temp'];
+	$GRAPH['y2'] = $rowa['AA'];
     array_push($dataPoints,$GRAPH);  
         
 }}}};
@@ -222,7 +223,13 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	data: [{
 		type: "line",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
+	},
+	{
+		type: "line",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}
+	
+	]
 	
 });
 chart.render();
