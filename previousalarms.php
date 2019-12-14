@@ -203,46 +203,6 @@ if(sqlsrv_has_rows($stmtA))
 	
 ?>
 
-<?php
-/*Connect using SQL Server authentication.*/
-
-$serverName = "tcp:korkutse599server.database.windows.net,1433";
-$connectionOptions = array("Database"=>"korkutse599db",
-                           "UID"=>"korkut",
-                           "PWD" => "774761Ka.");
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if($conn === false)
-{
-    die(print_r(sqlsrv_errors(), true));
-}
-if(isset($_GET['action']))
-{
-    if($_GET['action'] == 'deviceid')
-    {
-		$a=$_POST['t_aa'];
-
-
-$sqlB = "SELECT temp as AA, alarmdate as alarmdate,  FROM preses WHERE deviceId='$a' ";
-$stmtB = sqlsrv_query($conn,$sqlB);
-
-$dataPoints2=array();
-
-if(sqlsrv_has_rows($stmtB))
-
-{  while($rowb = sqlsrv_fetch_array($stmtB))
-    {
-    $GRAPH1 = array();
-    $GRAPH1['label'] = $rowb['alarmdate'];
-    $GRAPH1['y'] = $rowb['AA'];
-    array_push($dataPoints2,$GRAPH1);  
-        
-}}}};
-
-
-	
-?>
-
 
 
 
@@ -264,10 +224,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	},
 		
-		{
-		type: "line",
-		dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
-	}
 	]
 	
 });
