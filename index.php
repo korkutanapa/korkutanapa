@@ -131,7 +131,7 @@ if(isset($_GET['action']))
 
 $a=$_POST['t_a'];
 echo "$a";
-$sql = "select sicil as karantina
+$sql = "select sicil
 from dbo.corona 
 where 
 yemekhane IN ( select yemekhane from  dbo.corona where sicil='600780') 
@@ -158,30 +158,13 @@ echo "ok";
 	while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row['karantina']."</td></tr>");
+        print("<tr><td>".$row['sicil']."</td></tr>");
 
 		
     }
     print("</table><br>");
 
 
-
-
-if(sqlsrv_has_rows($stmt))
-{
-	 
-    print("<table border='1px'>");
-    print("<tr><td>Karantina Liste</td></tr>");
-	while($row = sqlsrv_fetch_array($stmt))
-    {
-         
-        print("<tr><td>".$row['karantina']."</td></tr>");
-
-		
-    }
-    print("</table><br>");
-};	
-		
 		
 
 }}     
