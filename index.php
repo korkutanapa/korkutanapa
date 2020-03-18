@@ -116,18 +116,7 @@ SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></b
 
 
 <?php
-/*Connect using SQL Server authentication.*/
 
-try {
-    $conn = new PDO("sqlsrv:server = tcp:korkutse599server.database.windows.net,1433; Database = korkutse599db", "korkut", "774761Ka.");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "korkut", "pwd" => "774761Ka.", "Database" => "korkutse599db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
