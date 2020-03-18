@@ -121,15 +121,14 @@ $connectionInfo = array("UID" => "korkut", "pwd" => "774761Ka.", "Database" => "
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+echo "ok";
 
 if(isset($_GET['action']))
 {
     if($_GET['action'] == 'closedanamoly')
     {
-		/*$a=$_POST['t_a'];*/
-		
-	$a=600780;
-		
+
+$a=$_POST['t_a'];
 $sql = "select sicil as karantina
 from dbo.corona 
 where 
@@ -147,12 +146,10 @@ istasyon IN ( select istasyon+1 from  dbo.corona where sicil='$a')
 or
 istasyon IN ( select istasyon-1 from  dbo.corona where sicil='$a')";
 		
-		
-
-
-
+	
 $stmt = sqlsrv_query($conn,$sql);
 
+echo "ok";
 
 if(sqlsrv_has_rows($stmt))
 {
