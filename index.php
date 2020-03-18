@@ -117,6 +117,7 @@ SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></b
 
 <?php
 
+
 $connectionInfo = array("UID" => "korkut", "pwd" => "774761Ka.", "Database" => "korkutse599db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
@@ -129,6 +130,7 @@ if(isset($_GET['action']))
     {
 
 $a=$_POST['t_a'];
+echo "$a";
 $sql = "select sicil as karantina
 from dbo.corona 
 where 
