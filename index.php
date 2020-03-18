@@ -118,11 +118,13 @@ SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></b
 <?php
 
 
-$connectionInfo = array("UID" => "korkut", "pwd" => "774761Ka.", "Database" => "korkutse599db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
-echo "$conn";
+
 
 if(isset($_GET['action']))
 {
