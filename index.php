@@ -124,7 +124,10 @@ $connectionOptions = array("Database"=>"korkutse599db",
                            "PWD" => "774761Ka.");
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-
+if($conn === false)
+{
+    echo "olmadı";
+}
 
 if(isset($_GET['action']))
 {
@@ -136,19 +139,19 @@ echo "$a";
 $sql = "select sicil
 from dbo.corona 
 where 
-yemekhane IN ( select yemekhane from  dbo.corona where sicil='600780') 
+yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
 or 
-mola IN ( select mola from  dbo.corona where sicil='600780') 
+mola IN ( select mola from  dbo.corona where sicil='$a') 
 or
-vardiya IN ( select vardiya from  dbo.corona where sicil='600780')
+vardiya IN ( select vardiya from  dbo.corona where sicil='$a')
 or
-servis IN ( select servis from  dbo.corona where sicil='600780')
+servis IN ( select servis from  dbo.corona where sicil='$a')
 or
-ekip IN ( select ekip from  dbo.corona where sicil='600780')
+ekip IN ( select ekip from  dbo.corona where sicil='$a')
 or
-istasyon IN ( select istasyon+1 from  dbo.corona where sicil='600780')
+istasyon IN ( select istasyon+1 from  dbo.corona where sicil='$a')
 or
-istasyon IN ( select istasyon-1 from  dbo.corona where sicil='600780')";
+istasyon IN ( select istasyon-1 from  dbo.corona where sicil='$a')";
 		
 	
 $stmt = sqlsrv_query($conn,$sql);
