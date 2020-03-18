@@ -153,6 +153,20 @@ $stmt = sqlsrv_query($conn,$sql);
 
 echo "ok";
 
+    print("<table border='1px'>");
+    print("<tr><td>Karantina Liste</td></tr>");
+	while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['karantina']."</td></tr>");
+
+		
+    }
+    print("</table><br>");
+
+
+
+
 if(sqlsrv_has_rows($stmt))
 {
 	 
