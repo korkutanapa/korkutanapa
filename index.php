@@ -134,19 +134,19 @@ echo "$a";
 $sql = "select sicil as karantina
 from dbo.corona 
 where 
-yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
+yemekhane IN ( select yemekhane from  dbo.corona where sicil='600780') 
 or 
-mola IN ( select mola from  dbo.corona where sicil='$a') 
+mola IN ( select mola from  dbo.corona where sicil='600780') 
 or
-vardiya IN ( select vardiya from  dbo.corona where sicil='$a')
+vardiya IN ( select vardiya from  dbo.corona where sicil='600780')
 or
-servis IN ( select servis from  dbo.corona where sicil='$a')
+servis IN ( select servis from  dbo.corona where sicil='600780')
 or
-ekip IN ( select ekip from  dbo.corona where sicil='$a')
+ekip IN ( select ekip from  dbo.corona where sicil='600780')
 or
-istasyon IN ( select istasyon+1 from  dbo.corona where sicil='$a')
+istasyon IN ( select istasyon+1 from  dbo.corona where sicil='600780')
 or
-istasyon IN ( select istasyon-1 from  dbo.corona where sicil='$a')";
+istasyon IN ( select istasyon-1 from  dbo.corona where sicil='600780')";
 		
 	
 $stmt = sqlsrv_query($conn,$sql);
