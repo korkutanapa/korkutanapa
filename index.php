@@ -122,7 +122,7 @@ $connectionInfo = array("UID" => "korkut", "pwd" => "774761Ka.", "Database" => "
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-echo "ok";
+echo "$conn";
 
 if(isset($_GET['action']))
 {
