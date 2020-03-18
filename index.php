@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>BULAŞIK MAKİNASI İŞLETMESİ KARANTİNA VERİ TABANI</title>
+<title>İŞLETME YAYILIM ÖNLEME VERİ TABANI</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,8 +98,8 @@ th {
 <body>
 
 <header>
- <h2>BULAŞIK MAKİNASI İŞLETMESİ KARANTİNA VERİ TABANI</h2>
- <p>by N-deck</p>
+ <h2>İŞLETME YAYILIM ÖNLEME VERİ TABANI</h2>
+ <p>by </p>
 </header>
 
 <section>
@@ -111,7 +111,7 @@ th {
 <h3>SICIL GIRISI</h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
-<input type="submit" name="submit" value="KARANTINA LISTESI TARA" />
+<input type="submit" name="submit" value="LİSTE TARA" />
 </form>
 
 
