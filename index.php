@@ -132,7 +132,7 @@ if(isset($_GET['action']))
 $sql = "select sicil as karantina
 from dbo.corona 
 where 
-yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
+yemekhane IN ( select yemekhane from  dbo.corona where sicil='600780') 
 or 
 mola IN ( select mola from  dbo.corona where sicil='$a') 
 or
