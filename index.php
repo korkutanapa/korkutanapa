@@ -132,7 +132,7 @@ if(isset($_GET['action']))
 $sql = "select sicil as karantina
 from dbo.corona 
 where 
-yemekhane IN ( select yemekhane from  dbo.corona where sicil='600780') 
+yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
 or 
 mola IN ( select mola from  dbo.corona where sicil='$a') 
 or
@@ -161,7 +161,7 @@ if(sqlsrv_has_rows($stmt))
 	while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row['sicil']."</td></tr>");
+        print("<tr><td>".$row['karantina']."</td></tr>");
 
 		
     }
