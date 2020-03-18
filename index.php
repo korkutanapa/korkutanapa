@@ -126,8 +126,9 @@ if(isset($_GET['action']))
 {
     if($_GET['action'] == 'closedanamoly')
     {
-		$a=$_POST['t_a'];
-	
+		/*$a=$_POST['t_a'];*/
+		
+	$a=600780;
 		
 $sql = "select sicil as karantina
 from dbo.corona 
