@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CONDITION BASED MAINTENANCE FRAMEWORK</title>
+<title>BULAŞIK MAKİNASI İŞLETMESİ KARANTİNA VERİ TABANI</title>
 <meta charset="utf-8">
-<meta name="keywords" content="IoT, sensor, alarm, Azure, cloud">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="60">
 <style>
@@ -98,7 +98,7 @@ th {
 <body>
 
 <header>
- <h2>CONDITION BASED MAINTENANCE FRAMEWORK</h2>
+ <h2>BULAŞIK MAKİNASI İŞLETMESİ KARANTİNA VERİ TABANI</h2>
  <p>by N-deck</p>
 </header>
 
@@ -108,11 +108,11 @@ th {
 
 
 
-<h3>CLOSE THE ANAMOLY ALARM</h3>
+<h3>SICIL GIRISI</h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
-Please enter the failure indicator <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
+SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
-<input type="submit" name="submit" value="Close The Anamoly Alarm" />
+<input type="submit" name="submit" value="KARANTINA LISTESI TARA" />
 </form>
 
 
