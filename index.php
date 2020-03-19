@@ -140,7 +140,7 @@ $sql = "
 
 
 
-select sicil
+select sicil,servis,yemekhane,ekip,vardiya
 from dbo.corona 
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
@@ -148,6 +148,8 @@ or
 (servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
 or
 (ekip IN ( select ekip from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+
+
 
 ";
 		
@@ -157,11 +159,27 @@ $stmt = sqlsrv_query($conn,$sql);
 echo "ok";
 
     print("<table border='1px'>");
-    print("<tr><td>Karantina Liste</td></tr>");
+    print("<tr><td>Karantina Liste</td>
+	
+	<td>servisbulaştırma</td>
+	<td>yemekhanebulaştırma</td>
+	<td>ekipbulaştırma</td>
+	<td>çalışanınvardiyası</td>
+	
+	</tr>");
 	while($row = sqlsrv_fetch_array($stmt))
     {
          
-        print("<tr><td>".$row['sicil']."</td></tr>");
+        print("<tr><td>".$row['sicil']."</td>
+		<td>".$row['servis']."</td>
+		<td>".$row['yemekhane']."</td>
+		<td>".$row['ekip']."</td>
+		<td>".$row['vardiya']."</td>
+		
+		
+		
+		
+		</tr>");
 		
 		
     }
@@ -210,7 +228,7 @@ $sql = "
 
 
 
-select sicil,servis,yemekhane,ekip
+select sicil,servis,yemekhane,ekip,vardiya
 from dbo.corona 
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$aa'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
@@ -234,6 +252,7 @@ echo "ok";
 	<td>servisbulaştırma</td>
 	<td>yemekhanebulaştırma</td>
 	<td>ekipbulaştırma</td>
+		<td>çalışanınvardiyası</td>
 	
 	
 	</tr>");
@@ -244,7 +263,7 @@ echo "ok";
 		<td>".$row['servis']."</td>
 		<td>".$row['yemekhane']."</td>
 		<td>".$row['ekip']."</td>
-		
+		<td>".$row['vardiya']."</td>
 		
 		
 		
