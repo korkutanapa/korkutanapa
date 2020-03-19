@@ -140,18 +140,13 @@ $sql = "select sicil
 from dbo.corona 
 where 
 yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
-or 
-mola IN ( select mola from  dbo.corona where sicil='$a') 
-or
+and
 vardiya IN ( select vardiya from  dbo.corona where sicil='$a')
 or
 servis IN ( select servis from  dbo.corona where sicil='$a')
 or
 ekip IN ( select ekip from  dbo.corona where sicil='$a')
-or
-istasyon IN ( select istasyon+1 from  dbo.corona where sicil='$a')
-or
-istasyon IN ( select istasyon-1 from  dbo.corona where sicil='$a')";
+";
 		
 	
 $stmt = sqlsrv_query($conn,$sql);
@@ -164,17 +159,20 @@ echo "ok";
     {
          
         print("<tr><td>".$row['sicil']."</td></tr>");
-
+		
 		
     }
     print("</table><br>");
 
 
-		
+
 
 }}     
 
 ?>
+
+
+
 
 
 
