@@ -108,7 +108,7 @@ th {
 
 
 
-<h3>SICIL GIRISI</h3>
+<h3>SICIL GIRISI 1.BULAŞMA </h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="submit" name="submit" value="LİSTE TARA" />
@@ -174,10 +174,82 @@ echo "ok";
 
 ?>
 
+</nav>
+<nav>
+
+
+<h3>SICIL GIRISI 2.BULAŞMA </h3>
+<form method="post" action="?action=closed" enctype="multipart/form-data" >
+SICIL GIRINIZ <br><input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
+<input type="submit" name="submit" value="LİSTE TARA" />
+</form>
+
+
+<?php
+
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    echo "olmadı";
+}
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'closed')
+    {
+
+$aa=$_POST['t_b'];
+echo "$aa";
+$sql = "
+
+
+
+select sicil
+from dbo.corona 
+where 
+yemekhane IN ( select yemekhane from  dbo.corona where sicil='$aa' and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa') )
+or
+servis IN ( select servis from  dbo.corona where sicil='$aa' and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+or
+ekip IN ( select ekip from  dbo.corona where sicil='$aa' and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+
+
+
+";
+		
+	
+$stmt = sqlsrv_query($conn,$sql);
+
+echo "ok";
+
+    print("<table border='1px'>");
+    print("<tr><td>Karantina Liste</td></tr>");
+	while($row = sqlsrv_fetch_array($stmt))
+    {
+         
+        print("<tr><td>".$row['sicil']."</td></tr>");
+		
+		
+    }
+    print("</table><br>");
 
 
 
 
+}}     
+
+?>
+
+
+
+
+</nav>
 
 </article>
 </section>
