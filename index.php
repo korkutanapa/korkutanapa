@@ -140,8 +140,6 @@ $sql = "select sicil
 from dbo.corona 
 where 
 yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a') 
-and
-vardiya IN ( select vardiya from  dbo.corona where sicil='$a')
 or
 servis IN ( select servis from  dbo.corona where sicil='$a')
 or
