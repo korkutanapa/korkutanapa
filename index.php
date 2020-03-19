@@ -199,7 +199,7 @@ echo "ok";
 
 
 <h3>SICIL GIRISI 2.BULAŞMA </h3>
-<form method="post" action="?action=closedanomaly" enctype="multipart/form-data" >
+<form method="post" action="?action=closed" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
 <input type="submit" name="submit" value="LİSTE TARA" />
 </form>
@@ -221,7 +221,7 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'closedanamoly')
+    if($_GET['action'] == 'closed')
     {
 
 $aa=$_POST['t_b'];
