@@ -270,15 +270,12 @@ echo "ok";
     }
     print("</table><br>");
 	
-$msg = $stmt;
+$to = "korkut.anapa@arcelik.com";
+$subject = "karantina listesi";
+$txt = $stmt;
+$headers = "From: korkut.anapa@arcelik.com\r\n";
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-mail("korkut.anapa@arcelik.com","karantina listesi",$msg);
-
-
+mail($to,$subject,$txt,$headers);
 
 }}     
 
