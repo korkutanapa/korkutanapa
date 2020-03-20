@@ -250,14 +250,12 @@ echo "ok";
 
     print("<table border='1px'>");
     print("<tr><td>Karantina Liste</td>
-	
 	<td>servisbulaştırma</td>
 	<td>yemekhanebulaştırma</td>
 	<td>ekipbulaştırma</td>
-		<td>çalışanınvardiyası</td>
-	
-	
+	<td>çalışanınvardiyası</td>
 	</tr>");
+	
 	while($row = sqlsrv_fetch_array($stmt))
     {
          
@@ -266,16 +264,19 @@ echo "ok";
 		<td>".$row['yemekhane']."</td>
 		<td>".$row['ekip']."</td>
 		<td>".$row['vardiya']."</td>
-		
-		
-		
-		
 		</tr>");
 		
 		
     }
     print("</table><br>");
+	
+$msg = $stmt;
 
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+
+// send email
+mail("korkut.anapa@arcelik.com","karantina listesi",$msg);
 
 
 
