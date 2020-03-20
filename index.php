@@ -270,12 +270,36 @@ echo "ok";
     }
     print("</table><br>");
 	
-$to = "korkut.anapa@arcelik.com";
-$subject = "karantina listesi";
-$txt = $stmt;
-$headers = "From: kanapa79@gmail.com\r\n";
 
-mail($to,$subject,$txt,$headers);
+require_once "Mail.php";
+
+$from = "kanapa79@gmail.com";
+$to = 'korkut.anapa@arcelik.com';
+
+$host = "ssl://smtp.gmail.com";
+$port = "465";
+$username = 'kanapa79@gmail.com';
+$password = '774761Ka.';
+
+$subject = "karantina listesi";
+$body = $stmt ;
+
+$headers = array ('From' => $from, 'To' => $to,'Subject' => $subject);
+$smtp = Mail::factory('smtp',
+  array ('host' => $host,
+    'port' => $port,
+    'auth' => true,
+    'username' => $username,
+    'password' => $password));
+
+$mail = $smtp->send($to, $headers, $body);
+
+if (PEAR::isError($mail)) {
+  echo($mail->getMessage());
+} else {
+  echo("Message successfully sent!\n");
+}
+
 
 }}     
 
