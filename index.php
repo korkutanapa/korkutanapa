@@ -273,7 +273,7 @@ echo "ok";
 $to = "korkut.anapa@arcelik.com";
 $subject = "karantina listesi";
 $txt = $stmt;
-$headers = "From: korkut.anapa@arcelik.com\r\n";
+$headers = "From: kanapa79@gmail.com\r\n";
 
 mail($to,$subject,$txt,$headers);
 
