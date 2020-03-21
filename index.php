@@ -216,19 +216,15 @@ STATU GIRINIZ <br><input type="text" name="t_9" autocomplete="off" id="t_9"/></b
 </form>
 
 <?php
-
-
 $serverName = "tcp:korkutse599server.database.windows.net,1433";
 $connectionOptions = array("Database"=>"korkutse599db",
                            "UID"=>"korkut",
                            "PWD" => "774761Ka.");
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-
 if($conn === false)
 {
     echo "olmadı";
 }
-
 if(isset($_GET['action']))
 {
     if($_GET['action'] == 'CHANGE')
@@ -250,26 +246,11 @@ UPDATE dbo.corona
 SET   yemekhane='$a3' , ekip='$a4' , vardiya='$a5' ,servis='$a6', servis2='$a7' ,servis3='$a8' ,statu='$a9' 
 WHERE sicil='$a1'
 ";
-
 if (mysqli_query($conn, $sql2)) {
 	echo "ok";
-	
-	
- 
-}else  {echo " uyumsuz kayıt lütfen istenen bilgileri giriniz";}
-
-
-
-
-
+}else  {echo " degistirilemedi";echo "$a1";}
 }
-
-
-
-
 }
-
-
 ?>
 
 </nav>
