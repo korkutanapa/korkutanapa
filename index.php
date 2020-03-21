@@ -204,14 +204,14 @@ or
 
 <h3>veri güncelleme </h3>
 <form method="post" action="?action=CHANGE" enctype="multipart/form-data" >
-SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_1"/></br>
-YEMEK MASASI GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_3"/></br>
-EKIP GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_4"/></br>
-VARDIYA GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_5"/></br>
-SERVIS GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_6"/></br>
-SERVIS2 GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_7"/></br>
-SERVIS3 GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_8"/></br>
-STATU GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_9"/></br>
+SICIL GIRINIZ <br><input type="text" name="t_1" autocomplete="off" id="t_1"/></br>
+YEMEK MASASI GIRINIZ <br><input type="text" name="t_3" autocomplete="off" id="t_3"/></br>
+EKIP GIRINIZ <br><input type="text" name="t_4" autocomplete="off" id="t_4"/></br>
+VARDIYA GIRINIZ <br><input type="text" name="t_5" autocomplete="off" id="t_5"/></br>
+SERVIS GIRINIZ <br><input type="text" name="t_6" autocomplete="off" id="t_6"/></br>
+SERVIS2 GIRINIZ <br><input type="text" name="t_7" autocomplete="off" id="t_7"/></br>
+SERVIS3 GIRINIZ <br><input type="text" name="t_8" autocomplete="off" id="t_8"/></br>
+STATU GIRINIZ <br><input type="text" name="t_9" autocomplete="off" id="t_9"/></br>
 <input type="submit" name="submit" value="DEGISTIR" />
 </form>
 
@@ -249,7 +249,7 @@ UPDATE dbo.corona
 SET   yemekhane='$a3' , ekip='$a4' , vardiya='$a5' ,servis='$a6', servis2='$a7' ,servis3='$a8' ,statu='$a9' 
 WHERE sicil='$a1'";
 
-}
+}}
 
 
 ?>
