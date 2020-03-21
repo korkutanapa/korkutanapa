@@ -138,7 +138,7 @@ $a=$_POST['t_a'];
 
 
 echo "$a";
-echo "temas listesi"
+echo "temas listesi";
 
 
 $sql = "
@@ -236,7 +236,7 @@ if(isset($_GET['action']))
 
 $aa=$_POST['t_b'];
 echo "$aa";
-echo "temas listesi"
+echo "temas listesi";
 $sql = "
 select sicil,servis,yemekhane,ekip,vardiya,servis2,servis3,statu,isim,soyisim,tel1,tel2
 from dbo.corona 
