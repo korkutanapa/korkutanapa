@@ -145,13 +145,13 @@ $sql = "
 select sicil,servis,yemekhane,ekip,vardiya,servis2,servis3,statu,isim,soyisim,tel1,tel2
 from dbo.corona 
 where 
-(yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+(yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$a')))
 or
-(servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+(servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a') and servis <> '')
 or
-(servis2 IN ( select servis2 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+(servis2 IN ( select servis2 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a')and servis2 <> '')
 or
-(servis3 IN ( select servis3 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+(servis3 IN ( select servis3 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a')and servis3 <> '')
 or
 (ekip IN ( select ekip from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
 ";
@@ -243,11 +243,11 @@ from dbo.corona
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$aa'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
 or
-(servis IN ( select servis from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+(servis IN ( select servis from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa')and servis <> '')
 or
-(servis2 IN ( select servis2 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+(servis2 IN ( select servis2 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa')and servis2 <> '')
 or
-(servis3 IN ( select servis3 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+(servis3 IN ( select servis3 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa')and servis3 <> '')
 or
 (ekip IN ( select ekip from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
 ";
