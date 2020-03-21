@@ -99,7 +99,7 @@ th {
 
 <header>
  <h2>İŞLETME YAYILIM ÖNLEME VERİ TABANI</h2>
- <p>by </p>
+
 </header>
 
 <section>
@@ -108,7 +108,7 @@ th {
 
 
 
-<h3>SICIL GIRISI 1.BULAŞMA </h3>
+<h3>SICIL GIRISI 1.TEMAS </h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
 <input type="submit" name="submit" value="LİSTE TARA" />
@@ -135,51 +135,61 @@ if(isset($_GET['action']))
     {
 
 $a=$_POST['t_a'];
+
+
 echo "$a";
+echo "temas listesi"
+
+
 $sql = "
-
-
-
-select sicil,servis,yemekhane,ekip,vardiya
+select sicil,servis,yemekhane,ekip,vardiya,servis2,servis3,statu,isim,soyisim,tel1,tel2
 from dbo.corona 
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
 or
 (servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
 or
+(servis2 IN ( select servis2 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+or
+(servis3 IN ( select servis3 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
+or
 (ekip IN ( select ekip from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
-
-
-
 ";
 		
 	
-$stmt = sqlsrv_query($conn,$sql);
+	$stmt = sqlsrv_query($conn,$sql);
 
-echo "ok";
 
     print("<table border='1px'>");
     print("<tr><td>Karantina Liste</td>
-	
-	<td>servisbulaştırma</td>
-	<td>yemekhanebulaştırma</td>
-	<td>ekipbulaştırma</td>
+	<td>isim</td>
+	<td>soyisim</td>
+	<td>statu</td>
+	<td>tel1</td>
+	<td>tel2</td>
+	<td>servistemas</td>
+	<td>servis2temas</td>
+	<td>servis3temas</td>
+	<td>yemekhanetemas</td>
+	<td>ekiptemas</td>
 	<td>çalışanınvardiyası</td>
-	
+	<td></td>
 	</tr>");
 	while($row = sqlsrv_fetch_array($stmt))
     {
-         
-        print("<tr><td>".$row['sicil']."</td>
-		<td>".$row['servis']."</td>
-		<td>".$row['yemekhane']."</td>
-		<td>".$row['ekip']."</td>
-		<td>".$row['vardiya']."</td>
-		
-		
-		
-		
-		</tr>");
+    print("<tr><td>".$row['sicil']."</td>
+	<td>".$row['isim']."</td>
+	<td>".$row['soyisim']."</td>
+	<td>".$row['statu']."</td>
+	<td>".$row['tel1']."</td>
+	<td>".$row['tel2']."</td>
+	<td>".$row['servis']."</td>
+	<td>".$row['servis2']."</td>
+	<td>".$row['servis3']."</td>
+	<td>".$row['yemekhane']."</td>
+	<td>".$row['ekip']."</td>
+	<td>".$row['vardiya']."</td>
+	</tr>");
 		
 		
     }
@@ -198,7 +208,7 @@ echo "ok";
 <nav>
 
 
-<h3>SICIL GIRISI 2.BULAŞMA </h3>
+<h3>SICIL GIRISI 2.TEMAS </h3>
 <form method="post" action="?action=closed" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_b" autocomplete="off" id="t_b"/></br>
 <input type="submit" name="submit" value="LİSTE TARA" />
@@ -226,79 +236,62 @@ if(isset($_GET['action']))
 
 $aa=$_POST['t_b'];
 echo "$aa";
+echo "temas listesi"
 $sql = "
-
-
-
-select sicil,servis,yemekhane,ekip,vardiya
+select sicil,servis,yemekhane,ekip,vardiya,servis2,servis3,statu,isim,soyisim,tel1,tel2
 from dbo.corona 
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$aa'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
 or
 (servis IN ( select servis from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
 or
+(servis2 IN ( select servis2 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+or
+(servis3 IN ( select servis3 from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
+or
 (ekip IN ( select ekip from  dbo.corona where sicil='$aa' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$aa'))
-
-
-
 ";
 		
 	
-$stmt = sqlsrv_query($conn,$sql);
+	$stmt = sqlsrv_query($conn,$sql);
 
-echo "ok";
 
     print("<table border='1px'>");
     print("<tr><td>Karantina Liste</td>
-	<td>servisbulaştırma</td>
-	<td>yemekhanebulaştırma</td>
-	<td>ekipbulaştırma</td>
+	<td>isim</td>
+	<td>soyisim</td>
+	<td>statu</td>
+	<td>tel1</td>
+	<td>tel2</td>
+	<td>servistemas</td>
+	<td>servis2temas</td>
+	<td>servis3temas</td>
+	<td>yemekhanetemas</td>
+	<td>ekiptemas</td>
 	<td>çalışanınvardiyası</td>
+	<td></td>
 	</tr>");
-	
 	while($row = sqlsrv_fetch_array($stmt))
     {
-         
-        print("<tr><td>".$row['sicil']."</td>
-		<td>".$row['servis']."</td>
-		<td>".$row['yemekhane']."</td>
-		<td>".$row['ekip']."</td>
-		<td>".$row['vardiya']."</td>
-		</tr>");
+    print("<tr><td>".$row['sicil']."</td>
+	<td>".$row['isim']."</td>
+	<td>".$row['soyisim']."</td>
+	<td>".$row['statu']."</td>
+	<td>".$row['tel1']."</td>
+	<td>".$row['tel2']."</td>
+	<td>".$row['servis']."</td>
+	<td>".$row['servis2']."</td>
+	<td>".$row['servis3']."</td>
+	<td>".$row['yemekhane']."</td>
+	<td>".$row['ekip']."</td>
+	<td>".$row['vardiya']."</td>
+	</tr>");
 		
 		
     }
     print("</table><br>");
-	
 
-require_once "Mail.php";
 
-$from = "kanapa79@gmail.com";
-$to = 'korkut.anapa@arcelik.com';
-
-$host = "ssl://smtp.gmail.com";
-$port = "465";
-$username = 'kanapa79@gmail.com';
-$password = '774761Ka.';
-
-$subject = "karantina listesi";
-$body = $stmt ;
-
-$headers = array ('From' => $from, 'To' => $to,'Subject' => $subject);
-$smtp = Mail::factory('smtp',
-  array ('host' => $host,
-    'port' => $port,
-    'auth' => true,
-    'username' => $username,
-    'password' => $password));
-
-$mail = $smtp->send($to, $headers, $body);
-
-if (PEAR::isError($mail)) {
-  echo($mail->getMessage());
-} else {
-  echo("Message successfully sent!\n");
-}
 
 
 }}     
