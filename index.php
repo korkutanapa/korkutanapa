@@ -241,12 +241,12 @@ $a9=$_POST['t_9'];
 
 
 $sql2 = 
-"
-UPDATE dbo.corona
-SET   (yemekhane='$a3' , ekip='$a4' , vardiya='$a5' ,servis='$a6', servis2='$a7' ,servis3='$a8' ,statu='$a9' )
-WHERE (sicil='$a1')
-";
-if (mysqli_query($conn, $sql2)) {
+"update dbo.corona
+set yemekhane='$a3',ekip='$a4',vardiya='$a5',servis='$a6',servis2='$a7',servis3='$a8',statu='$a9'
+where sicil='$a1' ";
+
+
+if (sqlsrv_query($conn,$sql2)) {
 	echo "ok";
 }else  {echo " degistirilemedi";echo "$a1";}
 }
