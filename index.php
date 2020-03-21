@@ -202,6 +202,58 @@ or
 
 ?>
 
+<h3>veri güncelleme </h3>
+<form method="post" action="?action=CHANGE" enctype="multipart/form-data" >
+SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_1"/></br>
+YEMEK MASASI GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_3"/></br>
+EKIP GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_4"/></br>
+VARDIYA GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_5"/></br>
+SERVIS GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_6"/></br>
+SERVIS2 GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_7"/></br>
+SERVIS3 GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_8"/></br>
+STATU GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_9"/></br>
+<input type="submit" name="submit" value="DEGISTIR" />
+</form>
+
+<?php
+
+
+$serverName = "tcp:korkutse599server.database.windows.net,1433";
+$connectionOptions = array("Database"=>"korkutse599db",
+                           "UID"=>"korkut",
+                           "PWD" => "774761Ka.");
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if($conn === false)
+{
+    echo "olmadı";
+}
+
+if(isset($_GET['action']))
+{
+    if($_GET['action'] == 'CHANGE')
+    {
+
+$a1=$_POST['t_1'];
+$a3=$_POST['t_3'];
+$a4=$_POST['t_4'];
+$a5=$_POST['t_5'];
+$a6=$_POST['t_6'];
+$a7=$_POST['t_7'];
+$a8=$_POST['t_8'];
+$a9=$_POST['t_9'];
+
+
+$sql2 = "
+UPDATE dbo.corona
+SET   yemekhane='$a3' , ekip='$a4' , vardiya='$a5' ,servis='$a6', servis2='$a7' ,servis3='$a8' ,statu='$a9' 
+WHERE sicil='$a1'";
+
+}
+
+
+?>
+
 </nav>
 
 
