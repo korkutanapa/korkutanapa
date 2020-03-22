@@ -145,7 +145,7 @@ echo "temas listesi";
 $sqlvar="select vardiya from  dbo.corona where sicil='$a'";
 $stmtvar = sqlsrv_query($conn,$sqlvar);
 
-if ($stmtvar=='4') 
+if ($stmtvar==4) 
 {$vardiya=$var2;}
 else
 {$vardiya=$stmtvar;}
