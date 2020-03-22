@@ -148,11 +148,11 @@ $stmtvar = sqlsrv_query($conn,$sqlvar);
 if ($stmtvar='4') 
 {$vardiya=$var2;}
 else
-{$vardiya=$sqlvar;}
+{$vardiya=$stmtvar;}
 
 
 if ($stmtvar=$var)
-echo"çalışan off vardiyada";
+{echo"çalışan off vardiyada";}
 else{
 
 $sql = "
