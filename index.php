@@ -151,7 +151,7 @@ else
 {$vardiya=$stmtvar;}
 echo "$stmtvar";echo"$var";
 
-if ($stmtvar=$var)
+if ($stmtvar==$var)
 {echo"çalışan off vardiyada";}
 else{
 
