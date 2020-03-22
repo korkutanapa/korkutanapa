@@ -149,7 +149,7 @@ if ($stmtvar='4')
 {$vardiya=$var2;}
 else
 {$vardiya=$stmtvar;}
-
+echo "$stmtvar";echo"$var";
 
 if ($stmtvar=$var)
 {echo"çalışan off vardiyada";}
