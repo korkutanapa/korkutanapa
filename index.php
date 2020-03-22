@@ -106,13 +106,9 @@ th {
 
 <nav>
 
-
 <h3>SICIL GIRISI 1.TEMAS </h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
 SICIL GIRINIZ <br><input type="text" name="t_a" autocomplete="off" id="t_a"/></br>
-off vardiya no <br><input type="text" name="t_var" autocomplete="off" id="t_var"/></br>
-sabah vardiya no <br><input type="text" name="t_var2" autocomplete="off" id="t_var2"/></br>
-
 <input type="submit" name="submit" value="LİSTE TARA" />
 </form>
 
@@ -133,24 +129,15 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-if($_GET['action'] == 'closedanamoly')
-{
+    if($_GET['action'] == 'closedanamoly')
+    {
 
 $a=$_POST['t_a'];
-$var=$_POST['t_var'];
-$var2=$_POST['t_var2'];
+
+
 echo "$a";
 echo "temas listesi";
 
-$sqlvar="select vardiya from  dbo.corona where sicil='$a'";
-$stmtvar = sqlsrv_query($conn,$sqlvar);
-
-
-
-
-if ($stmtvar==$var)
-{echo"çalışan off vardiyada";}
-else{
 
 $sql = "
 select sicil,servis,yemekhane,ekip,vardiya,servis2,servis3,statu,isim,soyisim,tel1,tel2
@@ -158,7 +145,7 @@ from dbo.corona
 where 
 (yemekhane IN ( select yemekhane from  dbo.corona where sicil='$a'  ) and vardiya IN ( select vardiya from  dbo.corona where sicil='$a'))
 or
-(servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a') and servis<>'' and vardiya IN ( select vardiya from  dbo.corona where vardiya='$vardiya'))
+(servis IN ( select servis from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a') and servis<>'')
 or
 (servis2 IN ( select servis2 from  dbo.corona where sicil='$a' )and vardiya IN ( select vardiya from  dbo.corona where sicil='$a')and servis2<>'')
 or
@@ -209,7 +196,8 @@ or
 
 
 
-}} }    
+}}     
+
 
 ?>
 
