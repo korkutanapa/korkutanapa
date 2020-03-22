@@ -106,7 +106,6 @@ th {
 
 <nav>
 
-/* buradan   */
 
 <h3>SICIL GIRISI 1.TEMAS </h3>
 <form method="post" action="?action=closedanamoly" enctype="multipart/form-data" >
@@ -134,14 +133,12 @@ if($conn === false)
 
 if(isset($_GET['action']))
 {
-    if($_GET['action'] == 'closedanamoly')
-    {
+if($_GET['action'] == 'closedanamoly')
+{
 
 $a=$_POST['t_a'];
 $var=$_POST['t_var'];
 $var2=$_POST['t_var2'];
-
-
 echo "$a";
 echo "temas listesi";
 
@@ -155,7 +152,7 @@ else
 
 
 if ($sqlvar=$stmtvar)
-	echo"çalışan off vardiyada"
+echo"çalışan off vardiyada";
 else{
 
 $sql = "
@@ -222,7 +219,7 @@ or
 
 
 
-/* buraya kadar  */
+
 
 <h3>veri güncelleme </h3>
 <form method="post" action="?action=CHANGE" enctype="multipart/form-data" >
